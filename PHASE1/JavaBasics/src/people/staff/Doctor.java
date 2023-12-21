@@ -1,3 +1,5 @@
+package people.staff; 
+
 
 public class Doctor {
 	// Fields/ Properties / Variables

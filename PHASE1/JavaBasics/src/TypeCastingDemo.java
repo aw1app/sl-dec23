@@ -20,6 +20,17 @@ public class TypeCastingDemo {
 		
 		System.out.printf("long a = %s \n" , a);
 		System.out.printf("int b = %s \n" , b);
+		
+		
+		boolean b1=true;
+		int b2;
+		
+		// b2=(boolean) b1;
+		
+		int b3 = 10;
+		char c1;
+		
+		c1 =(char) b3;
 
 	}
 

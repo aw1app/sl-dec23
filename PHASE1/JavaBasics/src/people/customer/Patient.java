@@ -1,3 +1,4 @@
+package people.customer; 
 
 public class Patient {
 	String name;
