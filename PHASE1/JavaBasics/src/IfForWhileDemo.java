@@ -24,7 +24,7 @@ public class IfForWhileDemo {
 		// Looping demo with break
 		System.out.println("\n Looping demo with break");
 		for (int i = 0; i < 50; i++) {
-			
+
 			System.out.println("Enter some number :");
 			int n = sc.nextInt();
 			if (n == 7)
@@ -35,14 +35,30 @@ public class IfForWhileDemo {
 
 		// Looping demo with continue
 		System.out.println("\n Looping demo with continue");
-		for (int i = 0; i < 10; i++) {			
+		for (int i = 0; i < 10; i++) {
 			System.out.println("hello i= " + i);
-			
-			if (i % 2 == 0)	
+
+			if (i % 2 == 0)
 				continue;
 
 			System.out.println("bye i= " + i);
 		}
+
+		// Looping demo using while
+		System.out.println("\n \n  while Looping demo");
+		int i = 0;
+		while (i < 5) {
+			System.out.println("Inside while loop i=" + i);
+			i++;
+		};
+		
+		
+		System.out.println("\n \n  do while Looping demo");
+		int j=0;
+		do {
+			System.out.println("Inside while loop i=" + j);
+			j++;
+		}while (j > 5);
 
 		System.out.println("DONE");
 
