@@ -12,5 +12,9 @@ public class Doctor {
 	void examinePatient(){
 		System.out.println("examining patient..");
 	}
+	
+	public String toString() {		
+		return "name is "+this.name + " and age is "+ this.age;		
+	}
 
 }
