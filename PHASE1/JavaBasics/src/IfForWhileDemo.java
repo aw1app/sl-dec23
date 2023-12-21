@@ -59,6 +59,17 @@ public class IfForWhileDemo {
 			System.out.println("Inside while loop i=" + j);
 			j++;
 		}while (j > 5);
+		
+		
+		System.out.println("\n \n  Switch case demo");
+		int k=3;
+		switch(k) {
+		case 1:System.out.println(" executing  case 1 " ); break;
+		case 3:System.out.println(" executing  case 3 " ); break;
+		case 4:
+			System.out.println(" executing  case 4 "); break;	
+		default: System.out.println(" executing  default case " );
+		}
 
 		System.out.println("DONE");
 
