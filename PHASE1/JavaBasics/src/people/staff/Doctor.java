@@ -16,6 +16,9 @@ public class Doctor {
 		this.age=age1;
 	}
 	
+	// Write a constructor that accepts name, age and mobileNos array
+	// and do the initialization.
+	
 	public Doctor(String name1,float age1, long mobileNo1, long mobileNo2) {
 		this.name=name1;
 		this.age=age1;
