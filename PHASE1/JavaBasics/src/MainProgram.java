@@ -11,6 +11,10 @@ public class MainProgram {
 		Doctor d0 = new Doctor("Sid",101);
 		Doctor d1 = new Doctor();
 		
+		// Create a doctor whose has 2 mobiles		
+		long[] mobiles = {9464664646L,464646466L};  
+		Doctor d2 = new Doctor("Jimmy",23, mobiles);
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter doctor's name :");
 		d1.name=sc.nextLine();

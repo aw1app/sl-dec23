@@ -26,10 +26,10 @@ public class Doctor {
 		this.mobileNos[1] = mobileNo2;
 	}
 	
-	public Doctor(String name1,float age1, long mobileNo1) {
+	public Doctor(String name1,float age1, long[] mobileNos) {
 		this.name=name1;
 		this.age=age1;
-		this.mobileNos[0] = mobileNo1;
+		this.mobileNos = mobileNos;
 	}
 	
 	// Operations/ Methods
