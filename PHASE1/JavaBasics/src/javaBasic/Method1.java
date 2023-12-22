@@ -19,10 +19,12 @@ public class Method1 {
 
 // Abstract class demo
 
-class ABC{
+abstract class ABC{
 	
 	public void m1(int n) {
 	
 	}
+	
+	public abstract void predictWeather();
 	
 }

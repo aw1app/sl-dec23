@@ -1,10 +1,13 @@
 import java.util.Scanner;
 
+import people.staff.Doctor;
+
 public class MainProgram {
 
 	public static void main(String[] args) {
 		
 		// Demo creating Doctor object
+		Doctor d0 = new Doctor("Sid",101);
 		Doctor d1 = new Doctor();
 		
 		Scanner sc = new Scanner(System.in);
