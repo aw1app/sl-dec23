@@ -8,9 +8,8 @@ public class A {
 	private int x4;
 	
 	
-	public void mA() {
-		x1=10;
-		
+	void mA() {
+		System.out.println("Hi");	
 	}
 
 }

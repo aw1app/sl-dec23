@@ -14,6 +14,8 @@ public class B {
 		// cannot be accessed in other classes
 		// a.x4=23;
 		
+		a.mA();
+		
 	}
 
 }
