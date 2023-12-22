@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+import people.customer.Patient;
 import people.staff.Doctor;
 
 public class MainProgram {
