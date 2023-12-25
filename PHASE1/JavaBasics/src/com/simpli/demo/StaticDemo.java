@@ -10,6 +10,7 @@ public class StaticDemo {
 		A a2 = new A();
 		a2.x = 300;
 		
+		System.out.println("Initailly A's was 100 : ");
 		System.out.println(a1.s); // 100
 		System.out.println(a2.s); // 100
 		System.out.println(A.s); // 100
@@ -23,7 +24,7 @@ public class StaticDemo {
 		
 		a1.s = 150;
 		
-		System.out.println("a1.s=100 gives : ");
+		System.out.println("a1.s=150 gives : ");
 		System.out.println(a1.s); // 150
 		System.out.println(a2.s); // 150
 		System.out.println(A.s); // 150
