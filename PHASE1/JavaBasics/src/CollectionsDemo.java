@@ -118,6 +118,29 @@ public class CollectionsDemo {
 		doctorSet.add(d2);
 		
 		System.out.printf("There are %s doctors in the doctorSet \n", doctorSet.size());
+		
+		// All operations that we do with List can be done with Set.
+		
+		
+		// Map demo
+		//Let's map doctors by thier name.
+		System.out.println("\n ** Map demo **");
+		Map<String, Doctor> mapNameWithDoctor = new TreeMap<String, Doctor>();
+		mapNameWithDoctor.put(d1.name, d1);
+		mapNameWithDoctor.put(d2.name, d2);
+		mapNameWithDoctor.put(d3.name, d3);
+		mapNameWithDoctor.put(d4.name, d4);
+		mapNameWithDoctor.put(d0.name, d0);
+		
+		// search for a doctor with a particualr name
+		
+		String nameOfDoctorToSearch = "Jimmy";
+		Doctor searchedDoc = mapNameWithDoctor.get(nameOfDoctorToSearch);
+		if(searchedDoc!=null)
+			System.out.printf("Doctor with name %s found \n", nameOfDoctorToSearch);
+		else
+			System.out.printf("Doctor with name %s not found \n", nameOfDoctorToSearch);
+		
 
 	}
 
