@@ -40,7 +40,7 @@ public class StaticDemo {
 		System.out.println("** static inner class  demo **");
 	    A.B b1 = new A.B();
 	    System.out.println("b1.b="+b1.b);
-	    
+	   	    
 				
 	}
 
