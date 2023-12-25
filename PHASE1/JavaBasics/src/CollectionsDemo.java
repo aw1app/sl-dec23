@@ -95,6 +95,29 @@ public class CollectionsDemo {
 		for (Doctor d : doctorList1) {
 			System.out.printf("Doctor name %s age %s \n", d.name, d.age);
 		}
+		
+		// Searching demo
+		// Challenge search for a doctor with name Santosh.
+		System.out.println("\n doctorList1 search for Santosh");
+		System.out.println("\n TODO by tomorrow");
+		
+		
+		
+		// Set of Doctors
+		System.out.println("\n\n SET DEMO");
+		Set<Doctor> doctorSet = new HashSet<Doctor>();
+		
+		doctorSet.add(d0);
+		doctorSet.add(d1);
+		doctorSet.add(d2);
+		doctorSet.add(d3);
+		doctorSet.add(d4);
+		
+		System.out.printf("There are %s doctors in the doctorSet \n", doctorSet.size());
+		
+		doctorSet.add(d2);
+		
+		System.out.printf("There are %s doctors in the doctorSet \n", doctorSet.size());
 
 	}
 
