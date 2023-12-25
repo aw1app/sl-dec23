@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 import people.customer.Patient;
 import people.staff.Doctor;
@@ -7,7 +7,7 @@ public class CollectionsDemo {
 
 	public static void main(String[] args) {
 
-		ArrayList doctorList = new ArrayList();
+		List doctorList = new LinkedList();
 
 		Doctor d0 = new Doctor("Sid", 101);
 		Doctor d1 = new Doctor("Monish", 55);
@@ -51,7 +51,7 @@ public class CollectionsDemo {
 		}
 		;
 
-		ArrayList<Doctor> doctorList1 = new ArrayList<Doctor>();
+		List<Doctor> doctorList1 = new ArrayList<Doctor>();
 
 		doctorList1.add(d0);
 		doctorList1.add(d1);
@@ -72,14 +72,29 @@ public class CollectionsDemo {
 		;
 
 		System.out.println("\n Approach 3 Looping a list demo");
-		doctorList1.forEach(
-				d -> {
-						System.out.printf("Doctor name %s age %s \n", d.name, d.age);
-					 }
-				);
+		doctorList1.forEach(d -> {
+			System.out.printf("Doctor name %s age %s \n", d.name, d.age);
+		});
 
-//		ArrayList<String> doctorNamesList= new ArrayList<String>();	
+//		List<String> doctorNamesList= new ArrayList<String>();	
 //		doctorNamesList.add("Santosh");
+
+		// Sort the doctors by age
+		doctorList1.sort((doc1, doc2) -> (int) (doc1.age - doc2.age));
+
+		System.out.println("\n doctorList1 Sorted by Age");
+		for (Doctor d : doctorList1) {
+			System.out.printf("Doctor name %s age %s \n", d.name, d.age);
+		}
+		;
+
+		// Sort the doctors by name
+		doctorList1.sort((doc1, doc2) -> doc1.name.compareTo(doc2.name));
+
+		System.out.println("\n doctorList1 Sorted by name");
+		for (Doctor d : doctorList1) {
+			System.out.printf("Doctor name %s age %s \n", d.name, d.age);
+		}
 
 	}
 
