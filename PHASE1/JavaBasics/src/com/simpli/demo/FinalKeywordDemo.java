@@ -4,7 +4,7 @@ public class FinalKeywordDemo {
 
 	public static void main(String[] args) {
 		
-		A a1 = new A();
+		ABC a1 = new ABC();
 		
 		// a1.x=1000; // Err cannot re-assign final variables
 
@@ -12,7 +12,7 @@ public class FinalKeywordDemo {
 
 }
 
-class A {
+class ABC {
 	final int x=100;
 	
 	final public void m() {
@@ -21,7 +21,7 @@ class A {
 	
 }
 
-class B extends A {
+class B extends ABC {
 	
 	/* Err cannot overide final method of parent class
 	public void m() {
