@@ -30,7 +30,7 @@ public class StaticDemo {
 		System.out.println(A.s); // 150
 		
 		// static method demo
-		System.out.println("static method demo. We can invoke static methods on the object a1, or a2 or the class A itself!!");
+		System.out.println("static method demo. \n We can invoke static methods on the \n object a1, or a2 or the class A itself!!");
 		a1.s1();
 		a2.s1();
 		A.s1();
