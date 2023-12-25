@@ -30,25 +30,36 @@ public class StaticDemo {
 		System.out.println(A.s); // 150
 		
 		// static method demo
-		System.out.println("static method demo. \n We can invoke static methods on the \n object a1, or a2 or the class A itself!!");
+		System.out.println(" ** static method demo ** . \n We can invoke static methods on the \n object a1, or a2 or the class A itself!!");
 		a1.s1();
 		a2.s1();
 		A.s1();
-
+		
+		
+		// static inner class  demo
+		System.out.println("** static inner class  demo **");
+	    A.B b1 = new A.B();
+	    System.out.println("b1.b="+b1.b);
+	    
+				
 	}
 
 }
 
-class A{
+class A {
 	// class level properties (static property)
-	static int s=100;
+	static int s = 100;
 
 	// instance properties
-	int x=100;
-	
+	int x = 100;
+
 	// class level methods
 	static public void s1() {
 		System.out.println("Inside static method s1");
 	}
-	
+
+	static class B {
+		int b = 20;
+	}
+
 }
