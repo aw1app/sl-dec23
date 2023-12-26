@@ -5,6 +5,8 @@ public class InPatient extends Patient{
 	int roomId;
 	int bedId;
 	
+	public InPatient() {};
+	
 	public InPatient(int id, String name,float age,int roomId, int bedId ) {
 		
 		
