@@ -10,6 +10,7 @@ public class Patient {
 	}
 			
 	public Patient(int id, String name,float age) {
+		System.out.println("Inside Patient constructor ");
 		this.name=name;
 		this.age=age;
 		this.id=id;

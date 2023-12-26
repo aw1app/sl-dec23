@@ -5,10 +5,19 @@ public class InPatient extends Patient{
 	int roomId;
 	int bedId;
 	
-	public InPatient() {};
+	public InPatient() {super();};
 	
 	public InPatient(int id, String name,float age,int roomId, int bedId ) {
+	
+//		this.name=name;
+//		this.age=age;
+//		this.id=id;	
 		
+		super(id,name,age);
+		System.out.println("Inside InPatient constructor ");
+		
+		this.roomId=roomId;
+		this.bedId=bedId;
 		
 	}
 	
