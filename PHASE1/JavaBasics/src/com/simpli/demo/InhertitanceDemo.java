@@ -7,8 +7,10 @@ public class InhertitanceDemo {
 	public static void main(String[] args) {
 		InPatient inPatient1 = new InPatient();
 		
-		inPatient1.prescription();
+		// calling an inherited method 
+		inPatient1.prescription(); 
 		
+		// calling an overridden method 
 		inPatient1.disease();
 	}
 
