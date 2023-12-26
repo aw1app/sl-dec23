@@ -1,6 +1,7 @@
 package com.simpli.demo;
 
 import people.customer.InPatient;
+import people.customer.Patient;
 
 public class InhertitanceDemo {
 
@@ -23,6 +24,21 @@ public class InhertitanceDemo {
 
 		// calling an overridden method
 		inPatient2.disease();
+		
+		System.out.println("\n Patient 1 :");
+		Patient patient1 = new  Patient(2, "Prabhu", 51);
+		patient1.prescription();
+		patient1.disease();	
+		
+		System.out.println("\n Display Patient's disease :");
+		displayDisease(patient1);
+		displayDisease(inPatient2);
+	}
+	
+	public static void displayDisease(Patient pat) {		
+		pat.disease();	
+		System.out.println(" Discount : "+pat.discount );
+		System.out.println(" Age : "+pat.age );
 	}
 
 }

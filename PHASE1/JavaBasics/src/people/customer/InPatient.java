@@ -1,9 +1,12 @@
 package people.customer;
 
 public class InPatient extends Patient{
-
+	public float age=100;
+	
 	int roomId;
 	int bedId;
+	
+	public int discount=30;
 	
 	public InPatient() {super();};
 	
@@ -22,7 +25,7 @@ public class InPatient extends Patient{
 	}
 	
 	void adminsterMedicine(String med){
-		System.out.println(" Gave medicine "+med + " to the in-patient");
+		System.out.println(name + ": Gave medicine "+med + " to the in-patient");
 	}
 	
 //	@Override
@@ -33,7 +36,7 @@ public class InPatient extends Patient{
 	@Override
 	public void disease(){
 		super.disease();
-		System.out.println("It is being treated..");
+		System.out.println(name + ": It is being treated..");
 	}
 	
 }

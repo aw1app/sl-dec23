@@ -2,8 +2,9 @@ package people.customer;
 
 public class Patient {
 	String name;
-	float age;
+	public float age=0;
 	int id;
+	public int discount=0;
 	
 	public Patient() {
 		
@@ -17,7 +18,7 @@ public class Patient {
 	}
 	
 	public void disease(){
-		System.out.println("Disease found..");
+		System.out.println(name + ": Disease found..");
 	}
 	
 	public void prescription(){
