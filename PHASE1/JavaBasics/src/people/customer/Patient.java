@@ -5,6 +5,15 @@ public class Patient {
 	float age;
 	int id;
 	
+	public Patient() {
+		
+	}
+			
+	public Patient(int id, String name,float age) {
+		this.name=name;
+		this.age=age;
+		this.id=id;
+	}
 	
 	public void disease(){
 		System.out.println("Disease found..");
