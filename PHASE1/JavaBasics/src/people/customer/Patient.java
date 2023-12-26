@@ -6,11 +6,11 @@ public class Patient {
 	int id;
 	
 	
-	void disease(){
+	public void disease(){
 		System.out.println("Disease found..");
 	}
 	
-	void prescription(){
+	public void prescription(){
 		System.out.println("Prescribed..");
 	}
 
