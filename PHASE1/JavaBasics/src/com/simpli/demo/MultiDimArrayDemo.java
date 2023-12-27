@@ -4,7 +4,7 @@ public class MultiDimArrayDemo {
 
 	public static void main(String[] args) {
 
-		int s [ ] [ ]=new int [2] [3];
+		int s[ ][ ]=new int [2] [3];
 		
 		s[0] = new int[]{1,2,3};
 		s[1] = new int[]{4,5,6};
@@ -18,7 +18,19 @@ public class MultiDimArrayDemo {
 			};
 			
 			System.out.println();
-		}
+		};
+		
+		
+		int r[ ][ ]=new int [2] [3];
+		r[ 0][0 ] = 10;
+		r[ 0][1 ] = 11;
+		r[ 0][2 ] = 12;
+		
+		r[ 1][0 ] = 13;
+		r[ 1][1 ] = 14;
+		r[ 1][2 ] = 15;
+		
+		// Loop the above r array
 
 	}
 
