@@ -27,7 +27,8 @@ public class ExceptionHandlingDemo {
 		try {
 			FileReader f = new FileReader(myFile);
 		} catch (FileNotFoundException e) {
-			System.out.printf("Given not found in the %s \n. Make sure it is in the said location and then retry",myFile);
+			System.out.printf("Given file %s not found in the system.  \n"
+					+ " Make sure it is in the said location and then retry\\n",myFile);
 		}
 		
 		System.out.println(" Thank you ");
