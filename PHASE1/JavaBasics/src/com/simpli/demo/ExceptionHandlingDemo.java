@@ -2,6 +2,7 @@ package com.simpli.demo;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ExceptionHandlingDemo {
@@ -26,9 +27,14 @@ public class ExceptionHandlingDemo {
 		String myFile = "C:\\Temp\\log.txt";
 		try {
 			FileReader f = new FileReader(myFile);
+			f.read();
+			
 		} catch (FileNotFoundException e) {
 			System.out.printf("Given file %s not found in the system.  \n"
 					+ " Make sure it is in the said location and then retry\\n",myFile);
+		} catch (IOException e) {
+			System.out.printf("Given file %s is not read\n"
+					+ " Make sure it has read permission for your account and then retry\\n",myFile);
 		}
 		
 		System.out.println(" Thank you ");
