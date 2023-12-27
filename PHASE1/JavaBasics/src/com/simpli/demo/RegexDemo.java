@@ -8,7 +8,8 @@ public class RegexDemo {
 	public static void main(String[] args) {
 		String text = "I am staying at door no 34. You can call me on 900007654 before 3 pm.";
 		
-		Pattern pattern = Pattern.compile("\\d+");
+		String myRegex = "\\d+";
+		Pattern pattern = Pattern.compile(myRegex);
 		
 		Matcher matcher = pattern.matcher(text);
 		
@@ -19,7 +20,7 @@ public class RegexDemo {
 			counter++;
 		};
 		
-		System.out.printf("\n Totally %s matches were found for the given pattern \n",counter);
+		System.out.printf("\n Totally %s matches were found for the given pattern %s \n",counter, myRegex);
 
 	}
 
