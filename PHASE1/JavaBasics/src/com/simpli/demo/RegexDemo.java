@@ -50,9 +50,16 @@ public class RegexDemo {
 		Matcher emailMatcher = emailPattern.matcher(email);
 
 		if (emailMatcher.matches())
-			System.out.printf("\n The given %s is a valid email",email);
+			System.out.printf("\n The given %s is a valid email", email);
 		else
-			System.out.printf("\n The given %s is a NOT valid email",email);
+			System.out.printf("\n The given %s is a NOT valid email", email);
+
+		// Challenge 5
+		// Given any number, check if it is a valid 10 digit phone number
+		// and starting with either 7 or 8 or 9.
+		
+		// SOLUTION: 		^[789]\d{9}$
+		
 
 	}
 
