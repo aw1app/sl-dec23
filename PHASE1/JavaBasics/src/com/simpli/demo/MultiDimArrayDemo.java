@@ -30,7 +30,11 @@ public class MultiDimArrayDemo {
 		r[ 1][1 ] = 14;
 		r[ 1][2 ] = 15;
 		
-		// Loop the above r array
+		//challenge: Loop the above r array
+		
+//		for(int i=0;i<r.length;i++)
+//			for(j=0;j<r[0].length;j++)
+//			S.o.p(r[i][j];
 
 	}
 
