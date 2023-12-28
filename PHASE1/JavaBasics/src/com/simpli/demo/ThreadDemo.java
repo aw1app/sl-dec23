@@ -1,8 +1,11 @@
 package com.simpli.demo;
 
 import com.compli.threads.LabTechnician;
+import com.compli.threads.Nurse;
 import com.compli.threads.Thread1;
 import com.compli.threads.Thread2;
+
+import people.customer.Patient;
 
 public class ThreadDemo {
 
@@ -34,9 +37,22 @@ public class ThreadDemo {
 		th2.setName("LabTechnician Sanju:");
 		th2.start();
 		
+		Patient pat = new Patient();
+		pat.name="Siddharth";
+		
+		Nurse n1= new Nurse(pat);
+		Thread nth1= new Thread(n1);
+		nth1.setName("Nurse 1:");
+		nth1.start();
+		
+		Nurse n2= new Nurse(pat);
+		Thread nth2= new Thread(n2);
+		nth2.setName("Nurse 2:");
+		nth2.start();
+		
 		
 		System.out.println(Thread.currentThread().getName());
-		for(int k=0;k<25;k++) {
+		for(int k=0;k<10;k++) {
 			System.out.println(Thread.currentThread().getName() + " k="+k);
 			try {
 				Thread.sleep(100);

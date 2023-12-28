@@ -1,7 +1,7 @@
 package people.customer; 
 
 public class Patient {
-	String name;
+	public String name;
 	public float age=0;
 	int id;
 	public int discount=0;
