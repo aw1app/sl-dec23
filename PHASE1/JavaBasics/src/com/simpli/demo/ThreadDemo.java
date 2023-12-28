@@ -1,6 +1,7 @@
 package com.simpli.demo;
 
 import com.compli.threads.Thread1;
+import com.compli.threads.Thread2;
 
 public class ThreadDemo {
 
@@ -21,6 +22,12 @@ public class ThreadDemo {
 		t2.setName("Surgeon");
 		t2.start();
 		
+		Thread2 rt1 = new Thread2(); // The runnable object
+		Thread th1 = new Thread(rt1); // the thread object
+		th1.setName("Receptionist");
+		th1.setPriority(10);
+		th1.start();
+		
 		System.out.println(Thread.currentThread().getName());
 		for(int k=0;k<25;k++) {
 			System.out.println(Thread.currentThread().getName() + " k="+k);
@@ -29,6 +36,8 @@ public class ThreadDemo {
 			} catch (InterruptedException e) {				
 			}
 		}
+		
+		
 
 	}
 
