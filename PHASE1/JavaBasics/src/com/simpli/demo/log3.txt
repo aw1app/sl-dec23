@@ -1,2 +1,6 @@
 The weather is awesome today
 Hope it will be same tomorrow
+ I am now appending this line
+This line too
+ I am now appending this line
+This line too

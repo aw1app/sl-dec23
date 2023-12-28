@@ -24,9 +24,32 @@ public class FileIODemo {
 		// fileReadDemo2();
 		// fileCopyDemo();
 		
-		fileWritingDemo1();
+		//fileWritingDemo1();
+		
+		fileAppendingWritingDemo1();
 	}
 
+	public static void fileAppendingWritingDemo1() {
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(myFile3,true);
+			
+			fw.write("\n I am now appending this line\n");
+			fw.write("This line too");
+			
+			System.out.println("Appended 2 lines to the file. pls check it out");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				fw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public static void fileWritingDemo1() {
 		FileWriter fw = null;
 		try {
