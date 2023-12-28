@@ -60,7 +60,7 @@ public class FileIODemo {
 			
 			Doctor d = (Doctor)obj;
 			
-			System.out.printf("Name %s and age=%s \n",d.name,d.age);
+			System.out.printf("Deserialized Doctor's name %s and age=%s \n",d.name,d.age);
 			
 		} catch (IOException | ClassNotFoundException e) {
 
