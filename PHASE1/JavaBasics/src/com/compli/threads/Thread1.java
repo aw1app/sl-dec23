@@ -7,6 +7,11 @@ public class Thread1 extends Thread{
 		
 		for(int i=0;i<10;i++) {
 			System.out.println(Thread.currentThread().getName() + " i="+i);
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {				
+			}
 		}
 		
 	}
