@@ -3,8 +3,8 @@ package com.simpli.demo;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -13,15 +13,39 @@ import java.util.List;
 public class FileIODemo {
 	static String myFile = "F:\\Users\\home\\git\\sl-dec23\\PHASE1\\JavaBasics\\src\\com\\simpli\\demo\\log.txt";
 	static String myFile2 = "F:\\Users\\home\\git\\sl-dec23\\PHASE1\\JavaBasics\\src\\com\\simpli\\demo\\log1.txt";
+	static String myFile3 = "F:\\Users\\home\\git\\sl-dec23\\PHASE1\\JavaBasics\\src\\com\\simpli\\demo\\log3.txt";
 	static String myFolder = "F:\\Users\\home\\git\\sl-dec23\\PHASE1\\JavaBasics\\src\\com\\simpli\\demo";
 
 	public static void main(String[] args) {
 
-		//fileClassDemo();
-		//fileReadDemo();
+		// fileClassDemo();
+		// fileReadDemo();
+
+		// fileReadDemo2();
+		// fileCopyDemo();
 		
-		//fileReadDemo2();
-		fileCopyDemo();
+		fileWritingDemo1();
+	}
+
+	public static void fileWritingDemo1() {
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(myFile3);
+			
+			fw.write("The weather is awesome today\n");
+			fw.write("Hope it will be same tomorrow");
+			
+			System.out.println("Wrote 2 lines to the file. pls check it out");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				fw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public static void fileCopyDemo() {
@@ -35,13 +59,14 @@ public class FileIODemo {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void fileReadDemo2() {
 		try {
 			Path filePath = Path.of(myFile);
-			List<String> lines = Files.readAllLines(filePath);	
-			
-			for(String s: lines)System.out.println(s);			
+			List<String> lines = Files.readAllLines(filePath);
+
+			for (String s : lines)
+				System.out.println(s);
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -49,21 +74,28 @@ public class FileIODemo {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void fileReadDemo1() {
+		FileReader fr = null;
 		try {
-			FileReader fr = new FileReader(myFile);			
-			
+			fr = new FileReader(myFile);
+
 			int ch = fr.read();
 			System.out.println(ch);
 			ch = fr.read();
-			System.out.println(ch);		
-			
+			System.out.println(ch);
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				fr.close();
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
 		}
 	}
 
