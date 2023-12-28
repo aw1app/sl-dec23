@@ -40,6 +40,9 @@ public class ThreadDemo {
 		Patient pat = new Patient();
 		pat.name="Siddharth";
 		
+		//synchronization demo
+		// Check the effect by commenting and uncommenting the 
+		// synchronized block in the Nurse class.
 		Nurse n1= new Nurse(pat);
 		Thread nth1= new Thread(n1);
 		nth1.setName("Nurse 1:");
