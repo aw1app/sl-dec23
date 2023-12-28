@@ -1,5 +1,6 @@
 package com.simpli.demo;
 
+import com.compli.threads.LabTechnician;
 import com.compli.threads.Thread1;
 import com.compli.threads.Thread2;
 
@@ -27,6 +28,12 @@ public class ThreadDemo {
 		th1.setName("Receptionist");
 		th1.setPriority(10);
 		th1.start();
+		
+		LabTechnician lb = new LabTechnician();
+		Thread th2 = new Thread(lb);
+		th2.setName("LabTechnician Sanju:");
+		th2.start();
+		
 		
 		System.out.println(Thread.currentThread().getName());
 		for(int k=0;k<25;k++) {
