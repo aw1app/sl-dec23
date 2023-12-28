@@ -1,7 +1,8 @@
-package people.staff; 
+package people.staff;
 
+import java.io.Serializable;
 
-public class Doctor {
+public class Doctor implements Serializable{
 	// Fields/ Properties / Variables
 	public String name;
 	public float age;
