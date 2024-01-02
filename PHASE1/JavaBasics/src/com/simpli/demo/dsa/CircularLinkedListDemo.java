@@ -66,6 +66,14 @@ class CircularLinkedList {
 			current_Node.next= newNode;
 			head = newNode;
 		}
+		else if (newNode.data >= current_Node.data) { // if newNode is greater that the head
+			
+			while(current_Node.next != head && current_Node.next.data <= newNode.data)
+				current_Node = current_Node.next;
+			
+			newNode.next = current_Node.next; 
+			current_Node.next =newNode;
+		}
 
 	}
 	
