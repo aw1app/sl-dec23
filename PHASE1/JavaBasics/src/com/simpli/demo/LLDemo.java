@@ -85,6 +85,8 @@ class MyLinkedList {
 
 		Node dummyNode = head;
 
+		// Loop thru and either stop one position before the key or
+		// before the tail if key was not found.
 		while (dummyNode.next != null && dummyNode.next.data != key) {
 			dummyNode = dummyNode.next;
 		}
