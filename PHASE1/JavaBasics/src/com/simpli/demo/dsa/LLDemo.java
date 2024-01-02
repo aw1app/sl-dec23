@@ -1,4 +1,4 @@
-package com.simpli.demo;
+package com.simpli.demo.dsa;
 
 public class LLDemo {
 
