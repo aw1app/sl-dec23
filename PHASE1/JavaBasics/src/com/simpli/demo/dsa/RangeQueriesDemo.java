@@ -21,7 +21,7 @@ public class RangeQueriesDemo {
 		for (int[] x : sparseTable) {
 			System.out.println(Arrays.toString(x));
 		}
-		;
+		System.out.println("");
 
 		int i = 2;
 		int j = 7;
