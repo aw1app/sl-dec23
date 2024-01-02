@@ -79,9 +79,11 @@ class MyLinkedList {
 			System.out.println("SLL's data was the key. Head deleted");
 			return;
 		}
+		
+		// If we are here, then the key may in some position
+		// after the head.
 
 		Node dummyNode = head;
-		// Node prevNode = head;
 
 		while (dummyNode.next != null && dummyNode.next.data != key) {
 			dummyNode = dummyNode.next;
