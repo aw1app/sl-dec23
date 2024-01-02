@@ -4,16 +4,27 @@ public class LLDemo {
 
 	public static void main(String[] args) {
 		MyLinkedList SLL1 = new MyLinkedList();
-		
+
 		SLL1.printSLL();
-		
+
 		SLL1.insert(10);
 		SLL1.insert(7);
 		SLL1.insert(6);
 		SLL1.insert(23);
-		
+		SLL1.insert(16);
+		SLL1.insert(17);
+
 		SLL1.printSLL();
-		
+
+		SLL1.delete(10);
+		SLL1.printSLL();
+
+		SLL1.delete(16);
+		SLL1.printSLL();
+
+		SLL1.delete(100);
+		SLL1.printSLL();
+
 	}
 
 }
@@ -31,7 +42,7 @@ class MyLinkedList {
 		}
 	}
 
-	// Insert
+	// Insert operation
 	void insert(int data) {
 
 		Node newNode = new Node(data);
@@ -51,6 +62,38 @@ class MyLinkedList {
 			// at this point, dummyNode is the tail
 			dummyNode.next = newNode;
 
+		}
+
+	}
+
+	// Remove operation
+	void delete(int key) {
+
+		if (head == null) {
+			System.err.println("SLL is empty. So nothing to delete");
+			return;
+		}
+
+		if (head.data == key) {
+			head = head.next;
+			System.out.println("SLL's data was the key. Head deleted");
+			return;
+		}
+
+		Node dummyNode = head;
+		// Node prevNode = head;
+
+		while (dummyNode.next != null && dummyNode.next.data != key) {
+			dummyNode = dummyNode.next;
+		}
+
+		if (dummyNode.next == null) {
+			System.out.println("Key not found ");
+			return;
+		} else if (dummyNode.next.data == key) {
+			dummyNode.next = dummyNode.next.next;
+			System.out.println("Found the key at non-head postion and deleted ");
+			return;
 		}
 
 	}
