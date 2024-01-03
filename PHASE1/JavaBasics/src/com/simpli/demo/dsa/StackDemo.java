@@ -20,6 +20,12 @@ public class StackDemo {
 		
 		myStack1.displayStack();
 		
+		System.out.println("\n Pop'ing. Got the pop'ed value as "+myStack1.pop());
+		myStack1.displayStack();
+		
+		System.out.println("\n Pop'ing. Got the pop'ed value as "+myStack1.pop());
+		myStack1.displayStack();
+		
 	}
 
 }
