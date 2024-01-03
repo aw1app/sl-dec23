@@ -19,7 +19,9 @@ public class LineraSearchDemo {
 
 		positionOfKey = doLinearSearch(arr, key);
 
-		if (positionOfKey == -1)
+		if (positionOfKey != -1)
+			System.out.println("Found the key " + key + " at position " + positionOfKey);
+		else
 			System.out.println("Key " + key + " not found ");
 
 	}
