@@ -1,7 +1,5 @@
 package com.simpli.demo.dsa;
 
-import com.simpli.demo.dsa.MyLinkedList.Node;
-
 public class CircularLinkedListDemo {
 
 	public static void main(String[] args) {
