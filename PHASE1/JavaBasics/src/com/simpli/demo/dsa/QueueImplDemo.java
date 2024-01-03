@@ -4,19 +4,28 @@ public class QueueImplDemo {
 
 	public static void main(String[] args) {
 		MyQueue myQueue = new MyQueue(5);
-		
+
 		myQueue.display();
-		
+
 		myQueue.enqueue(7);
 		myQueue.enqueue(17);
 		myQueue.enqueue(23);
-		
+
+		myQueue.display();
+
+		myQueue.enqueue(9);
+		myQueue.display();
+
+		myQueue.enqueue(21);
+		myQueue.display();
+
+		myQueue.enqueue(45);
 		myQueue.display();
 		
-		myQueue.enqueue(9);
-		myQueue.enqueue(21);
-		myQueue.enqueue(45);
+		System.out.println("\n Dequeue'ing. Got the dequeue'ed value as "+myQueue.dequeue());
+		myQueue.display();
 		
+		System.out.println("\n Dequeue'ing. Got the dequeue'ed value as "+myQueue.dequeue());
 		myQueue.display();
 
 	}
@@ -48,6 +57,26 @@ class MyQueue {
 			REAR = REAR + 1;
 			items[REAR] = val;
 		}
+	}
+
+	int dequeue() {
+		int dequeuedVal = -1;
+
+		if (isEmpty())
+			System.out.println("\nQueue is empty. Nothing to dequeue.");
+		else {
+			dequeuedVal = items[FRONT];
+			FRONT++;
+
+			// After deque of current of element check if the queue is empty
+			if (FRONT > REAR) {
+				REAR = -1;
+				FRONT = -1;
+			}
+
+		}
+
+		return dequeuedVal;
 	}
 
 	// Helper functions
