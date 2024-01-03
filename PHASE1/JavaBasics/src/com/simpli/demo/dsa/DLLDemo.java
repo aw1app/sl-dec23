@@ -15,7 +15,7 @@ public class DLLDemo {
 
 		DLL.printDLL();
 		
-		System.out.println("Inserting 50 and 1 using insertLast \n");
+		System.out.println("\n Inserting 50 and then 1 using insertLast \n");
 		
 		DLL.insertLast(50);
 		DLL.insertLast(1);
