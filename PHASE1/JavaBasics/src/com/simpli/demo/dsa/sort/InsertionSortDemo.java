@@ -23,10 +23,14 @@ public class InsertionSortDemo {
 			
 			int j = i-1;
 			
-			// compare the value at i with all the previous index values.
+			// compare the value at i(temp) with all the previous index values.
 			// and swap when it is less than.
-			while(temp < arr[j] && j>0) {
-				swap(arr, j+1, j);
+			while(j>=0 && temp < arr[j] ) {
+				
+				//swapping
+				arr[j+1] = arr[j];
+				arr[j] = temp;
+				
 				j--;
 			}			
 			
@@ -34,12 +38,5 @@ public class InsertionSortDemo {
 		
 	}
 	
-	private static void swap(int[] arr, int i, int j) {
-
-		int temp = arr[j];
-		arr[j] = arr[i];
-		arr[i] = temp;
-
-	}
-
+	
 }
