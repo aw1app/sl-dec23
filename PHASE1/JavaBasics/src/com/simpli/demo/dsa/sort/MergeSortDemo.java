@@ -21,12 +21,14 @@ public class MergeSortDemo {
 		if (arr.length == 1)
 			return arr;
 
-		// else partition / continue partioning
+		// else partition and continue partitioning until it is a single element array
 		int midIndex = arr.length / 2;
 
 		int[] left = mergeSort(Arrays.copyOfRange(arr, 0, midIndex));
 		int[] right = mergeSort(Arrays.copyOfRange(arr, midIndex, arr.length));
 
+		// we are here means, all partitions are single element arrays and the merge
+		// process has begun merging them.
 		return merge(left, right);
 	}
 
