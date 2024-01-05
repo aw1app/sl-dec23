@@ -39,7 +39,7 @@ public class ExponentialSearchDemo {
 		while (i < arr.length && arr[i] < key)
 			i = i * 2;
 
-		int upperBound = Math.min(i, arr.length);
+		int upperBound = Math.min(arr.length, i);
 		int lowerBound = i / 2;
 
 		return binarySearch(arr, lowerBound, upperBound-1, key);
