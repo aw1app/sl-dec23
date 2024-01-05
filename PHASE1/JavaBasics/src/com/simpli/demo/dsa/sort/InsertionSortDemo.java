@@ -27,7 +27,7 @@ public class InsertionSortDemo {
 			// and swap when it is less than.
 			while(j>=0 && temp < arr[j] ) {
 				
-				//swapping
+				//shifting
 				arr[j+1] = arr[j];
 				arr[j] = temp;
 				
