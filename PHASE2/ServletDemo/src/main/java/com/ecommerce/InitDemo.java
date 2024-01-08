@@ -15,7 +15,11 @@ import jakarta.servlet.http.HttpServletResponse;
 public class InitDemo extends HttpServlet{
 	
 	public void init(ServletConfig config) {
-		System.out.printf("\n Inside init .\n");		
+		System.out.printf("\n Inside init .\n");	
+		
+		String db_user = config.getInitParameter("database_username");
+		System.out.printf("db_user = %s \n", db_user);	
+		
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
