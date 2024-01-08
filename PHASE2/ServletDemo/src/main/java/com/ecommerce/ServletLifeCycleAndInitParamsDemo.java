@@ -4,15 +4,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 //@WebServlet(urlPatterns = "/init-demo")
-public class InitDemo extends HttpServlet{
+public class ServletLifeCycleAndInitParamsDemo extends HttpServlet{
 	
 	public void init(ServletConfig config) {
 		System.out.printf("\n Inside init .\n");	
@@ -31,6 +30,11 @@ public class InitDemo extends HttpServlet{
 		PrintWriter out = response.getWriter();	
 		
 		out.write("Hello from Init demo servlet");
+		
+		// Demo reading context params defined in web.xml
+		ServletContext sc = request.getServletContext();
+		String paramABC = sc.getInitParameter("ABC");
+		System.out.printf("paramABC = %s \n", paramABC);
 		
 		out.close();
 	}
