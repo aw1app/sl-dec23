@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/xyz")
+@WebServlet(urlPatterns = "/xyz")
 public class FormProcessingServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -17,11 +17,28 @@ public class FormProcessingServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();	
 		
+		String userid = request.getParameter("userid");
+		String pass = request.getParameter("pass");
 		
 		out.write("Hey user, got your GET request");
+		out.write("<br>  You submitted userid="+userid + " and  your password is "+ pass);
 		
 		out.close();
 	}
 
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();	
+		
+		String userid = request.getParameter("userid");
+		String pass = request.getParameter("pass");
+		
+		out.write("Hey user, got your POST request");
+		out.write("<br> You submitted userid="+userid + " and  your password is "+ pass);
+		
+		out.close();
+	}
 
 }
