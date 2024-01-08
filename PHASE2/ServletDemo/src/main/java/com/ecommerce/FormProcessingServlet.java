@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/xyz")
 public class FormProcessingServlet extends HttpServlet {
 	
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -21,7 +23,9 @@ public class FormProcessingServlet extends HttpServlet {
 		String pass = request.getParameter("pass");
 		
 		out.write("Hey user, got your GET request");
-		out.write("<br>  You submitted userid="+userid + " and  your password is "+ pass);
+		out.write("<br>  You submitted userid=<b>"+userid + "</b> and  your password is "+ pass);
+		
+		System.out.printf("\n User-Agent header value = %s \n", request.getHeader("User-Agent"));
 		
 		out.close();
 	}

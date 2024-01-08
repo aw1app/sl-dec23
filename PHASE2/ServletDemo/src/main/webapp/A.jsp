@@ -6,7 +6,7 @@
     String userid = request.getParameter("userid");
 	String pass = request.getParameter("pass");
 	
-	out.write("Hey user, got your GET request");
+	out.write("Hey user, I am a JSP page. got your GET request. ");
 	out.write("<br>  You submitted userid="+userid + " and  your password is "+ pass);   
     
     
