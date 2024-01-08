@@ -11,16 +11,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/init-demo")
+//@WebServlet(urlPatterns = "/init-demo")
 public class InitDemo extends HttpServlet{
 	
 	public void init(ServletConfig config) {
-		System.out.printf("\n Inside init .\n");
-		
+		System.out.printf("\n Inside init .\n");		
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html");
 		
 		System.out.printf("\n Inside do Get.\n");
 		
