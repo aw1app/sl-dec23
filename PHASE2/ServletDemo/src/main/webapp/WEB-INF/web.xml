@@ -58,6 +58,6 @@
   </filter>
   <filter-mapping>
     <filter-name>MyFilter1</filter-name>
-    <servlet-name>FormProcessingServlet</servlet-name>
+    <url-pattern>/xyz</url-pattern>
   </filter-mapping>
 </web-app>
