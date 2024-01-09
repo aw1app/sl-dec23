@@ -60,4 +60,14 @@
     <filter-name>MyFilter1</filter-name>
     <url-pattern>/xyz</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>A</display-name>
+    <servlet-name>A</servlet-name>
+    <servlet-class>A</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>A</servlet-name>
+    <url-pattern>/A</url-pattern>
+  </servlet-mapping>
 </web-app>
