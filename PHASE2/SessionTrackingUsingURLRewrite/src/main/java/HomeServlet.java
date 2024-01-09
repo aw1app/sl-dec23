@@ -23,16 +23,17 @@ public class HomeServlet extends HttpServlet {
 
 			// Let's add the sessId to the ServletContext so that we can implement
 			// something like a ShoppingCart functionality
-			request.getServletContext().setAttribute("sessIdStr", sessIdStr);
-			
-			Integer visits = (Integer) request.getServletContext().getAttribute(sessIdStr+"-no-of-visit");
-			
-			if (visits != null) {				
+			if (request.getServletContext().getAttribute("sessIdStr") == null)
+				request.getServletContext().setAttribute("sessIdStr", sessId);
+
+			Integer visits = (Integer) request.getServletContext().getAttribute(sessIdStr + "-no-of-visit");
+
+			if (visits != null) {
 				visits++;
-				request.getServletContext().setAttribute(sessIdStr+"-no-of-visit", visits);
+				request.getServletContext().setAttribute(sessIdStr + "-no-of-visit", visits);
 				System.out.println("In visits != null. Incremented");
-			}else {
-				request.getServletContext().setAttribute(sessIdStr+"-no-of-visit", 1);
+			} else {
+				request.getServletContext().setAttribute(sessIdStr + "-no-of-visit", 1);
 				System.out.println("In visits == null. set visits =1");
 			}
 
