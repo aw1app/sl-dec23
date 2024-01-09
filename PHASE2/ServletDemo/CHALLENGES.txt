@@ -1,1 +1,6 @@
 Develop a Servlet that can recieve  comments in the form.
+
+FILTERS:
+CHALLENGE-1
+Write a filter that checks no less than two
+hobbies be selected by the user.
