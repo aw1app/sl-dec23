@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 public class IncludeForwardReirectDemo extends HttpServlet {
 
 	// Demo redirection
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet2(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 
@@ -45,18 +45,22 @@ public class IncludeForwardReirectDemo extends HttpServlet {
 	}
 	
 	
-	// Demo Inlcude
-	protected void doGet0(HttpServletRequest request, HttpServletResponse response)
+	// 1. Demo Inlcude
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 
-		PrintWriter out = response.getWriter();		
+		PrintWriter out = response.getWriter();	
+		out.append("<br> Hi <br>");
 		
 		
-		request.getRequestDispatcher("/header").include(request, response);
+		//request.getRequestDispatcher("/header").include(request, response);
+		request.getRequestDispatcher("/test.html").include(request, response);
 		
 				
-		out.append("Today is Mega Sale day. Hurry until stock lasts.");
+		out.append("<br><br>Today is Mega Sale day. Hurry until stock lasts.<br>");
+		
+		request.getRequestDispatcher("/test2.html").include(request, response);
 		
 		out.flush();
 		
