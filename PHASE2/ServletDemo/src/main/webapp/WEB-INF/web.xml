@@ -51,4 +51,13 @@
     <servlet-name>IncludeForwardReirectDemo</servlet-name>
     <url-pattern>/IncludeForwardReirectDemo</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>MyFilter1</display-name>
+    <filter-name>MyFilter1</filter-name>
+    <filter-class>com.ecommerce.filters.MyFilter1</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyFilter1</filter-name>
+    <servlet-name>FormProcessingServlet</servlet-name>
+  </filter-mapping>
 </web-app>
