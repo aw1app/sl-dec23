@@ -15,14 +15,29 @@ public class HomeServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
-		
+
 		String sessIdStr = request.getParameter("browser-sess-id");
-		
-		if(sessIdStr==null) {
+
+		if (sessIdStr == null) {
 			int sessId = random.nextInt();
-			response.sendRedirect("dashboard?browser-sess-id="+sessId); // Go to Dashboard servlet
+
+			// Let's add the sessId to the ServletContext so that we can implement
+			// something like a ShoppingCart functionality
+			request.getServletContext().setAttribute("sessIdStr", sessIdStr);
+			
+			Integer visits = (Integer) request.getServletContext().getAttribute(sessIdStr+"-no-of-visit");
+			
+			if (visits != null) {				
+				visits++;
+				request.getServletContext().setAttribute(sessIdStr+"-no-of-visit", visits);
+				System.out.println("In visits != null. Incremented");
+			}else {
+				request.getServletContext().setAttribute(sessIdStr+"-no-of-visit", 1);
+				System.out.println("In visits == null. set visits =1");
+			}
+
+			response.sendRedirect("dashboard?browser-sess-id=" + sessId); // Go to Dashboard servlet
 		}
-		
 
 	}
 
