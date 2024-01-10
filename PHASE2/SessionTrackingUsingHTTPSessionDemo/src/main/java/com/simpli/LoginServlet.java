@@ -10,29 +10,28 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Dashboard extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
+public class LoginServlet extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
 		
-		// request.getSession(false) : false means if no http session object was ever created for this browser-session
-		// then null be returned and don't create a new one.
-		HttpSession session = request.getSession(false); 
+		String userId = request.getParameter("userid");
+		String password = request.getParameter("passwd");
 		
-		if(session!=null) {
-			out.println("Welcome User.");
-			out.println("<br> We are tracking you.");
-		}else {
-			// no session so no tracking.
-			out.println("Welcome User.");
+		if (userId.equals("admin") &&	password.equals("12345")) {
+			HttpSession session =  request.getSession(true);
 			
+			session.setAttribute("userid", userId);
+			response.sendRedirect("profile");
+		}
+		else {
+			out.print("Invalid userid or password. Re login.");
+			out.print("<br> <a href=\"login.html\">Login</a>");
 		}
 		
-		out.close();
 	}
 
 }
