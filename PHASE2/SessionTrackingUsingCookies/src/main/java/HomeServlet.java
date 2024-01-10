@@ -42,6 +42,9 @@ public class HomeServlet extends HttpServlet {
 			int sessId = random.nextInt();
 			Cookie sessIdCookie = new Cookie("browser-sess-id",""+sessId );
 			response.addCookie(sessIdCookie);
+		}else {
+			out.println("Welcome User.");
+			out.println("<br> We are tracking you.");
 		}
 
 			

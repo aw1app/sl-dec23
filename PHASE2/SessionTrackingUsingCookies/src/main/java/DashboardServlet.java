@@ -35,11 +35,14 @@ public class DashboardServlet extends HttpServlet {
 		}
 		
 		if(sessIdCookieExist==true) {
-			out.println("Welcome User. I think you first went to Home and got redirected to me. ");
+			out.println("Welcome User.");
 			out.println("<br> We are tracking you.");
 			out.println("<br> <br> <a href=\"home\">Go to Home Page</a>");
 		}else {
 			out.println("Welcome User. Looks like you directly came to me.");
+			int sessId = random.nextInt();
+			Cookie sessIdCookie = new Cookie("browser-sess-id",""+sessId );
+			response.addCookie(sessIdCookie);
 			out.println("<br> <br> <a href=\"home\">Go to Home Page</a>");
 		}
 
