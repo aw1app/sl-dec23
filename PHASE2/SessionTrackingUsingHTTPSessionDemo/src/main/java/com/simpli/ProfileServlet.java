@@ -21,10 +21,13 @@ public class ProfileServlet extends HttpServlet {
 
 		if (session == null) {
 			out.print("Login to see your profile.");
+			out.print("<br> <a href=\"login.html\">Login</a>");
+			out.print("<br> <a href=\"index.html\">Index Page</a>");
 		} else {
 
 			String user = (String) session.getAttribute("userid");
 			out.print("Welcome, " + user);
+			out.print("<br> <a href=\"index.html\">Index page</a>");
 		}
 
 	}
