@@ -15,8 +15,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/product-details")
-public class ProductDetails extends HttpServlet {
+@WebServlet("/insert-product")
+public class InsertProduct extends HttpServlet {
 	DBUtil dbUtil = null;
 	Connection connection = null;
 
@@ -35,35 +35,24 @@ public class ProductDetails extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
-		String idStr = request.getParameter("ID");
+
+		String name = request.getParameter("name");
+		String price = request.getParameter("price");
 
 		try {
 			Statement statement = connection.createStatement();
 
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM eproduct WHERE ID="+idStr);
+			String sql = String.format("INSERT INTO eproduct(name,price) VALUES('%s',%s)", name, price);
 
-			out.println("PRODUCT DETAILS:<br><br>");
-			out.println("<table border=1>");
-			out.println("<tr><th>ID<th> NAME <th>PRICE<th> DATE_ADDED<th></tr>");
+			int count = statement.executeUpdate(sql);
 
-			while (resultSet.next()) {
-				// Get data for each column of the current row
-				long ID = resultSet.getLong("ID");
-				String name = resultSet.getString("name");
-				float price = resultSet.getFloat("price");
-				Date dateAdded = resultSet.getDate("date_added");
+			out.println(count + "(s) PRODUCT ADDED Successfully:<br><br>");
 
-				out.printf("<tr><td> %s <td>%s <td>%s <td>%s </tr>", ID, name, price, dateAdded);
-			}
-			
-			out.println("</table>");
-
-		} catch (SQLException  e) {
+		} catch (SQLException e) {
 			out.println(e);
 		}
 
-		out.printf("<a href=\"index.html\">Home Page</a>");
+		out.printf("<br><br> <a href=\"index.html\">Home Page</a>");
 		out.close();
 	}
 
