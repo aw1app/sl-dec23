@@ -37,7 +37,7 @@ public class ImprovedQueryServletDemo extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			Statement statement = connection.createStatement();
+			Statement statement = connection.createStatement( );
 
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM eproduct");
 
