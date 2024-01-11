@@ -23,3 +23,10 @@ DELIMITER ;
 
 use ecommercedb;
 CALL add_product("Asus",10000.25);
+
+use ecommercedb;
+DELIMITER $$
+CREATE PROCEDURE list_products( )
+SELECT * FROM eproduct;
+$$
+DELIMITER ;
