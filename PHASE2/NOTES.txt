@@ -20,3 +20,6 @@ CREATE PROCEDURE add_product( IN in_name varchar(40), IN in_price decimal(10,2))
 INSERT INTO eproduct(name,price) VALUES (in_name, in_price);
 $$
 DELIMITER ;
+
+use ecommercedb;
+CALL add_product("Asus",10000.25);
