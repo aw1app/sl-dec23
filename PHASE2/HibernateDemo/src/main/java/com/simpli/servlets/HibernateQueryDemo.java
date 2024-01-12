@@ -42,17 +42,19 @@ public class HibernateQueryDemo extends HttpServlet {
 
 		List<EProduct> products = session.createQuery("from EProduct").list();
 
+		out.println("<table border=1>");
 		for (EProduct p : products) {
 
-			out.println("<br><br>");
+			out.println("<tr>");
 
-			out.printf("<li> ID : %s", p.getID());
-			out.printf("<li> Name : %s", p.getName());
-			out.printf("<li> Price : %s", p.getPrice());
-			out.printf("<li> Date Added : %s", p.getDateAdded());
+			out.printf("<td> %s", p.getID());
+			out.printf("<td>  %s", p.getName());
+			out.printf("<td> %s", p.getPrice());
+			out.printf("<td>  %s", p.getDateAdded());
 
 		}
 
+		out.println("</table>");
 		session.close();
 
 		out.println("</body></html>");
