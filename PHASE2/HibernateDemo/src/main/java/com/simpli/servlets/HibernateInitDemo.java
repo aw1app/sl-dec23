@@ -1,11 +1,18 @@
 package com.simpli.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import com.simpli.HibernateUtil;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class HibernateInitDemo extends HttpServlet {
 	
@@ -22,6 +29,21 @@ public class HibernateInitDemo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		PrintWriter out = response.getWriter();
+		out.println("<html><body>");
+
+		Session session = sessionFactory.openSession();
+		
+		out.println("Hibernate Session opened.<br>");
+		
+		session.close();
+		out.println("Hibernate Session closed.<br>");
+
+		out.println("</body></html>");
+		out.close();
+
+		
+		
 	}
 
 }
