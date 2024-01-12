@@ -12,6 +12,7 @@
     <property name="connection.password">rootroot</property>
     
      <mapping resource="com/simpli/EProduct.hbm.xml" />
+     <mapping resource="com/simpli/Color.hbm.xml" />
     
     </session-factory>
 </hibernate-configuration>
