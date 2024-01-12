@@ -17,11 +17,15 @@ import jakarta.servlet.http.HttpServletResponse;
 public class InsertProductUsingPreparedStatement extends HttpServlet {
 	DBUtil dbUtil = null;
 	Connection connection = null;
+	PreparedStatement pStatement = null;
 
 	public void init(ServletConfig config) {
 		try {
 			dbUtil = new DBUtil();
 			connection = dbUtil.getConnection();
+			
+			pStatement = connection.prepareStatement("INSERT INTO eproduct(name,price) VALUES(?,?)");
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -38,13 +42,13 @@ public class InsertProductUsingPreparedStatement extends HttpServlet {
 		String priceStr = request.getParameter("price");
 		float price = Float.parseFloat(priceStr);
 
-		try {
-			PreparedStatement pStatement = connection.prepareStatement("INSERT INTO eproduct(name,price) VALUES(?,?)");
+		try {			
 
+			pStatement.clearParameters();
 			pStatement.setString(1,name);
 			pStatement.setFloat(2, price);
 			
-			int count = pStatement.executeUpdate();
+			int count = pStatement.executeUpdate();			
 
 			out.println(count + "(s) PRODUCT ADDED Successfully:<br><br>");
 

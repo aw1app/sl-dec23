@@ -27,6 +27,19 @@ public class CallableStatementDemo extends HttpServlet {
 		}
 
 	}
+	
+	/*
+	use ecommercedb;
+	 
+	DELIMITER $$
+	CREATE PROCEDURE add_product( IN in_name varchar(40), IN in_price decimal(10,2))
+	INSERT INTO eproduct(name,price) VALUES (in_name, in_price);
+	$$
+	DELIMITER ;
+	
+	call add_product("dell",1010);
+	*/
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
