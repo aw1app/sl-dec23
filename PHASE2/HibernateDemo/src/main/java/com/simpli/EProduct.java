@@ -1,4 +1,4 @@
-package com.ecommerce;
+package com.simpli;
 
 import java.math.BigDecimal;
 import java.sql.Date;
