@@ -12,8 +12,7 @@ public class EProduct {
      private Date dateAdded;
      
      
-     List<Color> colors;   
-        
+     List<Color> colors;         
      
 	public List<Color> getColors() {
 		return colors;
