@@ -7,6 +7,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.simpli.Color;
 import com.simpli.EProduct;
 import com.simpli.HibernateUtil;
 
@@ -43,6 +44,7 @@ public class HibernateCollectionMappingDemo extends HttpServlet {
 		List<EProduct> products = session.createQuery("from EProduct").list();
 
 		out.println("<table border=1>");
+		out.printf("<th>ID <th> NAME <th>PRICE<th>DATE_ADDED <th>COLORS</th>");
 		for (EProduct p : products) {
 
 			out.println("<tr>");
@@ -51,6 +53,9 @@ public class HibernateCollectionMappingDemo extends HttpServlet {
 			out.printf("<td>  %s", p.getName());
 			out.printf("<td> %s", p.getPrice());
 			out.printf("<td>  %s", p.getDateAdded());
+			
+			List<Color> colors = p.getColors();
+			for(Color color : colors)	out.printf("<td>  %s", color.getName());		
 
 		}
 
