@@ -8,11 +8,15 @@
 
 <%! EProduct e1 = new EProduct(); %> 
 
+<%! String[] names = {"Shasi", "Somu", "Robert"} ;%>
+
 <%! public int add(int a, int b){
 	
 	return a+b;
 }
 %> 
+
+
 
 <!--  JSP Expresssions Demo -->
 <br> Data value is: <%= data %>
@@ -30,3 +34,5 @@
 	out.print("<li> Happy coding");
 
 %> 
+
+<% for(int i=0; i< names.length; i++){ %><li><%out.println(names[i]); }%></li>
