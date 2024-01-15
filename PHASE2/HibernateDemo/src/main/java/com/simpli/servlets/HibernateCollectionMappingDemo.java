@@ -2,14 +2,20 @@ package com.simpli.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.simpli.Color;
 import com.simpli.EProduct;
+import com.simpli.Finance;
 import com.simpli.HibernateUtil;
+import com.simpli.OS;
+import com.simpli.ScreenSize;
 
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -44,7 +50,7 @@ public class HibernateCollectionMappingDemo extends HttpServlet {
 		List<EProduct> products = session.createQuery("from EProduct").list();
 
 		out.println("<table border=1>");
-		out.printf("<th>ID <th> NAME <th>PRICE<th>DATE_ADDED <th colspan=2>COLORS</th>");
+		out.printf("<th>ID <th> NAME <th>PRICE<th>DATE_ADDED <th colspan=2>COLORS</th> <th> OS <th> SCREEN SIZE <th> FINANCE ");
 		for (EProduct p : products) {
 
 			out.println("<tr>");
@@ -55,7 +61,16 @@ public class HibernateCollectionMappingDemo extends HttpServlet {
 			out.printf("<td>  %s", p.getDateAdded());
 			
 			List<Color> colors = p.getColors();
-			for(Color color : colors)	out.printf("<td>  %s", color.getName());		
+			for(Color color : colors)	out.printf("<td>  %s", color.getName());
+			
+			Set<OS> oses = p.getOses();
+			for(OS os : oses)	out.printf("<td>  %s", os.getName());	
+			
+			Collection<ScreenSize> screenSizes = p.getScreenSizes();
+			for(ScreenSize screenSize : screenSizes)	out.printf("<td>  %s", screenSize.getSize());	
+			
+			Map finances = p.getFinance();			
+			finances.forEach( (ftype,name) -> out.printf("<td>  %s , %s ",ftype, name));	
 
 		}
 
