@@ -44,7 +44,7 @@ public class HibernateCollectionMappingDemo extends HttpServlet {
 		List<EProduct> products = session.createQuery("from EProduct").list();
 
 		out.println("<table border=1>");
-		out.printf("<th>ID <th> NAME <th>PRICE<th>DATE_ADDED <th>COLORS</th>");
+		out.printf("<th>ID <th> NAME <th>PRICE<th>DATE_ADDED <th colspan=2>COLORS</th>");
 		for (EProduct p : products) {
 
 			out.println("<tr>");
