@@ -2,6 +2,7 @@ package com.simpli;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class EProduct {
 	
@@ -9,6 +10,19 @@ public class EProduct {
      private String name;
      private BigDecimal price;
      private Date dateAdded;
+     
+     
+     List<Color> colors;   
+        
+     
+	public List<Color> getColors() {
+		return colors;
+	}
+	public void setColors(List<Color> colors) {
+		this.colors = colors;
+	}
+	
+	
 	public long getID() {
 		return ID;
 	}
