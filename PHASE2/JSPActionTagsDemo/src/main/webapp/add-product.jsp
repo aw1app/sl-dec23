@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<!-- 
+
 This part if you want to capture indiual form paramters.
      <jsp:useBean id="product1" class="com.ecommerce.EProduct" scope="page">          
      </jsp:useBean>
@@ -15,7 +15,7 @@ This part if you want to capture indiual form paramters.
    <br> Name: <jsp:getProperty property="name" name="product1" />
    <br> Price: <jsp:getProperty property="price" name="product1"/>
    
-    -->
+
    
    
     <jsp:useBean id="product2" class="com.ecommerce.EProduct" scope="session">          
