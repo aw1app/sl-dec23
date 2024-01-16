@@ -2,7 +2,9 @@
     pageEncoding="ISO-8859-1" import="com.simpli.*" %>
 <center><h1>Welcome to EProducts.com</h1></center>
 
+<a href="demo-error-handling.jsp" > Demo Error Handling </a>
 
+<br><br>
 <!--  JSP Declaration Demo-->
 <%! int data=100; %> 
 

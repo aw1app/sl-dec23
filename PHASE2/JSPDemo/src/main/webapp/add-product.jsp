@@ -15,6 +15,8 @@
      out.println("<li> price:"+price);  
      out.println("<li> price:"+java.util.Arrays.toString(colors)); 
      
+     //response.sendRedirect("index.jsp");
+     
      %>
      
      
