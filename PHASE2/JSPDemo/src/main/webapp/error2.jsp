@@ -2,6 +2,6 @@
 	pageEncoding="ISO-8859-1" isErrorPage="true"%>
 
 
-Some error occured.
+OOPS! an error occured!!
 
-Please contact the admin!
+ We are sorry, please contact the customer care!
