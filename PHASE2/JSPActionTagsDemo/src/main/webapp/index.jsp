@@ -4,5 +4,5 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <div style="text-align: right;">
-	<a href=""> Link A</a> <b>This is index page content</b>
+	<a href="add-product.html"> Add Product</a> <b>This is index page content</b>
 </div>
