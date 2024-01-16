@@ -7,7 +7,10 @@
 <a href="" > Link A</a>
 <b>This is index page content</b>
 </div>
-<%@ include file="content.txt" %>  
+<%@ include file="content.txt" %>
+<br><br><br><br>Products on sale today:<br>
+<%@ include file="products.html" %>
+  
     
     
 <%@ include file="footer.jsp" %>  
