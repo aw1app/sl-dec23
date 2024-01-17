@@ -11,13 +11,10 @@
 	
 	<sql:update dataSource="${ecommerce}" var="count" >
 	
-	INSERT INTO eproduct(name,price) values('<%=request.getParameter("name") %>',<%=request.getParameter("price") %>)
+	DELETE FROM eproduct where ID='<%=request.getParameter("ID") %>'
 	
 	</sql:update>
 	
-	<c:out value="${count}" /> product(s) inserted successfully!
-	
-	
-	CHALLENGE: Implement delete a product given its ID
+	<c:out value="${count}" /> product(s) delete successfully!
 	
 	
