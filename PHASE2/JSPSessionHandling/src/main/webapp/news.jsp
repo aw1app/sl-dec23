@@ -12,6 +12,6 @@ if (loggedIn == true) {
 	out.print("TODAY's hot news is ...");
 } else {
 	out.print("You need to be Logged In to see the hot news!");
-	out.print("<a href=\"login.html\">LOGIN HERE</a>");
+	out.print("<a href='login.html'>LOGIN HERE</a>");
 }
 %>
