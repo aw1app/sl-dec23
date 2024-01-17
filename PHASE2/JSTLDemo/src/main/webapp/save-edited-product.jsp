@@ -15,9 +15,6 @@
 	
 	</sql:update>
 	
-	<c:out value="${count}" /> product(s) inserted successfully!
-	
-	
-	Updated Successfully
+	<c:out value="${count}" />	Updated Successfully
 	
 	
