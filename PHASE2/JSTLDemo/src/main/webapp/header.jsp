@@ -3,3 +3,8 @@
 
 
 <center><h1>Welcome to EProducts.com<h1></center>
+<div style="text-align: right;">
+<a href="sql-query-demo.jsp">LIST DEMO</a>
+<a href="add-product.html">ADD NEW PRODUCT</a>
+
+</div>

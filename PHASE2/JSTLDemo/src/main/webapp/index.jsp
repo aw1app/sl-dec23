@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<div style="text-align: right;"></div>
+<%@ include file="header.jsp" %>
 <hr>
 Setting variables and printing them core tag demo
 <br>
