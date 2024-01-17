@@ -19,8 +19,8 @@
 	
 	<form action="save-edited-product.jsp" method="post">
 	
-	<br>ID: <input name="ID"   value="${row.ID}">
-	<br>Name: <input name="name" value="${row.name }">
+	<br>ID: ${row.ID}
+	<br>Name: ${row.name }
 	<br><br>Price: <input name="price" value="${row.price}">	
 	
 	<br><br><input type="submit" value="Submit">
