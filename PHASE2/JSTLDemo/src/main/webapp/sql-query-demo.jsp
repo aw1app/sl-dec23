@@ -21,6 +21,8 @@ LIST OF PRODUCT <br>
 		<th>NAME
 		<th>PRICE
 		<th>DATE ADDED
+		<th>DELETE
+		<th>EDIT
 	</tr>
 
 	<c:forEach var="row" items="${resultSet.rows}">
@@ -29,6 +31,8 @@ LIST OF PRODUCT <br>
 			<td>${row.name }
 			<td> ${row.price}
 			<td>${row.date_added }
+			<td><a href="delete-demo.jsp?ID=${row.ID}"> DELETE </a>
+			<td><a href="edit-demo.jsp?ID=${row.ID}"> EDIT </a>
 		</tr>
 	</c:forEach>
 
