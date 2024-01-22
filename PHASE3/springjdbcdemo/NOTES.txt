@@ -6,3 +6,9 @@ This class will have the Spring JDBCTemplate, using which we will connect to the
 We will also need to write a RowMapper class.
 
 STEP 3: Create the Spring Controller (Servlet)
+
+STEP 4: 
+Create the following folders if not present
+src\main\webapp
+src\main\webapp\WEB-INF
+src\main\webapp\lib
