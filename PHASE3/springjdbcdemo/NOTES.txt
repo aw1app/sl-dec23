@@ -11,4 +11,5 @@ STEP 4:
 Create the following folders if not present
 src\main\webapp
 src\main\webapp\WEB-INF
+src\main\webapp\WEB-INF\views
 src\main\webapp\lib
