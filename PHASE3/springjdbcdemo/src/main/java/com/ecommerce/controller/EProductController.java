@@ -20,6 +20,7 @@ public class EProductController {
 	public String productList(Model model) {
 		
 		List<EProduct> products = eProductDAO.getProducts();
+		
 		model.addAttribute("productList", products);
 		
 		return "products-list"; // Go to products-list.jsp

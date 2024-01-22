@@ -15,3 +15,9 @@ src\main\webapp\WEB-INF\views
 src\main\webapp\lib
 src\main\webapp\lib\jakarta.servlet.jsp.jstl-3.0.0.jar
 src\main\webapp\lib\jakarta.servlet.jsp.jstl-api-3.0.0.jar
+
+STEP 5:
+Create the configuration file (main-servlet.xml) in WEB-INF folder.
+that has configuration details like DB connection, and Beans.
+
+Then Create web.xml in WEB-INF folder.
