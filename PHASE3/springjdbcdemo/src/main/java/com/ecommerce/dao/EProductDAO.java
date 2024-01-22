@@ -19,7 +19,7 @@ public class EProductDAO {
 	// 1. Fetch product objects from the DB
 
 	public List<EProduct> getProducts() {
-		jdbcTemplate.query("SELECT * FROM eproduct", new EProductRowMapper());
+		return jdbcTemplate.query("SELECT * FROM eproduct", new EProductRowMapper());
 	}
 
 }
