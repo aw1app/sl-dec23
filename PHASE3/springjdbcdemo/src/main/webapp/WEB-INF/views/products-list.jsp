@@ -3,6 +3,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-c:forEach var="product" items="${productList}">   
+<c:forEach var="product" items="${productList}" >   
    ${product.name}, ${product.price}, ${product.dateAdded}<br>
 </c:forEach>
