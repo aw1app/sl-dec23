@@ -1,0 +1,7 @@
+Create the class that will represent the DB table
+`	EProduct for the eproduct table in ecommercedb
+
+Create DAO class for the above entity class
+This class will have the Spring JDBCTemplate, using which we will connect to the database.
+
+Create the Spring Controller (Servlet)
