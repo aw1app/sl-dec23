@@ -1,7 +1,8 @@
-Create the class that will represent the DB table
+STEP 1: Create the class that will represent the DB table
 `	EProduct for the eproduct table in ecommercedb
 
-Create DAO class for the above entity class
+STEP 2: Create DAO class for the above entity class
 This class will have the Spring JDBCTemplate, using which we will connect to the database.
+We will also need to write a RowMapper class.
 
-Create the Spring Controller (Servlet)
+STEP 3: Create the Spring Controller (Servlet)
