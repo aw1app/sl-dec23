@@ -3,6 +3,11 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<table border=1>
+<tr> <th>ID <th>NAME <th>PRICE <th>DATE ADDED </tr>
+
 <c:forEach var="product" items="${prodlist}">   
-   ${product.ID}, ${product.name}, ${product.price}, ${product.dateAdded}<br>
+ <tr>  <td> ${product.ID} <td>${product.name} <td>${product.price}<td>${product.dateAdded}
 </c:forEach>
+
+</table>
