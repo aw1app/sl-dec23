@@ -1,4 +1,6 @@
-package com.ecommerce.entity;
+//package com.ecommerce.entity;
+
+package com.example.demo;
 
 import java.math.BigDecimal;
 import java.util.Date;
