@@ -75,7 +75,7 @@ public class ProductController {
 
 	@PostMapping("/editProduct")
 	public String updateProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
-		product.setDateAdded(new Date());
+		product.setDateAdded(new Date());// some issue with retrieving date, so setting it again as a workaround for now.
 		
 		EProduct savedProduct = eProductRepositry.save(product);
 		model.addAttribute("id", savedProduct.getID());

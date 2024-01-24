@@ -6,8 +6,3 @@
 <a href="listProducts" >List of products </a>
 &nbsp;&nbsp;| &nbsp;&nbsp;
 <a href="/addProduct" >Add a new product</a>
-
-
-
-&nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="delete-product.jsp" >Delete product</a>
