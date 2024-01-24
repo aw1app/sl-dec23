@@ -3,9 +3,12 @@
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div align="center">
+Edit Product<hr>
 
-	<form:form action="addProduct" method="post" modelAttribute="product">
+<div align="center">
+Edit Product<hr>
+
+	<form:form action="editProduct" method="post" modelAttribute="product">
 		<form:input path="ID" value="${product.ID}" hidden="true"/>
 
 		<form:label path="name">Product name:</form:label>
@@ -22,7 +25,7 @@
 
 
 
-		<form:button>Add Product</form:button>
+		<form:button>Edit and Save Product</form:button>
 
 	</form:form>
 

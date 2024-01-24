@@ -65,7 +65,7 @@ public class ProductController {
 			EProduct product = eProductFromRepo.get();
 			model.addAttribute("product", product);
 
-			return "edit-product";
+			return "edit-product-form";
 		} 
 		else {
 			return "product-not-found";
@@ -76,11 +76,11 @@ public class ProductController {
 	@PostMapping("/editProduct")
 	public String updateProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
 		product.setDateAdded(new Date());
-
+		
 		EProduct savedProduct = eProductRepositry.save(product);
 		model.addAttribute("id", savedProduct.getID());
 
-		return "add-product-success";
+		return "edit-product-success";
 	}
 
 ////Edit product
