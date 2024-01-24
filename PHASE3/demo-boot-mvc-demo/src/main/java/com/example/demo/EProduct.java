@@ -19,12 +19,12 @@ import jakarta.persistence.Transient;
 @Entity
 @Table(name = "eproduct")
 public class EProduct {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "ID")
 	private long ID;
-	
+
 	@Column(name = "name")
 	private String name;
 
@@ -32,12 +32,12 @@ public class EProduct {
 	private BigDecimal price;
 
 	@Column(name = "date_added")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateAdded;
-	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dateAdded;
+
 	@Transient
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateAddedConverted;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date dateAddedConverted;
 
 	public long getID() {
 		return ID;
@@ -66,22 +66,17 @@ public class EProduct {
 	public void setDateAdded(Date date) {
 		this.dateAdded = date;
 	}
-	
-	
-	public void setDateAddedConverted(Date dateAdded) {
-        this.dateAdded = dateAdded;
-    }
 
-    public Date getDateAddedConverted() {
-        return dateAddedConverted;
-    }
-    
-    public Date getDateAdded() {
+	public Date getDateAdded() {
 		return this.dateAdded;
 	}
-	
-	
-	
-	
+
+	public void setDateAddedConverted(Date dateAdded) {
+		this.dateAdded = dateAdded;
+	}
+
+	public Date getDateAddedConverted() {
+		return dateAddedConverted;
+	}
 
 }

@@ -8,6 +8,7 @@
 
 	NAME: <input name="name"><br>
 	PRICE: <input name="price"><br>
+	DATE ADDED: <input type="date"  name="dateAdded"><br>
 
 	<input type=submit>
 

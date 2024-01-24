@@ -4,7 +4,7 @@
 
 <h3>Delete product</h3>
 
-<form action="deleteProduct" method="POST">
+<form action="deleteProduct" method="GET">
 
 	ID: <input name="id"><br>
 

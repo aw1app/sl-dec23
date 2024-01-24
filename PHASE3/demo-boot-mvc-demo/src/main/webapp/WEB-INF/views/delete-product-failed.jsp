@@ -2,4 +2,4 @@
     pageEncoding="ISO-8859-1"%>
 <%@ include file="header.jsp" %><hr>    
     
-Product with id=${id} Deleted succesfully!
+<div style="color:red" >Product Delete failed! No such product with id=${id} found in the database</div>
