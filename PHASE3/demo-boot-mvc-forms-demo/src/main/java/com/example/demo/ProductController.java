@@ -34,7 +34,7 @@ public class ProductController {
 //// Add a new product
 	@GetMapping("/addProduct")
 	public String showNewProductForm(ModelMap model) {
-		
+
 		EProduct product = new EProduct();
 		model.addAttribute("product", product);
 
@@ -44,13 +44,46 @@ public class ProductController {
 	@PostMapping("/addProduct")
 	public String addNewProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
 		product.setDateAdded(new Date());
-		
-		eProductRepositry.save(product);
+
+		EProduct savedProduct = eProductRepositry.save(product);
+		model.addAttribute("id", savedProduct.getID());
 
 		return "add-product-success";
 	}
 
 ////Add a new product
+
+////Edit product
+	@GetMapping("/editProduct")
+	public String editProductForm(ModelMap model, @RequestParam long id) {
+		model.addAttribute("id", id);
+
+		Optional<EProduct> eProductFromRepo = eProductRepositry.findById(id);
+		
+		if (eProductFromRepo.isPresent()) {
+			
+			EProduct product = eProductFromRepo.get();
+			model.addAttribute("product", product);
+
+			return "edit-product";
+		} 
+		else {
+			return "product-not-found";
+		}
+
+	}
+
+	@PostMapping("/editProduct")
+	public String updateProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
+		product.setDateAdded(new Date());
+
+		EProduct savedProduct = eProductRepositry.save(product);
+		model.addAttribute("id", savedProduct.getID());
+
+		return "add-product-success";
+	}
+
+////Edit product
 
 	@GetMapping("/deleteProduct")
 	public String deleteProduct(ModelMap model, @RequestParam long id) {
