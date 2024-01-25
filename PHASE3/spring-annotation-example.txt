@@ -1,0 +1,9 @@
+Project here is:
+https://github.com/aw1app/sl-dec23/blob/main/PHASE3/spring-annotation-example
+
+In annotation based approach, we use a config file (EProductConfig.java) to define the beans. EProduct.java is the bean here.
+
+Instructions to run:
+1. do maven clean
+2. maven install
+3. Right click the Main.java and run as "Java Application".
