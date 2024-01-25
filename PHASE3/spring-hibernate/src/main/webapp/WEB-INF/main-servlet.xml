@@ -78,8 +78,8 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
-	<bean id="dao" class="com.ecommerce.dao.EProductDAO">
-		<property name="template" ref="jdbctemplate"></property>
+	
+	<bean id="dao" class="com.ecommerce.dao.EProductDAO">		
 	</bean>
 	
 	
