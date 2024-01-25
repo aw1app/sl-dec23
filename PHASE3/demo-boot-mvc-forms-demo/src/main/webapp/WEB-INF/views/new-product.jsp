@@ -17,6 +17,9 @@
 		
 		<!--<form:label path="dateAdded">Product Date Added:</form:label>
 		<form:input path="dateAdded" />-->
+		
+		<form:label path="dateAdded">Product Date Added:</form:label>
+		<input name="dateAdded" type="date" />
 		<br />
 
 

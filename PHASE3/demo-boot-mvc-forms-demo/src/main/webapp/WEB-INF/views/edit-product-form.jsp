@@ -19,8 +19,8 @@ Edit Product<hr>
 		<form:input path="price" value="${product.price}" />
 		<br />
 		
-		<!--<form:label path="dateAdded">Product Date Added:</form:label>
-		<form:input path="dateAdded" />-->
+		<form:label path="dateAdded">Product Date Added:</form:label>
+		<form:input path="dateAdded" readonly="true"/>
 		<br />
 
 

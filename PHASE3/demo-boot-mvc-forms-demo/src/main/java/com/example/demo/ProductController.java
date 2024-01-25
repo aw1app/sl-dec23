@@ -2,11 +2,12 @@
 
 package com.example.demo;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,12 @@ public class ProductController {
 		return "list-of-products"; // go to list-of-products.jsp
 
 	}
+	
+	@PostMapping("/testdate")
+    public void date(@RequestParam("dateAdded") 
+      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateAdded) {
+       System.out.println(dateAdded + " Hi");
+    }
 
 //// Add a new product
 	@GetMapping("/addProduct")
@@ -43,7 +50,8 @@ public class ProductController {
 
 	@PostMapping("/addProduct")
 	public String addNewProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
-		product.setDateAdded(new Date());
+		//product.setDateAdded(new Date());
+		System.out.println(product.getDateAdded());
 
 		EProduct savedProduct = eProductRepositry.save(product);
 		model.addAttribute("id", savedProduct.getID());
@@ -75,7 +83,7 @@ public class ProductController {
 
 	@PostMapping("/editProduct")
 	public String updateProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
-		product.setDateAdded(new Date());// some issue with retrieving date, so setting it again as a workaround for now.
+		//product.setDateAdded(new Date());// some issue with retrieving date, so setting it again as a workaround for now.
 		
 		EProduct savedProduct = eProductRepositry.save(product);
 		model.addAttribute("id", savedProduct.getID());

@@ -3,18 +3,11 @@
 package com.example.demo;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "eproduct")
@@ -32,12 +25,9 @@ public class EProduct {
 	private BigDecimal price;
 
 	@Column(name = "date_added")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dateAdded;
-
-	@Transient
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date dateAddedConverted;
+	private LocalDate dateAdded;
+	
 
 	public long getID() {
 		return ID;
@@ -63,20 +53,14 @@ public class EProduct {
 		this.price = price;
 	}
 
-	public void setDateAdded(Date date) {
+	public void setDateAdded(LocalDate date) {
 		this.dateAdded = date;
 	}
 
-	public Date getDateAdded() {
+	public LocalDate getDateAdded() {
 		return this.dateAdded;
 	}
 
-	public void setDateAddedConverted(Date dateAdded) {
-        this.dateAdded = dateAdded;
-    }
 
-    public Date getDateAddedConverted() {
-        return dateAddedConverted;
-    }
 
 }
