@@ -1,22 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>spring-hibernate</groupId>
-	<artifactId>spring-hibernate</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 
+	<groupId>springhibernatedemo</groupId>
+	<artifactId>springhibernatedemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>com.simpli Maven Webapp</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.springframework.version>6.0.5</org.springframework.version>
+		<org.springframework.version>6.0.4</org.springframework.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
-
 	<dependencies>
-
+		
 		<!-- Additional to springjdbc demp project -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -29,6 +35,8 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>3.6.3.Final</version>
 		</dependency>
+		
+		
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -60,14 +68,11 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-
-		<!-- Additional to springjdbc demp project -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>3.0.5.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -78,17 +83,20 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+		
+		<!-- Additional to springjdbc demp project -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.12.1.GA</version>
 		</dependency>
-		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-			<version>1.1.2</version>
-			<scope>runtime</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
@@ -137,10 +145,9 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	
+
 	<build>
-		<finalName>${project.name}</finalName>
+		<finalName>springhibernatedemo</finalName>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
 			<plugins>
@@ -177,6 +184,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-
 </project>

@@ -1,0 +1,23 @@
+STEP 1: Create the class that will represent the DB table
+`	EProduct for the eproduct table in ecommercedb
+
+STEP 2: Create DAO class for the above entity class
+This class will have the Spring JDBCTemplate, using which we will connect to the database.
+We will also need to write a RowMapper class.
+
+STEP 3: Create the Spring Controller (Servlet)
+
+STEP 4: 
+Create the following folders if not present
+src\main\webapp
+src\main\webapp\WEB-INF
+src\main\webapp\WEB-INF\views
+src\main\webapp\lib
+src\main\webapp\lib\jakarta.servlet.jsp.jstl-3.0.0.jar
+src\main\webapp\lib\jakarta.servlet.jsp.jstl-api-3.0.0.jar
+
+STEP 5:
+Create the configuration file (main-servlet.xml) in WEB-INF folder.
+that has configuration details like DB connection, and Beans.
+
+Then Create web.xml in WEB-INF folder.
