@@ -21,3 +21,30 @@ Create the configuration file (main-servlet.xml) in WEB-INF folder.
 that has configuration details like DB connection, and Beans.
 
 Then Create web.xml in WEB-INF folder.
+
+Beans.xml
+<context:annotation-config/>
+
+import org.springframework.beans.factory.annotation.Required;
+@Component
+public class Student {
+     private Integer age;
+     private String name;
+@Required
+public void setAge(Integer age) {
+     this.age = age;
+}
+public Integer getAge() {
+     return age;
+}
+@Required
+public void setName(String name) {
+     this.name = name;
+}
+public String getName() {
+      return name;
+  }
+}
+
+https://github.com/aw1app/sl-dec23/blob/main/PHASE3/spring-annotation-example.txt
+
