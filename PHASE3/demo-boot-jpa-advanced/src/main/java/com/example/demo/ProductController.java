@@ -2,6 +2,7 @@
 
 package com.example.demo;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
@@ -36,6 +37,17 @@ public class ProductController {
 	public String listProductsByName(ModelMap model, String name) {
 
 		List<EProduct> listOfProducts = eProductRepositry.findAllByName(name);
+
+		model.addAttribute("prodlist", listOfProducts);
+
+		return "list-of-products"; // go to list-of-products.jsp
+
+	}
+	
+	@GetMapping("/listProductsByPrice")
+	public String listProductsByPrice(ModelMap model, BigDecimal price) {
+
+		List<EProduct> listOfProducts = eProductRepositry.findAllByPrice(price);
 
 		model.addAttribute("prodlist", listOfProducts);
 

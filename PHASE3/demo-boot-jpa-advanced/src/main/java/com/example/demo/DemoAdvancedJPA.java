@@ -10,10 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableJpaRepositories
 @ComponentScan({"com.example.demo","com.ecommerce.controller","com.ecommerce.entity","com.ecommerce.repositry"})
 @SpringBootApplication
-public class DemoMVCForm {
+public class DemoAdvancedJPA {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoMVCForm.class, args);
+		SpringApplication.run(DemoAdvancedJPA.class, args);
 	}
 
 }
