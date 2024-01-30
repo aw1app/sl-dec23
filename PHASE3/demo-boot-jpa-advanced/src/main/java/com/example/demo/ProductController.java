@@ -55,6 +55,17 @@ public class ProductController {
 
 	}
 	
+	@GetMapping("/listProductsByNameStartingWith")
+	public String listProductsByNameStartingWith(ModelMap model, String name) {
+
+		List<EProduct> listOfProducts = eProductRepositry.abc(name);
+
+		model.addAttribute("prodlist", listOfProducts);
+
+		return "list-of-products"; // go to list-of-products.jsp
+
+	}
+	
 	@PostMapping("/testdate")
     public void date(@RequestParam("dateAdded") 
       @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateAdded) {
