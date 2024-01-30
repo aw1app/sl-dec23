@@ -13,12 +13,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class ProductController {
@@ -104,9 +107,7 @@ public class ProductController {
 	}
 
 	@PostMapping("/addProduct")
-	public String addNewProduct(ModelMap model, @ModelAttribute("product") EProduct product) {
-		//product.setDateAdded(new Date());
-		System.out.println(product.getDateAdded());
+	public String addNewProduct(ModelMap model, @ModelAttribute("product") @Valid EProduct product) {		
 
 		EProduct savedProduct = eProductRepositry.save(product);
 		model.addAttribute("id", savedProduct.getID());
@@ -166,15 +167,26 @@ public class ProductController {
 	}
 	
 	@ExceptionHandler
-	public  ResponseEntity<Object> xyz(org.springframework.web.method.annotation.MethodArgumentTypeMismatchException ex) {
+	public  ResponseEntity<Object> handler1(org.springframework.web.method.annotation.MethodArgumentTypeMismatchException ex) {
 		
 		return new ResponseEntity<>("<br>Sorry, Invalid argument values were passed that could not be processed. Contact our Customer Care to know more.", HttpStatus.BAD_REQUEST);
 	}
 	
 	@ExceptionHandler
-	public  ResponseEntity<Object> xyz(ProductNotFoundException ex) {
+	public  ResponseEntity<Object> handler2(ProductNotFoundException ex) {
 		
 		return new ResponseEntity<>(ex.getMessage() + "<br>Contact our Customer Care to know more.", HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler
+	public  ResponseEntity<Object> handler3(org.springframework.web.bind.MethodArgumentNotValidException ex) {
+		
+		FieldError fe = ex.getFieldError();
+		fe.getRejectedValue();
+		
+		return new ResponseEntity<>( "  REJECTED VALUE is "+  fe.getRejectedValue()  +  "<br>Sorry, Invalid argument values were passed that could not be processed. Contact our Customer Care to know more.", HttpStatus.BAD_REQUEST);
+	}
+	
+	
 
 }
