@@ -9,12 +9,16 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ProductController {
@@ -66,10 +70,13 @@ public class ProductController {
 
 	}
 	
-	@PostMapping("/testdate")
-    public void date(@RequestParam("dateAdded") 
-      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateAdded) {
-       System.out.println(dateAdded + " Hi");
+	@GetMapping("/testdate")	
+	@ResponseBody
+    public String date(@RequestParam("dateAdded") 
+      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateAdded) {		
+	   
+       return (dateAdded + " Hi");              
+       
     }
 
 //// Add a new product
@@ -142,6 +149,12 @@ public class ProductController {
 		} else {
 			return "delete-product-failed";
 		}
+	}
+	
+	@ExceptionHandler
+	public  ResponseEntity<Object> xyz(org.springframework.web.method.annotation.MethodArgumentTypeMismatchException ex) {
+		
+		return new ResponseEntity<>("<br>Sorry, something went wrong. Contact our Customer Care.", HttpStatus.BAD_REQUEST);
 	}
 
 }
