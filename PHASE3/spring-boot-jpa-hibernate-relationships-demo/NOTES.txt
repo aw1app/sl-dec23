@@ -19,7 +19,7 @@ spring.mvc.view.suffix=.jsp
 3. If working with DB, then add this as well 
 #Database MySQL
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommercedb
 spring.datasource.username=root
 spring.datasource.password=rootroot
 #spring.jpa.show-sql=true
@@ -30,7 +30,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 Create the follder folders and add lib files
 main\webapp
 main\webapp\lib (in this folder add the jakarta jstl jars)
-main\webapp\views
+main\webapp\WEB-INF\views
 
 More Steps:
 STEP 1: Create the class (@Entity class) that will represent the DB table

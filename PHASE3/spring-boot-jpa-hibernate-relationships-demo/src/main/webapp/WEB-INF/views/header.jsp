@@ -3,6 +3,6 @@
 <!DOCTYPE html>
 <a href="/" > Home </a>&nbsp;&nbsp;| &nbsp;&nbsp;
 
-<a href="listProducts" >List of products </a>
+<a href="list-users" >List of Users </a>
 &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="/addProduct" >Add a new product</a>
+<a href="/adduser" >Add a new User</a>
