@@ -78,6 +78,20 @@ public class ProductController {
        return (dateAdded + " Hi");              
        
     }
+	
+	@GetMapping("/testSearchbyId")	
+	@ResponseBody
+    public String serachbyId(@RequestParam long id ) throws ProductNotFoundException {		
+	   
+		Optional<EProduct> eProductFromRepo = eProductRepositry.findById(id);  
+		
+		if (eProductFromRepo.isEmpty()) {
+			throw new ProductNotFoundException(id);
+		}
+		
+		return "Succesfully serached product with id="+id;
+       
+    }
 
 //// Add a new product
 	@GetMapping("/addProduct")
@@ -154,7 +168,13 @@ public class ProductController {
 	@ExceptionHandler
 	public  ResponseEntity<Object> xyz(org.springframework.web.method.annotation.MethodArgumentTypeMismatchException ex) {
 		
-		return new ResponseEntity<>("<br>Sorry, something went wrong. Contact our Customer Care.", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>("<br>Sorry, Invalid argument values were passed that could not be processed. Contact our Customer Care to know more.", HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler
+	public  ResponseEntity<Object> xyz(ProductNotFoundException ex) {
+		
+		return new ResponseEntity<>(ex.getMessage() + "<br>Contact our Customer Care to know more.", HttpStatus.BAD_REQUEST);
 	}
 
 }
