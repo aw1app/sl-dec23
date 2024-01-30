@@ -1,0 +1,18 @@
+use ecommercedb;
+
+CREATE TABLE aadhar (
+  id bigint NOT NULL AUTO_INCREMENT,
+  number bigint NOT NULL unique,
+  PRIMARY KEY (id)
+);
+
+
+CREATE TABLE user (
+  ID bigint NOT NULL AUTO_INCREMENT,
+  name varchar(100) DEFAULT NULL,
+  aadhar_card_id bigint DEFAULT NULL,
+  PRIMARY KEY (ID),
+  UNIQUE KEY (aadhar_card_id),
+  CONSTRAINT FOREIGN KEY (aadhar_card_id) REFERENCES aadhar (id)
+);
+
