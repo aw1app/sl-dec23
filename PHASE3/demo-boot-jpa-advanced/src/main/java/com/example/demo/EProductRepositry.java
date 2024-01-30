@@ -17,25 +17,23 @@ public interface EProductRepositry extends JpaRepository<EProduct, Long> {
 
 	// search by name like
 	List<EProduct> findAllByNameContaining(String name);
-	
+
 	List<EProduct> findAllByPriceGreaterThan(BigDecimal price);
-	
+
 	List<EProduct> findAllByPriceGreaterThanAndPriceLessThan(BigDecimal price1, BigDecimal price2);
-	
+
 	List<EProduct> findAllByNameContainingAndPriceLessThan(String name, BigDecimal price);
-	
-	
-	//Ordering
-    List<EProduct> findAllByPriceGreaterThanOrderByPrice(BigDecimal price);
-    
-    // SQL queries (Native Queries)
-    // Below SQL will search all products that start with name
-    @Query(value="SELECT * FROM eproduct WHERE name LIKE :name%", nativeQuery=true)
-    List<EProduct> abc(String name);
-	
-    
-   
+
+	// Ordering
+	List<EProduct> findAllByPriceGreaterThanOrderByPrice(BigDecimal price);
+
+	// SQL queries (Native Queries)
+	// Below SQL will search all products that start with name
+	@Query(value = "SELECT * FROM eproduct WHERE name LIKE :name%", nativeQuery = true)
+	List<EProduct> abc(String name);
+
+	// Our own JPQL queries
+	@Query("SELECT p FROM EProduct p WHERE p.price < :minPrice and p.price > :maxPrice")
+	List<EProduct> findAllWherePriceIsNotInBetween(float minPrice, float maxPrice);
 
 }
-
-
