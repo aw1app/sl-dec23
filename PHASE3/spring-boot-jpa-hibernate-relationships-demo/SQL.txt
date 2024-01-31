@@ -26,3 +26,9 @@ CREATE TABLE mobilephones (
   KEY  (user_id),
   CONSTRAINT  FOREIGN KEY (user_id) REFERENCES user (ID)
 );
+
+CREATE TABLE educational_degree (
+  id bigint NOT NULL AUTO_INCREMENT,
+  name varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
