@@ -16,3 +16,13 @@ CREATE TABLE user (
   CONSTRAINT FOREIGN KEY (aadhar_card_id) REFERENCES aadhar (id)
 );
 
+
+CREATE TABLE mobilephones (
+  id bigint NOT NULL AUTO_INCREMENT,
+  number bigint NOT NULL,
+  provider varchar(255) DEFAULT NULL,
+  user_id bigint DEFAULT NULL,
+  PRIMARY KEY (id),
+  KEY  (user_id),
+  CONSTRAINT  FOREIGN KEY (user_id) REFERENCES user (ID)
+);
