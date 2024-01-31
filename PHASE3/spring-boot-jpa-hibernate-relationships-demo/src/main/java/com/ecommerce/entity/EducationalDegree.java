@@ -1,5 +1,7 @@
 package com.ecommerce.entity;
 
+import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -30,6 +32,35 @@ public class EducationalDegree {
 			joinColumns = @JoinColumn(name = "educationaldegree_id"),
 			inverseJoinColumns = @JoinColumn(name = "user_id")
 			)
-	List<User> users;
+	List<User> users = new ArrayList<User>();
+
+	public long getID() {
+		return ID;
+	}
+
+	public void setID(long iD) {
+		ID = iD;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	
+	public void addUser(User user) {
+		this.users.add(user);
+	}
 
 }

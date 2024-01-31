@@ -62,6 +62,16 @@ public class User {
 
 	public void setPhones(List<MobilePhone> phones) {
 		this.phones = phones;
-	}		
+	}
+
+	public List<EducationalDegree> getDegrees() {
+		return degrees;
+	}
+
+	public void setDegrees(List<EducationalDegree> degrees) {
+		this.degrees = degrees;
+	}	
+	
+	
 
 }

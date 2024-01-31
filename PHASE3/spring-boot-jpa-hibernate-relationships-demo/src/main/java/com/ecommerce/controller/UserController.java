@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ecommerce.entity.AadharCard;
+import com.ecommerce.entity.EducationalDegree;
 import com.ecommerce.entity.MobilePhone;
 import com.ecommerce.entity.User;
 import com.ecommerce.repositry.AadharCardRepositry;
+import com.ecommerce.repositry.EducationalDegreeRepositry;
 import com.ecommerce.repositry.MobilePhoneRepositry;
 import com.ecommerce.repositry.UserRepositry;
 
@@ -31,6 +33,9 @@ public class UserController {
 
 	@Autowired
 	MobilePhoneRepositry mobilePhoneRepositry;
+	
+	@Autowired
+	EducationalDegreeRepositry educationalDegreeRepositry;
 
 	@PostMapping("/add-user")
 	public String addUser(ModelMap model, @RequestParam String uName, @RequestParam long aadharCardNo) {
@@ -105,16 +110,52 @@ public class UserController {
 	@PostMapping("/add-user-with-mobiles-simplified")
 	public String addUserWithMobiles(Model model, @ModelAttribute("user") User user) {
 
-		user = userRepositry.save(user);	
-		
+		user = userRepositry.save(user);
+
 		List<MobilePhone> mobiles = user.getPhones();
 
 		for (MobilePhone m : mobiles) {
 			m.setUser(user);
-			m=mobilePhoneRepositry.save(m);
+			m = mobilePhoneRepositry.save(m);
 		}
 
+		model.addAttribute("id", user.getID());
+
+		return "new-user-added-success"; // New user added successfully
+	}
+
+	// With Degrees (M-M mapping demo)
+	// show-form
+	@GetMapping("/add-user-with-degrees-simplified")
+	public String addUserWithDegrees(Model model) {
+		User user = new User();
+		model.addAttribute("user", user);
+
+		return "new-user-with-degrees";
+	}
+
+	// process-form
+	@PostMapping("/add-user-with-degrees-simplified")
+	public String addUserWithDegrees(Model model, @ModelAttribute("user") User user) {
+
+		user = userRepositry.save(user);
+
+		List<MobilePhone> mobiles = user.getPhones();
+
+		for (MobilePhone m : mobiles) {
+			m.setUser(user);
+			m = mobilePhoneRepositry.save(m);
+		};	
 		
+		
+		List<EducationalDegree> degrees = user.getDegrees();
+		
+		for (EducationalDegree degree : degrees) {
+			degree.addUser(user);
+			degree = educationalDegreeRepositry.save(degree);
+		};
+		
+
 		model.addAttribute("id", user.getID());
 
 		return "new-user-added-success"; // New user added successfully
