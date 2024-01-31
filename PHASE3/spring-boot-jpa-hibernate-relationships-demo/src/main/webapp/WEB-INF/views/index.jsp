@@ -10,6 +10,8 @@
 		<br> User Name: <input name="uName"> 
 		<br> Aadhar No:	<input	name="aadharCardNo"> <input type=submit value="Add User">
 	</form>
+	
+	
 
 
 </body>

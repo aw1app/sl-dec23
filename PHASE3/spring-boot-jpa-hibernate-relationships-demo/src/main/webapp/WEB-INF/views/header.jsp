@@ -5,4 +5,4 @@
 
 <a href="list-users" >List of Users </a>
 &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="/adduser" >Add a new User</a>
+<a href="add-user-with-mobiles-simplified" >Add a new User with Mobiles</a>
