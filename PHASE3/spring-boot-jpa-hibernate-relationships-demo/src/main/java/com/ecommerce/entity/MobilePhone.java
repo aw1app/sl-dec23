@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +23,42 @@ public class MobilePhone {
 	private long number;
 	
 	private String provider;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	User user;
+
+	public long getID() {
+		return ID;
+	}
+
+	public void setID(long iD) {
+		ID = iD;
+	}
+
+	public long getNumber() {
+		return number;
+	}
+
+	public void setNumber(long number) {
+		this.number = number;
+	}
+
+	public String getProvider() {
+		return provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 	
 	
