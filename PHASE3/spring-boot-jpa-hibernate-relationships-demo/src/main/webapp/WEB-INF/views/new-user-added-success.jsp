@@ -2,4 +2,4 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 
-New user added successfully. user id = {{id}} 
+New user added successfully. user id = ${id} 
