@@ -45,20 +45,42 @@ public class EProductRestController {
 		}
 	}
 
-	/* Test the below API below posting JSON data 
-	{
-	    "name":"Dell Mouse",
-	    "price":500.5,
-	    "dateAdded":"2024-01-01"
-	}
-	 in postman
-	*/
-	//@PostMapping(value = "/add-product", consumes = "application/json", produces = "application/json")
+	/*
+	 * Test the below API below posting JSON data { "name":"Dell Mouse",
+	 * "price":500.5, "dateAdded":"2024-01-01" } in postman
+	 */
+	// @PostMapping(value = "/add-product", consumes = "application/json", produces
+	// = "application/json")
 	@PostMapping(value = "/add-product")
 	public EProduct addProduct(@RequestBody EProduct eProduct) {
 
 		EProduct savedProduct = eProductRepositry.save(eProduct);
 		return savedProduct;
+	}
+
+	// EDIT a Product
+	@PostMapping("/edit-product/{id}")
+	public EProduct editProduct(@PathVariable("id") long id, @RequestBody EProduct eProduct) {
+
+		Optional<EProduct> productFromRepo = eProductRepositry.findById(id);
+
+		if (productFromRepo.isPresent()) {
+
+			EProduct product = productFromRepo.get();
+
+			if (eProduct.getName() != null && !eProduct.getName().equals(""))
+				product.setName(eProduct.getName());
+
+			if (eProduct.getPrice() != null)
+				product.setPrice(eProduct.getPrice());
+
+			EProduct savedProduct = eProductRepositry.save(product);
+
+			return savedProduct;
+		} else {
+			return new EProduct();
+			// return "Product with id = "+ id + " not found";
+		}
 	}
 
 }
