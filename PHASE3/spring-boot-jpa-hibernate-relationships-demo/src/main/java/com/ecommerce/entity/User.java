@@ -1,6 +1,7 @@
 package com.ecommerce.entity;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -29,7 +30,7 @@ public class User {
 	List<MobilePhone> phones;
 	
 	@ManyToMany(mappedBy = "users", cascade = CascadeType.ALL)
-	List<EducationalDegree> degrees;
+	List<EducationalDegree> degrees = new CopyOnWriteArrayList<EducationalDegree>() ;// new ArrayList<EducationalDegree>();
 	
 
 	public long getID() {

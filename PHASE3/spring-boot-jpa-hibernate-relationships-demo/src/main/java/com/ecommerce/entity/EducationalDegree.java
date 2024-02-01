@@ -1,7 +1,6 @@
 package com.ecommerce.entity;
 
 import java.util.ArrayList;
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -32,7 +31,7 @@ public class EducationalDegree {
 			joinColumns = @JoinColumn(name = "educationaldegree_id"),
 			inverseJoinColumns = @JoinColumn(name = "user_id")
 			)
-	List<User> users = new ArrayList<User>();
+	List<User> users = new ArrayList<User>(); // new CopyOnWriteArrayList<User>();
 
 	public long getID() {
 		return ID;
