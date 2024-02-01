@@ -45,6 +45,14 @@ public class EProductRestController {
 		}
 	}
 
+	/* Test the below API below posting JSON data 
+	{
+	    "name":"Dell Mouse",
+	    "price":500.5,
+	    "dateAdded":"2024-01-01"
+	}
+	 in postman
+	*/
 	//@PostMapping(value = "/add-product", consumes = "application/json", produces = "application/json")
 	@PostMapping(value = "/add-product")
 	public EProduct addProduct(@RequestBody EProduct eProduct) {
