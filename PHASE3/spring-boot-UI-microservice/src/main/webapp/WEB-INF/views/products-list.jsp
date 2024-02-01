@@ -10,6 +10,7 @@
 		<td>PRICE
 		<td>DATE ADDED
 		<td>DETAILS
+		<td>EDIT
 	</tr>
 
 	<c:forEach var="product" items="${products}">
@@ -19,6 +20,7 @@
 			<td>${product.price}
 			<td>${product.dateAdded}</td>
 			<td><a href="product-details/${product.ID}"> DETAILS </a> &nbsp;&nbsp;
+			<td><a href="edit-product/${product.ID}"> EDIT </a> &nbsp;&nbsp;
 		</tr>
 	</c:forEach>
 
