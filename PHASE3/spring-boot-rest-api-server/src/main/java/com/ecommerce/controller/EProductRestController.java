@@ -59,6 +59,13 @@ public class EProductRestController {
 	}
 
 	// EDIT a Product
+	/* Use POST data like this
+	 * { "price":200, "name":"Phillips Monitor" }
+	 * OR
+	 * { "price":200 }
+	 * OR
+	 * { "name":"Phillips Monitor" }
+	 */
 	@PostMapping("/edit-product/{id}")
 	public EProduct editProduct(@PathVariable("id") long id, @RequestBody EProduct eProduct) {
 
