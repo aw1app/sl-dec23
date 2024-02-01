@@ -18,7 +18,7 @@
 			<td>${product.name}
 			<td>${product.price}
 			<td>${product.dateAdded}</td>
-			<td><a href="product-details/id=${product.ID}"> DETAILS </a> &nbsp;&nbsp;
+			<td><a href="product-details/${product.ID}"> DETAILS </a> &nbsp;&nbsp;
 		</tr>
 	</c:forEach>
 
