@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
 import com.ecommerce.entity.EProduct;
@@ -17,8 +18,7 @@ public class UIController {
 	
 	
 	@GetMapping("/products")
-	public String listProduct(Model model) {
-		System.out.println("INSIDE listProduct ");
+	public String listProduct(Model model) {		
 
 		EProduct[] products = restTemplate.getForObject("http://localhost/product/list", EProduct[].class);
 
@@ -26,5 +26,18 @@ public class UIController {
 
 		return "products-list";
 	}
+		
+		@GetMapping("/product-details/{id}")
+		public String displayProductDetails(@PathVariable("id") long id, Model model) {
+			
+			EProduct product = restTemplate.getForObject("http://localhost/product/details/"+id, EProduct.class);
+			
+			model.addAttribute("product", product);
 
-}
+			return "products-details";
+			
+		}
+		
+	}
+
+
