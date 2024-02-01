@@ -28,8 +28,8 @@ public class HelloRestController {
 		u1.name="Sudhir";
 		
 		User u2= new User();
-		u1.age=55;
-		u1.name="Sudhir";
+		u2.age=65;
+		u2.name="Raha";
 		
 		
 		
