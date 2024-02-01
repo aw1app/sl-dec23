@@ -3,9 +3,5 @@
 <!DOCTYPE html>
 <a href="/" > Home </a>&nbsp;&nbsp;| &nbsp;&nbsp;
 
-<a href="list-users" >List of Users </a>
+<a href="/products" >List of Products </a>
 &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="add-user-with-mobiles-simplified" >Add a new User with Mobiles</a>
-
-&nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="add-user-with-degrees-simplified" >Add a new User with Mobiles and Degrees</a>

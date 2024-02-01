@@ -18,6 +18,7 @@ public class UIController {
 	
 	@GetMapping("/products")
 	public String listProduct(Model model) {
+		System.out.println("INSIDE listProduct ");
 
 		EProduct[] products = restTemplate.getForObject("http://localhost/product/list", EProduct[].class);
 
