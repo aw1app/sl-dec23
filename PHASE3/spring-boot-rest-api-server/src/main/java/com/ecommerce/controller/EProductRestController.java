@@ -89,5 +89,8 @@ public class EProductRestController {
 			// return "Product with id = "+ id + " not found";
 		}
 	}
+	
+	//CHALLENGE:Add the delete-product mapping
+	//@PostMapping("/delete-product/{id}")
 
 }
