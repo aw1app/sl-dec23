@@ -6,3 +6,7 @@ Product Details:<br>
 	<li>${product.price}
 	<li>${product.dateAdded}
 </ol>
+
+
+<br>
+	<br> <a href="/"> Back to HOME</a>

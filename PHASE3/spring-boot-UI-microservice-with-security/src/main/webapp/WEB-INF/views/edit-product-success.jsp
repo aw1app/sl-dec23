@@ -3,3 +3,6 @@
 <%@ include file="header.jsp" %><hr>
     
 Product with id=${id} Updated succesfully!
+
+<br>
+	<br> <a href="/"> Back to HOME</a>

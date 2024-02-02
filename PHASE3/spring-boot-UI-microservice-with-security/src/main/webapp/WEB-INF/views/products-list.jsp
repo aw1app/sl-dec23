@@ -25,3 +25,6 @@
 	</c:forEach>
 
 </table>
+
+<br>
+	<br> <a href="/"> Back to HOME</a>
