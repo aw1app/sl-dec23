@@ -6,7 +6,9 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import com.ecommerce.Calculator;
@@ -39,7 +41,7 @@ class CalculatorTest {
 		
 	}
 	
-	
+	@Disabled
 	@Test
 	@DisplayName(" Test case for add method for +,+ inputs")
 	public void testAdd1() {		
@@ -55,6 +57,7 @@ class CalculatorTest {
 		assertEquals(expectResult, actualResult);		
 	}
 	
+	@Tag(value="important-test")
 	@Test
 	public void testAddWhenPositiveNegative() {
 		System.out.println(" INSIDE testAddWhenPositiveNegative method");
