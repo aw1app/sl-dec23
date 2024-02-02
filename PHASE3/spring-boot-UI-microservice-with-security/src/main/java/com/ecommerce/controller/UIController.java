@@ -18,13 +18,11 @@ public class UIController {
 	// Rest Client
 	@Autowired
 	RestTemplate restTemplate;
-	
-	String restAPIServerBaseProductsURL = "http://localhost/product";
-	
+
 	@GetMapping("/products")
 	public String listProduct(Model model) {
 
-		EProduct[] products = restTemplate.getForObject(restAPIServerBaseProductsURL +"/list", EProduct[].class);
+		EProduct[] products = restTemplate.getForObject("http://localhost/product/list", EProduct[].class);
 
 		model.addAttribute("products", products);
 
@@ -34,7 +32,7 @@ public class UIController {
 	@GetMapping("/product-details/{id}")
 	public String displayProductDetails(@PathVariable("id") long id, Model model) {
 
-		EProduct product = restTemplate.getForObject(restAPIServerBaseProductsURL +"/details/" + id, EProduct.class);
+		EProduct product = restTemplate.getForObject("http://localhost/product/details/" + id, EProduct.class);
 
 		model.addAttribute("product", product);
 
@@ -45,7 +43,7 @@ public class UIController {
 	@GetMapping("/edit-product/{id}")
 	public String EditProductDetails(@PathVariable("id") long id, Model model) {
 
-		EProduct product = restTemplate.getForObject(restAPIServerBaseProductsURL +"/details/" + id, EProduct.class);
+		EProduct product = restTemplate.getForObject("http://localhost/product/details/" + id, EProduct.class);
 
 		model.addAttribute("product", product);
 
@@ -58,7 +56,7 @@ public class UIController {
 
 		long id = product.getID();
 
-		EProduct savedproduct = restTemplate.postForObject(restAPIServerBaseProductsURL +"/edit-product/" + id, product,
+		EProduct savedproduct = restTemplate.postForObject("http://localhost/product/edit-product/" + id, product,
 				EProduct.class);
 
 		model.addAttribute("id", savedproduct.getID());

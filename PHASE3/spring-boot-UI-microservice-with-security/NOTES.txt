@@ -1,0 +1,35 @@
+After creating the initilazer project with the required dependencies (In this UI microservices project
+we only need the spring-web dependency!)
+
+1. Add the following dependency in POM.xml
+<!-- JSP support in Spring -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+	
+2. Go to application.properties
+server.port=8080
+
+#JSP files configuation
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+
+
+Create the follder folders and add lib files
+main\webapp
+main\webapp\lib (in this folder add the jakarta jstl jars)
+main\webapp\WEB-INF\views
+
+More Steps:
+STEP 1: Create the class (Entity class) that will fetch product related data from another 
+microservice (in our case it is the spring-boot-rest-api-server project)
+
+
+STEP 2: Create the Spring Controller (Servlet)
+In this controller we will have a REST client, that will connct to 
+rest-api-server (spring-boot-rest-api-server project) running at http://localhost:80/product
+
