@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+<!-- Tag CSS Selector-->
+li {
+    color:blue;
+}
+
+ul li {
+    color:rgb(255, 0, 234);
+}
+
+p{
+        font-size:20px;
+}
+
+#para3 {
+    font-size:40px;
+}
+
+#para5, #para6, #para7 {
+    background-color: aqua;
+}
+
+.yellowParas{
+    background-color: yellow;
+}
+
+div div > p {
+    color: blue;
+    font-size:8px;
+}
+
+div div > p > p {
+    color: red;
+    font-size:40px;
+}
+
+</style>
+
+
+<body>
+
+    <div class="yellowParas"> Div1 content</div>
+    <div style="color:red"> Div2 content</div>
+    <div style="color:green; background-color: rgb(79, 245, 245); "> Div3 content</div>
+
+    <br>
+
+    <ol>
+        <li> L1 </li>
+        <li> L2 </li>
+        <li> L3 </li>
+        <li> L4 </li>
+    </ol>
+
+    <br>
+    <ul>
+        <li> L OUT 1 </li>
+        <li> L OUT 2 </li>
+        <li> L OUT 3 </li>
+        <li> L OUT 4 </li>
+    </ul>
+
+
+    <p>Para 1</p>
+    <p>Para 2</p>
+    <p id="para3">Para 3</p>
+    <p>Para 4</p>
+
+
+    <p id="para5">Para 5</p>
+    <p id="para6">Para 6</p>
+    <p id="para7" >Para 7</p>
+    <p id="para8">Para 8</p>
+
+    <br>
+    How will you have the above paras come in font size 20px?
+    <br> How will you have para 3 come in font size 40px?
+
+    <br> How will you have para 5-7 should be having background blue
+
+    <br> How will you have para 15-17 should be having background yellow, without using IDs.
+    <p class="yellowParas">Para 15</p>
+    <p class="yellowParas">Para 16</p>
+    <p class="yellowParas">Para 17</p>
+    <p >Para 18</p>
+
+
+    <br><br> How will Div20.21 and Div20.22 have font size 24 and color is blue, without using IDs and classes.
+    <div> Div20 content
+        <div> Div20.1 content</div>
+        <div> Div20.2 content
+            <p> Div20.21 content 
+                <p> Div20.211 content</p>
+            </p>
+            <p > Div20.22 content</p>
+        </div>
+    </div>
+    
+    
+
+</body>
+
+
+</html>
