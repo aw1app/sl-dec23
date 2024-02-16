@@ -1,0 +1,32 @@
+<script>
+
+
+    function giveMeAddFunction(){
+
+        return function add(x,y){return parseInt(x) +parseInt(y);};
+
+    };
+
+
+    let f1 = giveMeAddFunction();
+
+    /*let ans= f1(4,5);
+    console.log(`4+5 is ${ans}`); // 9
+
+
+    let f2 = giveMeAddFunction();
+    let ans2= f1(14,5);
+    console.log(`14+5 is ${ans2}`); // 19 
+    */
+</script>
+
+<body>
+
+    Num1: <input name="num1" id="num1"> , 
+    Num2:<input name="num2" id="num2">
+
+    <br>Result:<h2 id="result"> </h2>
+
+    <button onclick="document.getElementById('result').textContent  = f1(document.getElementById('num1').value, document.getElementById('num2').value)"> Add number</button>
+
+</body>
