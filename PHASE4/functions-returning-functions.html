@@ -2,9 +2,7 @@
 
 
     function giveMeAddFunction(){
-
         return function add(x,y){return parseInt(x) +parseInt(y);};
-
     };
 
 
@@ -13,11 +11,16 @@
     /*let ans= f1(4,5);
     console.log(`4+5 is ${ans}`); // 9
 
-
     let f2 = giveMeAddFunction();
     let ans2= f1(14,5);
     console.log(`14+5 is ${ans2}`); // 19 
     */
+
+    function giveMeSubtractFunction(){
+        return function subtract(x,y){return parseInt(x)- parseInt(y);};
+    };
+    let f2 = giveMeSubtractFunction();
+
 </script>
 
 <body>
@@ -28,5 +31,10 @@
     <br>Result:<h2 id="result"> </h2>
 
     <button onclick="document.getElementById('result').textContent  = f1(document.getElementById('num1').value, document.getElementById('num2').value)"> Add number</button>
+    <button onclick="document.getElementById('result').textContent  = f2(document.getElementById('num1').value, document.getElementById('num2').value)"> Subtract number</button>
 
 </body>
+
+<br><br>
+<b>CHALLENGE</b>: Write a JS function in the same page, that will return a function subtract.<br>
+Demo its usage.

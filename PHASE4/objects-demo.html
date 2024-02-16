@@ -1,0 +1,38 @@
+<script>
+
+    // Tradionall JS way of creating objects
+
+    function Car(name,price){
+
+        this.name = name;
+        this.price = price;
+
+    };
+
+
+    let car1= new Car("Maruti Swift", 1000000);
+
+    console.log(`Car name is ${car1.name} and price is ${car1.price}`)
+
+</script>
+
+
+<script>
+
+    // ES6 JS way of creating objects
+
+    class Bus{
+
+        constructor(name,price){
+            this.name = name;
+            this.price = price;
+        }
+
+    }
+
+
+    let bus1= new Bus("Volvo", 50000);
+
+    console.log(`Bus name is ${bus1.name} and price is ${bus1.price}`)
+
+</script>
