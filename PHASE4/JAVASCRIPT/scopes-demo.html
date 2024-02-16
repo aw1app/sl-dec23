@@ -1,0 +1,64 @@
+<script>
+
+    // Global variable (non-local variable)
+var x=100; 
+console.log("At line 5 x= "+x);
+
+function f1(){
+    //local variable 
+    var y=10;
+
+    console.log(y);
+
+    console.log(`Inside f1() At line 13 x= ${x}`);
+
+}
+
+
+// console.log(y); // ERROR, y is local to f1 function and therfore not available outside of that function.
+console.log(`At line 19 x= ${x}`);
+
+f1();
+
+</script>
+
+
+<script>
+    //MODERN (ES6) JavaScript
+    let a1=100; // Global
+
+    function f2(){
+        let a2=1000; // local
+
+        {
+            let a3=9; // block scope
+            console.log(`Inside f2 , At line 35 a3= ${a3}`);
+        }
+        // console.log(`Inside f2 , At line 37 a3= ${a3}`); ERROR
+    };
+
+   
+    f2();
+
+</script>
+
+
+<script>
+    //MODERN (ES6) JavaScript
+    var b1=100; // Global
+
+    function f3(){
+        var b2=1000; // local
+
+        {
+            var b3=9; // local scope
+            console.log(`Inside f3 , At line 55 b3= ${b3}`);
+        }
+        console.log(`Inside f3 , At line 57 b3= ${b3}`);
+    };
+
+   
+    f3();
+
+</script>
+

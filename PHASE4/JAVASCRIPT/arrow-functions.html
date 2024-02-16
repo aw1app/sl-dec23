@@ -1,0 +1,21 @@
+<script>
+
+    // Traditional JS way of writing functions
+    /*
+    function add(x, y) {
+        return parseInt(x) + parseInt(y);
+    };
+    */
+
+    // In ES6, it is written as an arrow function, like this:
+    add = (x, y) => {
+        return parseInt(x) + parseInt(y);
+    };
+
+    console.log ("add() : 4+5 is " +  add(4,5) ) ;
+
+    add1 = (x, y) => parseInt(x) + parseInt(y);
+    
+    console.log ("add1() : 4+5 is " +  add1(4,5) ) ;
+
+</script>

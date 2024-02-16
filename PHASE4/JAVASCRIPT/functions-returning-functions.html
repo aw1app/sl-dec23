@@ -1,0 +1,56 @@
+<script>
+
+    function f0(name) {
+        console.log("Hello " + name);
+    }
+
+    function f1(name) {
+        console.log("Hi " + name);
+    }
+
+    function f2(nam, f) {
+        f(nam);
+    };
+
+    f2("Suman", f1);
+
+    f2("Radha", f0);
+
+
+</script>
+
+<script>
+
+    function greetingInEnglish(name) {
+        alert("Hello " + name);
+    }
+
+    function greetingInFrench(name) {
+        alert("Bonjour " + name);
+    }
+
+
+    function greetAPerson(name, func) {
+        func(name);
+    }
+
+    //greetAPerson("Saboo", greetingInEnglish);
+    greetAPerson("Saboo", greetingInFrench);
+
+
+    // If the concept of functions accepting other function was not there.
+    // Then we would have written the below
+    // Which long amd
+    // everytime we add a new language gretting
+    // we have to write one more if else and the 
+    // the project has to re tested throughly
+    function greetAPersonByHisLocation(name) {
+        let location = "";
+        if (location == "France")
+            greetAPerson(name, greetingInFrench);
+        else
+            greetAPerson(name, greetingInEnglish);
+    }
+
+
+</script>
