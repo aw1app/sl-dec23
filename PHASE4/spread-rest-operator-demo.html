@@ -1,0 +1,17 @@
+<script>
+document.write("**** SPREAD OPERATOR DEMO ***<br><br>")
+
+let a1Arr = [6, 4, 5, 77, 23, 15, 17];
+
+let add = (x, y, z, w) => x + y + z + w;
+
+let result = add(a1Arr[0],a1Arr[1],a1Arr[2],a1Arr[3] );
+
+document.write(`result =  ${result}`);
+
+let result1 = add (...a1Arr );
+document.write(`<br> result1 =  ${result1}`);
+
+
+</script>
+
