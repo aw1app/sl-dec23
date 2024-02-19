@@ -8,10 +8,20 @@
     //OR
     let fruitArray3 = [];
 
+    // Some common functions avaiable on the array object
     document.write("<ul> Fruits on Sale.");
     fruitArray.forEach( element => document.write("<li>" + element.toUpperCase()));
     document.write("</ul>");
 
+    
+    //mapping every element of an array to ... 
+    let mappedFruitArray = fruitArray.map ( element =>  element.substring(0,2) ); 
 
+    document.write(mappedFruitArray);
+
+    // filter 
+    let allFruitsWithNameLength5Array =  fruitArray.filter( element =>  element.length === 5  );
+    document.write("<br>");
+    document.write(allFruitsWithNameLength5Array);
 
 </script>
