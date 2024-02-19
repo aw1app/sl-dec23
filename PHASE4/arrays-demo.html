@@ -24,4 +24,36 @@
     document.write("<br>");
     document.write(allFruitsWithNameLength5Array);
 
+    fruitArray.sort ( (a,b) => a.length - b.length);
+    document.write("<br>SORTED ARRAY <br>");
+    document.write(fruitArray);
+
+</script>
+
+
+<script>
+
+    const numbers = [1, 2, 3, 4, 5];
+    document.write("<br><br>ARRAY numbers is: <br>" + numbers);
+
+    // add an element at the end of the array
+    numbers.push(11);
+
+    document.write("<br><br>ARRAY numbers after push  is: <br>" + numbers);
+
+    // remove an element from the end of the array
+    let poppedElement = numbers.pop(11);
+    document.write("<br><br>ARRAY numbers after pop is: <br>" + numbers + " and the popped element was " + poppedElement);
+
+
+    // add an element to start of the array
+    numbers.unshift(22);
+
+    document.write("<br><br>ARRAY numbers after unshift  is: <br>" + numbers);
+
+    // remove an element to start of the array
+    let poppedElementArStart = numbers.shift();
+
+    document.write("<br><br>ARRAY numbers after shift  is: <br>" + numbers + " and the popped element was " + poppedElementArStart );
+
 </script>
