@@ -12,6 +12,51 @@ document.write(`result =  ${result}`);
 let result1 = add (...a1Arr );
 document.write(`<br> result1 =  ${result1}`);
 
+</script>
+
+<script>
+    document.write("<br><br><br><br>**** REST OPERATOR DEMO ***<br><br>")
+
+    let a2Arr = [16, 4, 56, 77, 23, 15, 17];
+
+    let [a,b,...c] = a2Arr;
+    document.write(`<br> a= ${a}`);
+    document.write(`<br> b= ${b}`);
+    document.write(`<br> c= ${c}`);
+
+    let [...x] =a2Arr;
+    document.write(`<br><br> x= ${x}`);
 
 </script>
 
+<script>
+    //JSON notation for objects
+    let employee1 = {
+        name: "Saboo",
+        age: 56
+    };
+
+
+    let employee2 = { ...employee1 };// = { name: "Saboo", age: 56  }
+
+    document.write('<br><br> OBJECT DETRUCTURING DEMO <br>');
+    document.write(`<br> employee1.name = ${employee1.name}`);
+    document.write(`<br> employee2.name = ${employee2.name}`);
+
+    employee1.name = "Rajnish";
+    document.write(`<br> employee1.name = ${employee1.name}`);
+    document.write(`<br> employee2.name = ${employee2.name}`);
+
+    let sayHello = (name,age) => document.write (`Hello ${name}`);
+
+    // Traditional way to tell Hello to employee1
+    document.write ( "<br><br> Traditional way to tell Hello to employee1 ");
+    sayHello(employee1.name);
+
+    // In ES6 (obj destructuring way) way
+    document.write ( "<br>In ES6 obj destructuring way ") ;
+    sayHello(...employee1);
+    document.write ( "<br>");
+
+
+</script>
