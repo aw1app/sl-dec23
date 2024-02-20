@@ -1,5 +1,7 @@
 // function f1(x,y){
 
+
+
 //     return x+y
 //  }
 
@@ -29,3 +31,10 @@ function f3(x: number, y: number): Function {
 
 let g : Function =f3(4,5);
 g();
+
+// can we set return type  like class name - YES
+
+import { Person } from "./interface-demo";
+let f4 = (name:string):Person => new Person(name);
+
+let person1:Person = f4("Joginder");
