@@ -50,6 +50,37 @@ console.log(`\n Array type Demo \n ${carsArr}`);
 console.log(`\n First car name is \n ${carsArr[0].name}`);
 
 
+// object literal
+/* Obj literal in JS
+let bus1 = {
+    name:"Tata",
+    model:2022
+};
+*/
+
+//in TS
+let bus1: {name:string, model:number } = {
+    name:"Tata",
+    model:2022
+};
+
+//Enum Data type in TS 
+enum ModelYear { Year2020=20, Year2021, Year2022, Year2023 }
+
+class Bike{
+    name:string;
+    mileage:number;
+    modelYr:ModelYear;
+
+    constructor(name:string, mileage:number,modelYr:ModelYear  ){
+        this.name=name;
+        this.mileage=mileage;
+        this.modelYr=modelYr;
+    }
+}
+
+let bike1 : Bike =  new Bike("Bullet", 100,23 );
+//let bike2 : Bike =  new Bike("Bullet", 100,73 ); // ERROR 
 
 
 
