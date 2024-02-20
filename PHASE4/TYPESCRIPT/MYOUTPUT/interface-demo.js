@@ -22,7 +22,7 @@ class ABC {
 // let abc1:ABC = new ABC();  // ERROR
 class GreatABC extends ABC {
     walkSlow() {
-        console.log("Walking ...., slowing walking");
+        console.log("Walking ...., slowly walking");
     }
 }
 let abc1 = new GreatABC();

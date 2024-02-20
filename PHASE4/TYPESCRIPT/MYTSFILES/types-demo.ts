@@ -47,7 +47,7 @@ carsArr[1] = new Car("Maruti",150);
 carsArr.push(new Car("Fiat",250));
 
 console.log(`\n Array type Demo \n ${carsArr}`);
-console.log(`\n Array type Demo \n ${carsArr[0].name}`);
+console.log(`\n First car name is \n ${carsArr[0].name}`);
 
 
 
