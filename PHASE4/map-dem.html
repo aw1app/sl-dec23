@@ -15,5 +15,10 @@ let johnObj = studentMap.get('John');
 document.write ( `John's age =  ${johnObj.age}`);
 document.write ( `John's grade =  ${johnObj.grade}`);
 
+let getAge = name => document.getElementById('result').textContent = studentMap.get(name).age;
 
 </script>
+
+<br>Name: <input name="name" id="name"> 
+<br>Result:<h2 id="result"></h2>
+<br><button onclick="getAge(document.getElementById('name').value)" > Click to Know the AGE</button>
