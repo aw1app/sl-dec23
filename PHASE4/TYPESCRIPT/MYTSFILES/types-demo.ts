@@ -38,13 +38,13 @@ per10.walkFast();
 // Array
 let myArr1 = []; // in Plain JS
 
-let myArr2 : string[] = []; // in TS
+let myArr2: string[] = []; // in TS
 
 let carsArr: Car[] = [];
-carsArr[0] = new Car("Ford",100);
-carsArr[1] = new Car("Maruti",150);
+carsArr[0] = new Car("Ford", 100);
+carsArr[1] = new Car("Maruti", 150);
 
-carsArr.push(new Car("Fiat",250));
+carsArr.push(new Car("Fiat", 250));
 
 console.log(`\n Array type Demo \n ${carsArr}`);
 console.log(`\n First car name is \n ${carsArr[0].name}`);
@@ -59,28 +59,56 @@ let bus1 = {
 */
 
 //in TS
-let bus1: {name:string, model:number } = {
-    name:"Tata",
-    model:2022
+let bus1: { name: string, model: number } = {
+    name: "Tata",
+    model: 2022
 };
 
 //Enum Data type in TS 
-enum ModelYear { Year2020=20, Year2021, Year2022, Year2023 }
+enum ModelYear { Year2020 = 20, Year2021, Year2022, Year2023 }
 
-class Bike{
-    name:string;
-    mileage:number;
-    modelYr:ModelYear;
+class Bike {
+    name: string;
+    mileage: number;
+    modelYr: ModelYear;
 
-    constructor(name:string, mileage:number,modelYr:ModelYear  ){
-        this.name=name;
-        this.mileage=mileage;
-        this.modelYr=modelYr;
+    constructor(name: string, mileage: number, modelYr: ModelYear) {
+        this.name = name;
+        this.mileage = mileage;
+        this.modelYr = modelYr;
     }
 }
 
-let bike1 : Bike =  new Bike("Bullet", 100,23 );
+let bike1: Bike = new Bike("Bullet", 100, 23);
 //let bike2 : Bike =  new Bike("Bullet", 100,73 ); // ERROR 
+
+
+// Union Type
+let myVar: number | string
+
+myVar = 10;
+myVar = "Suman";
+
+let myVar1: boolean | string
+myVar1 = true
+myVar = "hello"
+
+let myVar3: number | string | Person
+myVar3 = 10
+myVar3 = "hello"
+myVar3 = 10
+myVar3 = new Person("Sundar");
+
+// Any type
+let myVar4: any;
+myVar4 = 10
+myVar4 = "hello"
+myVar4 = true
+myVar4 = new Person("Sundar");
+myVar4 = new Car("Maruti", 60);
+
+
+
 
 
 
