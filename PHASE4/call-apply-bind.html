@@ -1,0 +1,25 @@
+<script>
+
+    console.log("*** CALL DEMO *****");
+
+    // object literal
+    let employee1 = {
+
+        name: "EmpName1",
+        age: 57 
+
+    };
+
+    function getDetails() { return `\n ${this.name} , ${this.age}  `};
+
+    let details1 = getDetails.call(employee1);
+
+    document.write(`<br>Details of  employee1: ${details1}`);
+
+    function getDetails2(retirementAge, x) { return `\n ${this.name} , ${this.age}. Your will retire in ${retirementAge - this.age} years `};
+    let details2 = getDetails2.call(employee1, 60, 5);
+    document.write(`<br>Details of  employee1: ${details2}`);
+
+
+
+</script>
