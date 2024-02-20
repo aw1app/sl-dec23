@@ -26,8 +26,8 @@ class Car {
 }
 
  let  car1: Car = new Car("Toyota", 70);
- 
- console.log(`Car 1 name is ${car1.name}`);
+
+ console.log(`Car 1 name is ${car1.name} and mileage is ${car1.mileage}`);
 
 
 
