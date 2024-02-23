@@ -1,1 +1,18 @@
-<p>productlist works!</p>
+<br>
+<div style="border: 2px solid blue;">
+
+    List of Products on sale <br>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let pro of products">
+            <td> {{pro.name}} </td>
+            <td> {{pro.price}} </td>
+        </tr>
+    </table>
+
+
+</div>

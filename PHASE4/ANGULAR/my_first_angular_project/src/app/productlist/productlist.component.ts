@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Product } from '../model/product';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'productlist',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
