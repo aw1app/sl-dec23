@@ -14,12 +14,13 @@ export class ProductV1Component implements OnInit {
 
   @Input("name") name!: string;
   @Input("price") price!: string;
+  @Input("isFestiveSeasonOn") isFestiveSeasonOn!:boolean;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.product = new Product(this.name, Number(this.price));
+    this.product = new Product(this.name, Number(this.price),this.isFestiveSeasonOn );
   }
 
 }

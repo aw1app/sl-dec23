@@ -1,11 +1,12 @@
 
-      <h1>Hello, {{ title }}</h1>
+      <h1>Hello, {{ title }}, {{ isFestiveSeasonOnFromParent }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
 
       <productlist></productlist>
 
 
-      <product-v1 name="Samsung Mobile" price="12500.75"> </product-v1>
+      <!-- <product-v1 name="Samsung Mobile" price="12500.75" isFestiveSeasonOn="{{ isFestiveSeasonOn }}"> </product-v1> -->
+      <product-v1 name="Samsung Mobile" price="12500.75" [isFestiveSeasonOn]="isFestiveSeasonOnFromParent"> </product-v1>
       <product-v1 name="Apple iPhone" price="52500.75"> </product-v1>
 
       <br>

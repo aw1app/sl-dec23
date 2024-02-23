@@ -16,7 +16,7 @@ export class ProductComponent {
   product!: Product;
 
   constructor() {
-    this.product = new Product("HP Laptop", 50000.0);
+    this.product = new Product("HP Laptop", 50000.0,false);
   }
 
 }

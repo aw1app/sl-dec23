@@ -12,5 +12,7 @@ import { ProductV1Component } from './product-v1/product-v1.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'my_first_great angular_project';
+  title :string = 'my_first_great angular_project';
+
+  isFestiveSeasonOnFromParent:boolean=false;
 }
