@@ -13,7 +13,6 @@ class Bus {
     }
 
     showMileage = (): number => this.mileage;
-
 }
 
 let bus1:Bus = new Bus("Volvo", 100, 90, "petrol");

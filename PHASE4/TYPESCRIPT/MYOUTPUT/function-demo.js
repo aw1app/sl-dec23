@@ -1,5 +1,6 @@
 "use strict";
 // function f1(x,y){
+Object.defineProperty(exports, "__esModule", { value: true });
 //     return x+y
 //  }
 function f1(x, y) {
@@ -21,3 +22,7 @@ function f3(x, y) {
 ;
 let g = f3(4, 5);
 g();
+// can we set return type  like class name - YES
+const interface_demo_1 = require("./interface-demo");
+let f4 = (name) => new interface_demo_1.Person(name);
+let person1 = f4("Joginder");
