@@ -15,4 +15,13 @@ export class AppComponent {
   title :string = 'my_first_great angular_project';
 
   isFestiveSeasonOnFromParent:boolean=false;
+
+
+  // class binding demo
+  badCurly:string="bad curly special";
+
+  changeClass = ():void => {
+    this.badCurly="bad";
+  }
+
 }
