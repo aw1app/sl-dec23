@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+  name:string ="HP Laptop";
+  price:number =50000.0;
+
 }
