@@ -1,6 +1,25 @@
 <br>
 <div style="border: 4px solid grey;">
-<p>Add Product</p>
+    <p>Add Product</p>
+
+
+    <form [formGroup]="productForm">
+
+
+        <div class="form-group">
+
+            <label for="productName">Product Name:</label>
+
+            <input id="productName" formControlName="productName">
+
+            <div *ngIf="productForm.get('productName')?.hasError('required')" class="error-message">Product Name is
+                required.</div>
+            <div *ngIf="productForm.get('productName')?.hasError('minlength')" class="error-message">Product Name must
+                be at least 3 characters long.</div>
+        </div>
+
+
+    </form>
 
 
 </div>
