@@ -5,6 +5,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductV1Component } from './product-v1/product-v1.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { HighlightDirective } from './highlight.directive';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,9 @@ import { AddproductComponent } from './addproduct/addproduct.component';
             ProductComponent,
             ProductlistComponent,
             ProductV1Component,
-            AddproductComponent
-          ],
+            AddproductComponent,
+            HighlightDirective
+          ], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

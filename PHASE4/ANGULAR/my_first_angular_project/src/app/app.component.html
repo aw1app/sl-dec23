@@ -2,6 +2,8 @@
       <h1>Hello, {{ title }}, {{ isFestiveSeasonOnFromParent }}</h1>
       <p [class]="badCurly">Congratulations {{counter}} times !</p>
 
+      <div appHighlight> Directive Demo </div>
+
       T1:<input name="t1" (input)="processInput($event)"> 
       <br> <br> 
        T2(Demo two way binding 1): <input name="t2" (input)="processInput2()"> 
