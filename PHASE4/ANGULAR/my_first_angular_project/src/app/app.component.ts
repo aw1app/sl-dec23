@@ -32,5 +32,8 @@ export class AppComponent {
   //Demo two way binding
   processInput2 = ()  => this.counter++;
 
-  
+  //Demo two way binding
+  t3Text:string="Hello"
+  processInput3 = ()  => this.t3Text = this.t3Text+this.counter++;
+
 }
