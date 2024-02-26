@@ -1,6 +1,6 @@
 <br>
 <div style="border: 4px solid grey;">
-    <p>Add Product</p>
+    <p>Add New Product</p>
 
 
     <form [formGroup]="productForm">
@@ -28,13 +28,14 @@
             <div *ngIf="productForm.get('productPrice')?.hasError('required')" class="error-message">
                 Product Price is required.</div>
             <div *ngIf="productForm.get('productPrice')?.hasError('pattern')" class="error-message">
-                Product Price must be numeric.</div>
+                Product Price must be numeric with up to 2 decimal points.</div>
             <div *ngIf="productForm.get('productPrice')?.hasError('max')" class="error-message">
                 Product Price must be less than 100000.
             </div>
         </div>
 
 
+        <button (click)="addProduct()" [disabled]="productForm.invalid" class="btn btn-primary">Add Product</button>
 
     </form>
 

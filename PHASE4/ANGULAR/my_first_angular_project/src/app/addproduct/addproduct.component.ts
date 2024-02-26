@@ -26,6 +26,9 @@ export class AddproductComponent {
 
   }
 
-
+  addProduct():void{  
+    console.log(this.productForm.value.productName);
+    console.log(this.productForm.value.productPrice);
+  }
 
 }
