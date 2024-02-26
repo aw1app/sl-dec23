@@ -20,7 +20,7 @@ export class AddproductComponent {
     this.productForm = this.fb.group(
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],
-        productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]]       
+        productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000),Validators.min(1000)]]       
       }
     ); 
 

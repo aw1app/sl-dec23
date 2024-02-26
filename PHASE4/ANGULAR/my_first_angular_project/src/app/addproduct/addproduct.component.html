@@ -32,6 +32,9 @@
             <div *ngIf="productForm.get('productPrice')?.hasError('max')" class="error-message">
                 Product Price must be less than 100000.
             </div>
+            <div *ngIf="productForm.get('productPrice')?.hasError('min')" class="error-message">
+                Product Price must be greater than 1000.
+            </div>
         </div>
 
 
