@@ -3,17 +3,17 @@
       <p [class]="badCurly">Congratulations {{counter}} times !</p>
 
       T1:<input name="t1" (input)="processInput($event)"> 
-
+      <br> <br> 
        T2(Demo two way binding 1): <input name="t2" (input)="processInput2()"> 
-
+       <br> <br> 
        T3(Demo two way binding 2): <input name="t3" (input)="processInput3()" [value]="t3Text"> 
 
        <br> <br> 
        T4(Demo two way binding 3): <input name="t4" [(ngModel)]="t4Text"> 
 
-       <br>  data in t4Text is {{t4Text}}
+       <br>  data in t4Text(in the component class) is {{t4Text}}
 
-       <br>
+       <br> <br> 
       <button (click)="changeClass()">Change Class of Congratulations!</button>
 
       <br><br>
@@ -25,7 +25,8 @@
 
       <!-- <product-v1 name="Samsung Mobile" price="12500.75" isFestiveSeasonOn="{{ isFestiveSeasonOn }}"> </product-v1> -->
       <product-v1 name="Samsung Mobile" price="12500.75" [isFestiveSeasonOn]="isFestiveSeasonOnFromParent"> </product-v1>
-      <product-v1 name="Apple iPhone" price="52500.75"> </product-v1>
+      
+      <product-v1 name="Apple iPhone" price="52500.75" (increasePriceEvent)="processIncreasePriceEvent($event)" > </product-v1>
 
       <br>
       <product name="TV1" price=""> </product>

@@ -8,35 +8,39 @@ import { ProductV1Component } from './product-v1/product-v1.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,FormsModule, ProductComponent, ProductlistComponent, ProductV1Component],
+  imports: [RouterOutlet, FormsModule, ProductComponent, ProductlistComponent, ProductV1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title :string = 'my_first_great angular_project';
+  title: string = 'my_first_great angular_project';
 
-  isFestiveSeasonOnFromParent:boolean=false;
+  isFestiveSeasonOnFromParent: boolean = false;
 
 
   // class binding demo
-  badCurly:string="bad";
+  badCurly: string = "bad";
 
-  changeClass = ():void => {
-    this.badCurly="bad curly special";
+  changeClass = (): void => {
+    this.badCurly = "bad curly special";
   }
 
-  f1=(evt:any):void => alert (`You clicked a div!. This div has id=${evt.target.id}`);
+  f1 = (evt: any): void => alert(`You clicked a div!. This div has id=${evt.target.id}`);
 
-  counter:number=1;
-  processInput = (evt:any)  => console.log(`Hi ${this.counter++}. Value in text feild is ${evt.target.value}`);
-
-  //Demo two way binding
-  processInput2 = ()  => this.counter++;
+  counter: number = 1;
+  processInput = (evt: any) => console.log(`Hi ${this.counter++}. Value in text feild is ${evt.target.value}`);
 
   //Demo two way binding
-  t3Text:string="Hello"
-  processInput3 = ()  => this.t3Text = this.t3Text+this.counter++;
+  processInput2 = () => this.counter++;
 
-  t4Text!:string;
+  //Demo two way binding
+  t3Text: string = "Hello"
+  processInput3 = () => this.t3Text = this.t3Text + this.counter++;
+
+  t4Text!: string;
+
+
+  // Process events from child component demo
+  processIncreasePriceEvent = (evt: any) => console.log(`Child has asked to increase the price by ${evt}. `)
 
 }
