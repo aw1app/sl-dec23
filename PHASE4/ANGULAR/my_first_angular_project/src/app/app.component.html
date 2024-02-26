@@ -2,7 +2,12 @@
       <h1>Hello, {{ title }}, {{ isFestiveSeasonOnFromParent }}</h1>
       <p [class]="badCurly">Congratulations!</p>
 
-      <br><button (click)="changeClass()">Change Class of Congratulations!</button>
+      <input name="t1" (input)="processInput($event)"> 
+      <button (click)="changeClass()">Change Class of Congratulations!</button>
+
+      <br><br>
+      <div id="div1" (click)="f1($event)" style="background-color: yellow;">I am div 1. You can click me!</div>
+      <div id="div2" (click)="f1($event)" style="background-color: aquamarine;">I am div 2. You can click me!</div>
 
       <productlist></productlist>
 

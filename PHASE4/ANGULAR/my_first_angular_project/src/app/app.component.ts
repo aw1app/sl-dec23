@@ -18,10 +18,15 @@ export class AppComponent {
 
 
   // class binding demo
-  badCurly:string="bad curly special";
+  badCurly:string="bad";
 
   changeClass = ():void => {
-    this.badCurly="bad";
+    this.badCurly="bad curly special";
   }
+
+  f1=(evt:any):void => alert (`You clicked a div!. This div has id=${evt.target.id}`);
+
+  counter:number=1;
+  processInput = (evt:any)  => console.log(`Hi ${this.counter++}. Value in text feild is ${evt.target.value}`);
 
 }
