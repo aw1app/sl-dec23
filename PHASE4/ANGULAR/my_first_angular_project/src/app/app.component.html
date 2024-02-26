@@ -8,6 +8,11 @@
 
        T3(Demo two way binding 2): <input name="t3" (input)="processInput3()" [value]="t3Text"> 
 
+       <br> <br> 
+       T4(Demo two way binding 3): <input name="t4" [(ngModel)]="t4Text"> 
+
+       <br>  data in t4Text is {{t4Text}}
+
        <br>
       <button (click)="changeClass()">Change Class of Congratulations!</button>
 
