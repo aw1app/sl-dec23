@@ -29,4 +29,8 @@ export class AppComponent {
   counter:number=1;
   processInput = (evt:any)  => console.log(`Hi ${this.counter++}. Value in text feild is ${evt.target.value}`);
 
+  //Demo two way binding
+  processInput2 = ()  => this.counter++;
+
+  
 }

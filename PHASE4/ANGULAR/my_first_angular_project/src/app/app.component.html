@@ -1,8 +1,11 @@
 
       <h1>Hello, {{ title }}, {{ isFestiveSeasonOnFromParent }}</h1>
-      <p [class]="badCurly">Congratulations!</p>
+      <p [class]="badCurly">Congratulations {{counter}} times !</p>
 
-      <input name="t1" (input)="processInput($event)"> 
+      T1:<input name="t1" (input)="processInput($event)"> 
+
+       T2: <input name="t2" (input)="processInput2()"> 
+
       <button (click)="changeClass()">Change Class of Congratulations!</button>
 
       <br><br>
