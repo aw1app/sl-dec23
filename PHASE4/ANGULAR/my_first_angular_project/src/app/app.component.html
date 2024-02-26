@@ -20,16 +20,21 @@
       <div id="div1" (click)="f1($event)" style="background-color: yellow;">I am div 1. You can click me!</div>
       <div id="div2" (click)="f1($event)" style="background-color: aquamarine;">I am div 2. You can click me!</div>
 
+
+      <br>
+      <addproduct></addproduct>
+
+      <br>
       <productlist></productlist>
 
 
       <!-- <product-v1 name="Samsung Mobile" price="12500.75" isFestiveSeasonOn="{{ isFestiveSeasonOn }}"> </product-v1> -->
       <product-v1 name="Samsung Mobile" price="12500.75" [isFestiveSeasonOn]="isFestiveSeasonOnFromParent"> </product-v1>
       
-      <product-v1 name="Apple iPhone" price="52500.75" (increasePriceEvent)="processIncreasePriceEvent($event)" > </product-v1>
+      <product-v1 name="Apple iPhone" price="52500.75" (increasePriceEvent)="processIncreasePriceEvent($event)" ></product-v1>
 
       <br>
-      <product name="TV1" price=""> </product>
+      <product name="TV1" price="">  </product>
 
       <product name="TV2" price="" ></product>
     
