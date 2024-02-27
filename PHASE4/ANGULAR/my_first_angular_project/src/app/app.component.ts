@@ -6,11 +6,12 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductV1Component } from './product-v1/product-v1.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { HighlightDirective } from './highlight.directive';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule,
+  imports: [RouterOutlet, CommonModule, FormsModule,
             ProductComponent,
             ProductlistComponent,
             ProductV1Component,
@@ -51,4 +52,13 @@ export class AppComponent {
   // Process events from child component demo
   processIncreasePriceEvent = (evt: any) => console.log(`Child has asked to increase the price by ${evt}. `)
 
+
+
+  // ngSwitch demo
+  // NgSwitch Directive demo start
+  arr: number[] = [1, 3];
+
+  getLength(): number {
+    return this.arr.length;
+  }
 }

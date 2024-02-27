@@ -1,42 +1,50 @@
+<h1>Hello, {{ title }}, {{ isFestiveSeasonOnFromParent }}</h1>
+<p [class]="badCurly">Congratulations {{counter}} times !</p>
 
-      <h1>Hello, {{ title }}, {{ isFestiveSeasonOnFromParent }}</h1>
-      <p [class]="badCurly">Congratulations {{counter}} times !</p>
+<div appHighlight> Directive Demo </div>
 
-      <div appHighlight> Directive Demo </div>
+T1:<input name="t1" (input)="processInput($event)">
+<br> <br>
+T2(Demo two way binding 1): <input name="t2" (input)="processInput2()">
+<br> <br>
+T3(Demo two way binding 2): <input name="t3" (input)="processInput3()" [value]="t3Text">
 
-      T1:<input name="t1" (input)="processInput($event)"> 
-      <br> <br> 
-       T2(Demo two way binding 1): <input name="t2" (input)="processInput2()"> 
-       <br> <br> 
-       T3(Demo two way binding 2): <input name="t3" (input)="processInput3()" [value]="t3Text"> 
+<br> <br>
+T4(Demo two way binding 3): <input name="t4" [(ngModel)]="t4Text">
 
-       <br> <br> 
-       T4(Demo two way binding 3): <input name="t4" [(ngModel)]="t4Text"> 
+<br> data in t4Text(in the component class) is {{t4Text}}
 
-       <br>  data in t4Text(in the component class) is {{t4Text}}
+<br> <br>
+<button (click)="changeClass()">Change Class of Congratulations!</button>
 
-       <br> <br> 
-      <button (click)="changeClass()">Change Class of Congratulations!</button>
-
-      <br><br>
-      <div id="div1" (click)="f1($event)" style="background-color: yellow;">I am div 1. You can click me!</div>
-      <div id="div2" (click)="f1($event)" style="background-color: aquamarine;">I am div 2. You can click me!</div>
-
-
-      <br>
-      <addproduct></addproduct>
-
-      <br>
-      <productlist></productlist>
+<br><br>
+<div id="div1" (click)="f1($event)" style="background-color: yellow;">I am div 1. You can click me!</div>
+<div id="div2" (click)="f1($event)" style="background-color: aquamarine;">I am div 2. You can click me!</div>
 
 
-      <!-- <product-v1 name="Samsung Mobile" price="12500.75" isFestiveSeasonOn="{{ isFestiveSeasonOn }}"> </product-v1> -->
-      <product-v1 name="Samsung Mobile" price="12500.75" [isFestiveSeasonOn]="isFestiveSeasonOnFromParent"> </product-v1>
-      
-      <product-v1 name="Apple iPhone" price="52500.75" (increasePriceEvent)="processIncreasePriceEvent($event)" ></product-v1>
+<br>
+<addproduct></addproduct>
 
-      <br>
-      <product name="TV1" price="">  </product>
+<br>
+<productlist></productlist>
 
-      <product name="TV2" price="" ></product>
-    
+
+<!-- <product-v1 name="Samsung Mobile" price="12500.75" isFestiveSeasonOn="{{ isFestiveSeasonOn }}"> </product-v1> -->
+<product-v1 name="Samsung Mobile" price="12500.75" [isFestiveSeasonOn]="isFestiveSeasonOnFromParent"> </product-v1>
+
+<product-v1 name="Apple iPhone" price="52500.75" (increasePriceEvent)="processIncreasePriceEvent($event)"></product-v1>
+
+<br>
+<product name="TV1" price=""> </product>
+
+<product name="TV2" price=""></product>
+
+<hr>
+<p>Switch demo</p>
+<div> There are {{getLength()}} numbers.</div>
+<div [ngSwitch]="getLength()">
+      <span *ngSwitchCase="0">No number is present</span>
+      <span *ngSwitchCase="1">One number is present</span>
+      <span *ngSwitchCase="2">Two number are present</span>
+      <span *ngSwitchCase="3">Three number are present</span>
+</div>
