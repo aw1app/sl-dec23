@@ -31,6 +31,22 @@ export class ProductlistV1Component {
 
   }
 
+  deleteProduct = (id: number): void => {
+    this.productServiceV1.deleteProduct(id)
+      .subscribe(
+        result => console.log(result),
+        error => console.error('Error deleting product:', error)
+      );
+
+    //After deletion, Fetch the updated list
+    this.productServiceV1.getAllProducts()
+      .subscribe(
+        data => this.products = data,
+        err => console.error('Error fetching products:', err)
+      );  
+  }
+
+
 
 
 }
