@@ -55,7 +55,6 @@ export class AppComponent {
 
 
   // ngSwitch demo
-  // NgSwitch Directive demo start
   arr: number[] = [1, 3];
 
   getLength(): number {
