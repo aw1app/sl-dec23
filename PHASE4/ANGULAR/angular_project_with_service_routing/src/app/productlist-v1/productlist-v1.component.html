@@ -1,0 +1,27 @@
+<!-- <div style="border: 2px solid green;"> -->
+
+    List of Products (JSON Server)
+
+    <div *ngIf="products.length>0;else elseBlock">
+        <table border="2" >
+    
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Product Name</th>
+                    <th>Price</th> 
+                </tr>
+            </thead>
+    
+            <tr *ngFor="let prod of products; index as i">
+                <td> {{i+1}}</td>
+                <td> {{prod.name}}</td>
+                <td> {{prod.price}}</td> 
+            </tr>
+    
+        </table>
+    </div>
+     
+    <ng-template #elseBlock> No products on Sale!! Visit a day later. </ng-template >
+    
+    <!-- </div> -->

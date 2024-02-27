@@ -3,6 +3,7 @@
       { "id": "1", "name": "HP Mouse", "price": 100.5 },
       { "id": "2", "name": "Dell Monitor", "price": 10000 },
       { "id": "3", "name": "HP Monitor", "price": 10505.25 },
-      { "id": "4", "name": "Dell Laptop", "price": 51000 }
+      { "id": "4", "name": "Dell Laptop", "price": 51000 },
+      { "id": "5", "name": "Phillips Mixer Grinder", "price": 5000 }
     ]
 }
