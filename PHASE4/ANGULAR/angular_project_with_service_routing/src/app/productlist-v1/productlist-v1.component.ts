@@ -14,16 +14,16 @@ export class ProductlistV1Component {
 
   products!: Product[];
 
-  productService!: ProductV1Service;
+  productServiceV1!: ProductV1Service;
 
   constructor(productService: ProductV1Service) {
-    this.productService = productService;
+    this.productServiceV1 = productService;
   }
 
 
   ngOnInit(): void {
 
-    this.productService.getAllProducts()
+    this.productServiceV1.getAllProducts()
       .subscribe(
         data => this.products = data,
         err => console.error('Error fetching products:', err)
