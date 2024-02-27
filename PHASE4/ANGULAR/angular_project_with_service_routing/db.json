@@ -1,0 +1,6 @@
+{
+    "products": [
+      { "id": "1", "name": "HP Mouse", "price": 1005 },
+      { "id": "2", "name": "Dell Monitor", "price": 1000 }
+    ]
+}

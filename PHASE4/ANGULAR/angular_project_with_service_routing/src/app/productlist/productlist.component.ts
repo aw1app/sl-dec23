@@ -30,4 +30,6 @@ export class ProductlistComponent implements OnInit {
     this.products = this.productService.getAllProducts();
    }
 
+  
+
 }

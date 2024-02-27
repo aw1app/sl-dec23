@@ -8,7 +8,7 @@ export class ProductService {
 
   products: Product[] = [];
 
-  constructor() { 
+  constructor() {
     this.products[0] = new Product(1, "HP Mouse", "../../assets/images/HPMouse.JPG", 250, true);
     this.products[1] = new Product(2, "iPhone", "../../assets/images/Apple-Phone.JPG", 50250, true);
     this.products[2] = new Product(3, "Dell Monitor", "../../assets/images/dell.JPG", 15250, true);
@@ -28,7 +28,9 @@ export class ProductService {
     this.products.push(new Product(this.productIndex++, name, "../../assets/images/Apple-Phone.JPG", price, true));
 
   deleteProduct = (id: number): void => {
-      this.products = this.products.filter(product => product.id !== id);
-    };  
+    this.products = this.products.filter(product => product.id !== id);
+  };
+
+ 
 
 }

@@ -9,7 +9,8 @@
                 <tr>
                     <th>Sl No</th>
                     <th>Product Name</th>
-                    <th>Price</th>
+                    <th>Price</th> 
+                    <th> EDIT </th>                   
                     <th> DELETE </th>
                 </tr>
             </thead>
@@ -17,7 +18,7 @@
             <tr *ngFor="let prod of products; index as i">
                 <td> {{i+1}}</td>
                 <td> {{prod.name}}</td>
-                <td> {{prod.price}}</td>
+                <td> {{prod.price}}</td>                              
                 <td> <button (click)="deleteProduct(prod.id)" > DELETE </button></td>
             </tr>
     
