@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'addproduct',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule],
+  imports: [CommonModule, FormsModule,ReactiveFormsModule],
   templateUrl: './addproduct.component.html',
   styleUrl: './addproduct.component.css'
 })
@@ -17,7 +18,8 @@ export class AddproductComponent {
 
   constructor(productService: ProductService, fb: FormBuilder) {
     this.productService = productService;
-
+    this.fb =fb;
+    
     this.productForm = this.fb.group(
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],
