@@ -1,15 +1,22 @@
-<addproduct-v1></addproduct-v1>
+<div class="container">
+    <h1 style="text-align: center;">Welcome to ECommerce</h1>
+
+
+    <a [routerLink]="['/list-products']"> List </a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a [routerLink]="['/add-product']"> Add NewProduct </a> &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <br><hr><br>
+
+    <router-outlet></router-outlet>
+
+</div>
+
+<!-- <addproduct-v1></addproduct-v1>
 <br>
-
 <productlist-v1></productlist-v1>
-
 
 <hr><hr><br>
 <addproduct></addproduct>
 
 <br>
-
-<productlist></productlist>
-
-<br>
-
+<productlist></productlist> -->
