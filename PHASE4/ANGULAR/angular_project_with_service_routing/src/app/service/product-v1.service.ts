@@ -23,10 +23,17 @@ export class ProductV1Service {
     return this.httpClient.get<Product[]>(`${this.restAPIServerBaseUrl}/products`);
   }
 
+  //Details API
+  getProduct = (id: number): Observable<Product> => {
+    return this.httpClient.get<Product>(`${this.restAPIServerBaseUrl}/products/${id}`);
+  }
+
   //Delete API
   deleteProduct = (id: number): Observable<string> => {
     return this.httpClient.delete<string>(`${this.restAPIServerBaseUrl}/products/${id}`);
   };
+
+ 
 
   
   // Create API
