@@ -31,6 +31,7 @@ export class ProductlistV1Component {
 
   }
 
+  
   deleteProduct = (id: number): void => {
     this.productServiceV1.deleteProduct(id)
       .subscribe(

@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../model/product';
 import { ProductV1Service } from '../service/product-v1.service';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-v1',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './product-v1.component.html',
   styleUrl: './product-v1.component.css'
 })
@@ -36,7 +37,7 @@ export class ProductV1Component implements OnInit {
             err => console.log(err)
           );
         }
-        
+
       }
 
     );
