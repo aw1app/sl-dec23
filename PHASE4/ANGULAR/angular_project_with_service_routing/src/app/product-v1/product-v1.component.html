@@ -1,5 +1,8 @@
 <div class="product-card" *ngIf="product">
 
+    <img [src]="product.productImage" height="200" width="200" class="rounded-circle"> 
+    <img [src]="product.productImage" height="200" width="200" class="img-thumbnail">
+
     <p>Product ID: {{ product.id }}</p>
 
     <p>Name: {{ product.name | uppercase  }}
@@ -7,7 +10,7 @@
     <p class="price">Price: {{ product.price | currency:'USD' }} 
 
 
-    <br>JSON of this product:
-    {{ product | json }}
+    <!-- <br>JSON of this product:
+    {{ product | json }} -->
 
 </div>

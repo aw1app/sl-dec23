@@ -27,7 +27,8 @@ export class AddproductV1Component {
     this.productForm = this.fb.group(
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],
-        productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]]
+        productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]],
+        productImage: ['']
       }
     );
   }
@@ -35,7 +36,8 @@ export class AddproductV1Component {
   addProduct= ():void =>  {
     let name=this.productForm.value.productName;
     let price = this.productForm.value.productPrice;
-    this.productV1Service.addProduct(name,price).subscribe(
+    let image = this.productForm.value.productImage ;
+    this.productV1Service.addProduct(name,price,image).subscribe(
       result => this.router.navigate(['/list-products']),
       error => console.error('Error adding product:', error)
     );

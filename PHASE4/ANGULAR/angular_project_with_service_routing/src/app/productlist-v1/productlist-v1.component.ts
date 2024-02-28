@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../model/product';
 import { ProductV1Service } from '../service/product-v1.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'productlist-v1',
@@ -15,9 +16,11 @@ export class ProductlistV1Component {
   products!: Product[];
 
   productServiceV1!: ProductV1Service;
+  router:Router
 
-  constructor(productService: ProductV1Service) {
+  constructor(router:Router, productService: ProductV1Service) {
     this.productServiceV1 = productService;
+    this.router=router;
   }
 
 
@@ -31,25 +34,16 @@ export class ProductlistV1Component {
 
   }
 
-  
+
   deleteProduct = (id: number): void => {
     this.productServiceV1.deleteProduct(id)
       .subscribe(
-        result => console.log(result),
+        result => this.router.navigate(['/list-products']),
         error => console.error('Error deleting product:', error)
       );
 
-    //After deletion, Fetch the updated list
-    this.productServiceV1.getAllProducts()
-      .subscribe(
-        data => this.products = data,
-        err => console.error('Error fetching products:', err)
-      );  
+   
   }
-
-  
-
-
 
 
 }

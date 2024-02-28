@@ -39,9 +39,7 @@ export class ProductV1Component implements OnInit {
         }
 
       }
-
     );
-
   }
 
 

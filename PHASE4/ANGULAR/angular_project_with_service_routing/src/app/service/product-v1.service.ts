@@ -39,19 +39,20 @@ export class ProductV1Service {
   // Create API
   newIdsStart:number=10002;
 
-  addProduct(name: string, price: number): Observable<any>  {
+  addProduct(name: string, price: number, image:string): Observable<any>  {
 
     this.newIdsStart=this.newIdsStart+1;
 
     let id: number = this.newIdsStart;   
 
-    //let prod: Product = new Product(id, name," ", price, true);
+    //let prod: Product = new Product(id, name,image, price, true);
     //const prodJSON = JSON.stringify(prod);
 
     let prodJSON={
       "id":""+id,
       "name":name,
-      "price":price
+      "price":price,
+      "productImage":image,
     };
 
     const headers = { 'content-type': 'application/json' };

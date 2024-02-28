@@ -1,24 +1,10 @@
 {
   "products": [
     {
-      "id": "3",
-      "name": "HP Monitor",
-      "price": 10505.25
-    },
-    {
       "id": "10003",
-      "name": "abc",
-      "price": "434"
-    },
-    {
-      "id": "10003",
-      "name": "dsdsds",
-      "price": "54545"
-    },
-    {
-      "id": "10004",
-      "name": "ddfdf",
-      "price": "545"
+      "name": "HP Mouse",
+      "price": "400",
+      "productImage": "assets/images/hp-mouse.JPG"
     }
   ],
   "user": [
