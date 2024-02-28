@@ -20,12 +20,14 @@ export class UpdateproductComponent {
 
   product!:Product;
 
+  router: Router;
   route: ActivatedRoute;
 
-  constructor(route: ActivatedRoute, productService: ProductV1Service, fb: FormBuilder, ) {
+  constructor(router: Router, route: ActivatedRoute, productService: ProductV1Service, fb: FormBuilder, ) {
     this.productV1Service = productService;
     this.fb =fb;
-    this.route=route;    
+    this.route=route; 
+    this.router=router;
   }
 
   ngOnInit(): void {
@@ -61,7 +63,7 @@ export class UpdateproductComponent {
     let price = this.productForm.value.productPrice;
     let image = this.productForm.value.productImage ;
     this.productV1Service.updateProduct(this.product.id,name,price,image).subscribe(
-      result => console.log(),
+      result => this.router.navigate(['/list-products']),
       error => console.error('Error adding product:', error)
     );
 
