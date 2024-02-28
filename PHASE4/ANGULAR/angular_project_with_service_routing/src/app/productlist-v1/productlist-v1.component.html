@@ -1,9 +1,9 @@
 <!-- <div style="border: 2px solid green;"> -->
-
+<div class="container">
     List of Products (JSON Server)
 
     <div *ngIf="products.length>0;else elseBlock">
-        <table border="2" >
+        <table class="table striped" >
     
             <thead>
                 <tr>
@@ -18,7 +18,7 @@
                 <td> {{i+1}}</td>
                 <td> {{prod.name}}</td>
                 <td> {{prod.price}}</td>                              
-                <td> {{prod.id}} <button (click)="deleteProduct(prod.id)" > DELETE </button></td>
+                <td> <button (click)="deleteProduct(prod.id)" class="btn btn-danger"> DELETE </button></td>
             </tr>
     
         </table>
@@ -26,4 +26,4 @@
      
     <ng-template #elseBlock> No products on Sale!! Visit a day later. </ng-template >
     
-    <!-- </div> -->
+    </div>
