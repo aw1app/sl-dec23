@@ -2,32 +2,37 @@
 <div class="container">
     List of Products (JSON Server)
 
-    <div *ngIf="products.length>0;else elseBlock">
-        <table class="table striped" >
-    
-            <thead>
-                <tr>
-                    <th>Sl No</th>
-                    <th>Product Name</th>
-                    <th>Price</th>   
-                    <th> DETAILS </th> 
-                    <th> UPDATE </th>               
-                    <th> DELETE </th>
-                </tr>
-            </thead>
-    
-            <tr *ngFor="let prod of products; index as i">
-                <td> {{i+1}}</td>
-                <td> {{prod.name}}</td>
-                <td> {{prod.price}}</td> 
-                <td> <a href="product/{{prod.id}}" class="btn btn-success"> DETAILS </a></td> 
-                <td> <a href="update-product/{{prod.id}}" > UPDATE </a></td>                            
-                <td> <button (click)="deleteProduct(prod.id)" class="btn btn-danger"> DELETE </button></td>
-            </tr>
-    
-        </table>
+    <div class="row gx-50 px-4">
+        <div class="p-2 col-9">
+            <div *ngIf="products.length>0;else elseBlock">
+                <table class="table table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th>Sl No</th>
+                            <th>Product Name</th>
+                             <th>Price</th>
+                            <th> DETAILS </th>
+                            <th> UPDATE </th>
+                            <th> DELETE </th>
+                        </tr>
+                    </thead>
+
+                    <tr *ngFor="let prod of products; index as i">
+                        <td> {{i+1}}</td>
+                        <td> {{prod.name}}</td>
+                        <td> {{prod.price}}</td>
+                        <td> <a href="product/{{prod.id}}" class="badge bg-info"> DETAILS </a></td>
+                        <td> <a href="update-product/{{prod.id}}" class="badge bg-info"> UPDATE </a></td>
+                        <td> <button (click)="deleteProduct(prod.id)" class="badge bg-danger"> DELETE </button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <ng-template #elseBlock> No products on Sale!! Visit a day later. </ng-template>
     </div>
-     
-    <ng-template #elseBlock> No products on Sale!! Visit a day later. </ng-template >
-    
-    </div>
+
+</div>
