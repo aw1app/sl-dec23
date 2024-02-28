@@ -18,7 +18,7 @@
                 <td> {{i+1}}</td>
                 <td> {{prod.name}}</td>
                 <td> {{prod.price}}</td>                              
-                <td> <button (click)="deleteProduct(prod.id)" > DELETE </button></td>
+                <td> {{prod.id}} <button (click)="deleteProduct(prod.id)" > DELETE </button></td>
             </tr>
     
         </table>

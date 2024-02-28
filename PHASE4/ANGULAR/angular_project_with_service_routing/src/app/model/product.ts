@@ -8,7 +8,7 @@ export class Product {
     productImage: string = "";
     productInStock:boolean=true;
 
-    constructor(id: number =-1, productName: string, productImage: string, price: number, productInStock:boolean) {
+    constructor(id: number =-1, productName: string, productImage: string="", price: number, productInStock:boolean=true) {
         this.id = id;
         this.name = productName;
         this.productImage = productImage;

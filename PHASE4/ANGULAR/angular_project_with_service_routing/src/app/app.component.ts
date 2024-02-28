@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ProductlistV1Component } from './productlist-v1/productlist-v1.component';
+import { AddproductV1Component } from './addproduct-v1/addproduct-v1.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductlistComponent, AddproductComponent, ProductlistV1Component],
+  imports: [RouterOutlet, ProductlistComponent, AddproductComponent, ProductlistV1Component,
+    AddproductV1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

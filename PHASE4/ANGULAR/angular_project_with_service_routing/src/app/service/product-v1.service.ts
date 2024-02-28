@@ -28,4 +28,29 @@ export class ProductV1Service {
     return this.httpClient.delete<string>(`${this.restAPIServerBaseUrl}/products/${id}`);
   };
 
+  
+  // Create API
+  newIdsStart:number=10002;
+
+  addProduct(name: string, price: number): Observable<any>  {
+
+    this.newIdsStart=this.newIdsStart+1;
+
+    let id: number = this.newIdsStart;   
+
+    //let prod: Product = new Product(id, name," ", price, true);
+    //const prodJSON = JSON.stringify(prod);
+
+    let prodJSON={
+      "id":""+id,
+      "name":name,
+      "price":price
+    };
+
+    const headers = { 'content-type': 'application/json' };
+    
+
+    return this.httpClient.post(`${this.restAPIServerBaseUrl}/products`, prodJSON, { 'headers': headers });
+  }
+
 }
