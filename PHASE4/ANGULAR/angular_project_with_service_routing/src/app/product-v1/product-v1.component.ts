@@ -10,9 +10,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './product-v1.component.html',
   styleUrl: './product-v1.component.css'
 })
-export class ProductV1Component implements OnInit{
+export class ProductV1Component implements OnInit {
 
-  product!:Product;
+  product!: Product;
   productService: ProductV1Service;
 
   route!: ActivatedRoute;
@@ -24,11 +24,25 @@ export class ProductV1Component implements OnInit{
 
 
   ngOnInit(): void {
-    
-    this.productService.
+
+    this.route.paramMap.subscribe(
+
+      params => {
+        const productId = params.get('productId');
+
+        if (productId !== null) {
+          this.productService.getProduct(Number(productId)).subscribe(
+            prod => this.product = prod,
+            err => console.log(err)
+          );
+        }
+        
+      }
+
+    );
 
   }
 
-  
+
 
 }
