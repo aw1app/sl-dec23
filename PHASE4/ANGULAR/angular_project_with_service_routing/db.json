@@ -9,6 +9,31 @@
       "id": "10003",
       "name": "abc",
       "price": "434"
+    },
+    {
+      "id": "10003",
+      "name": "dsdsds",
+      "price": "54545"
+    },
+    {
+      "id": "10004",
+      "name": "ddfdf",
+      "price": "545"
+    }
+  ],
+  "user": [
+    {
+      "name": "Steve",
+      "age": "21",
+      "username": "steve123",
+      "password": "qwerty123",
+      "address": "Street 12, New Delhi",
+      "referralCode": "R123",
+      "isCabRider": "Yes",
+      "panCard": "GUE377IEI0",
+      "rc": "R123",
+      "dl": "DL59839",
+      "vehicle": "Toyota Innova"
     }
   ]
 }

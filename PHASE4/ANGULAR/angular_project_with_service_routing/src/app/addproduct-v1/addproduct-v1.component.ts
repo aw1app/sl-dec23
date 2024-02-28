@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductV1Service } from '../service/product-v1.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'addproduct-v1',
@@ -16,9 +17,12 @@ export class AddproductV1Component {
   productV1Service!: ProductV1Service;
   fb!: FormBuilder;
 
-  constructor(productService: ProductV1Service, fb: FormBuilder) {
+  router: Router;
+
+  constructor(router: Router, productService: ProductV1Service, fb: FormBuilder, ) {
     this.productV1Service = productService;
     this.fb =fb;
+    this.router=router;
     
     this.productForm = this.fb.group(
       {
@@ -32,9 +36,10 @@ export class AddproductV1Component {
     let name=this.productForm.value.productName;
     let price = this.productForm.value.productPrice;
     this.productV1Service.addProduct(name,price).subscribe(
-      result => console.log(result),
+      result => this.router.navigate(['/list-products']),
       error => console.error('Error adding product:', error)
     );
+
   }
 
 }
