@@ -1,10 +1,16 @@
 {
   "products": [
     {
-      "id": "10003",
-      "name": "HP Mouse",
-      "price": "4009",
+      "id": "10000",
+      "name": "HP Mouse2",
+      "price": "4019",
       "productImage": "assets/images/hp-mouse.JPG"
+    },
+    {
+      "id": "10001",
+      "name": "Apple iPhone V2",
+      "price": "77667",
+      "productImage": "assets/images/apple-iphone.JPG"
     }
   ],
   "user": [
