@@ -59,8 +59,8 @@ export class UpdateproductComponent {
   updateProduct= ():void =>  {
     let name=this.productForm.value.productName;
     let price = this.productForm.value.productPrice;
-    let image = "assets/images/"+this.productForm.value.productImage ;
-    this.productV1Service.addProduct(name,price,image).subscribe(
+    let image = this.productForm.value.productImage ;
+    this.productV1Service.updateProduct(this.product.id,name,price,image).subscribe(
       result => console.log(),
       error => console.error('Error adding product:', error)
     );

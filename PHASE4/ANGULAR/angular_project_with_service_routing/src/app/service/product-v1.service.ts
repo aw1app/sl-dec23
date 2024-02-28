@@ -61,4 +61,17 @@ export class ProductV1Service {
     return this.httpClient.post(`${this.restAPIServerBaseUrl}/products`, prodJSON, { 'headers': headers });
   }
 
+  updateProduct(id:number,name: string, price: number, image:string): Observable<any>  {
+    let prodJSON={
+      "id":""+id,
+      "name":name,
+      "price":price,
+      "productImage":image,
+    };
+
+    const headers = { 'content-type': 'application/json' };    
+
+    return this.httpClient.put(`${this.restAPIServerBaseUrl}/products/${id}`, prodJSON, { 'headers': headers });
+  }
+
 }
