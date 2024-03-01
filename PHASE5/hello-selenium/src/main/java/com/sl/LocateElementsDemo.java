@@ -63,6 +63,8 @@ public class LocateElementsDemo {
 		String nextButtonXPath = "/html/body/div[1]/div[1]/div[2]/div/c-wiz/div[2]/div[2]/div/div[2]/div/div/div/div/button/span";
 		WebElement nextButton = driver.findElement(By.xpath(nextButtonXPath));
 		nextButton.click();
+		
+		//CHALLENGE 2: Automate selecting "June" for Month drop down
 
 	}
 
