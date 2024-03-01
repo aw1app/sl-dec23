@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class LocateElementsDemo {
 
@@ -17,7 +18,7 @@ public class LocateElementsDemo {
 
 		googleNewAccCreation();
 
-		Thread.sleep(30000);// 30 secs sleep
+		Thread.sleep(30000);// 30 secs sleep  (remove this in your commercial/remove projects)
 		driver.close(); // close the automated browser
 
 	}
@@ -55,7 +56,7 @@ public class LocateElementsDemo {
 		WebElement lastNameTF = driver.findElement(By.id("lastName"));
 		lastNameTF.sendKeys("Varma");
 		
-		Thread.sleep(5000);// 5 secs pause
+		Thread.sleep(5000);// 5 secs pause (remove this in your commercial/remove projects)
 		
 		// Locate the button using class
 		//WebElement nextButton = driver.findElement(By.className("VfPpkd-vQzf8d")); // Not working
@@ -64,7 +65,13 @@ public class LocateElementsDemo {
 		WebElement nextButton = driver.findElement(By.xpath(nextButtonXPath));
 		nextButton.click();
 		
+		Thread.sleep(5000);// 5 secs pause (remove this in your commercial/remove projects)
 		//CHALLENGE 2: Automate selecting "June" for Month drop down
+		WebElement monthSelectElement = driver.findElement(By.id("month"));
+		Select select = new Select(monthSelectElement);
+		//select.selectByValue("6");// Select "June" - works
+		select.selectByVisibleText("June"); // Select "June" - works
+		
 
 	}
 
