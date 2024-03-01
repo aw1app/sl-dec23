@@ -1,5 +1,7 @@
 package com.sl;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,6 +49,15 @@ public class LocateElementsDemo {
 		
 		
 		System.out.println("Successfully located Gender radio feild and set it to value Female");
+		
+		//Locating image by its tag names
+		List<WebElement> allImages = driver.findElements(By.tagName("img"));
+		
+		WebElement fb_logo_image = allImages.get(0);
+		
+		// Print the src of fb logo
+		String srcOfFbLogoImage = fb_logo_image.getAttribute("src");
+		System.out.println("FB logo src ="+srcOfFbLogoImage);
 		
 	}
 
