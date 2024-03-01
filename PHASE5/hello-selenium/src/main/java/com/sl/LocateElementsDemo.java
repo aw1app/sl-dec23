@@ -40,7 +40,7 @@ public class LocateElementsDemo {
 	}
 
 	// google New Acc Creation
-	public static void googleNewAccCreation() {
+	public static void googleNewAccCreation() throws InterruptedException {
 
 		String baseUrl = "https://accounts.google.com/signup/v2/createaccount?flowEntry=SignUp";
 
@@ -54,6 +54,15 @@ public class LocateElementsDemo {
 		// Locate the last name feild using name
 		WebElement lastNameTF = driver.findElement(By.id("lastName"));
 		lastNameTF.sendKeys("Varma");
+		
+		Thread.sleep(5000);// 5 secs pause
+		
+		// Locate the button using class
+		//WebElement nextButton = driver.findElement(By.className("VfPpkd-vQzf8d")); // Not working
+	
+		String nextButtonXPath = "/html/body/div[1]/div[1]/div[2]/div/c-wiz/div[2]/div[2]/div/div[2]/div/div/div/div/button/span";
+		WebElement nextButton = driver.findElement(By.xpath(nextButtonXPath));
+		nextButton.click();
 
 	}
 
