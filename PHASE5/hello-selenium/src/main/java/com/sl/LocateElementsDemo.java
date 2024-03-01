@@ -14,16 +14,16 @@ public class LocateElementsDemo {
 
 		driver = new ChromeDriver();
 
-		// faceBookAcctCreation();
+		faceBookAcctCreation();
 
-		googleNewAccCreation();
+		//googleNewAccCreation();
 
 		Thread.sleep(30000);// 30 secs sleep  (remove this in your commercial/remove projects)
 		driver.close(); // close the automated browser
 
 	}
 
-	public static void faceBookAcctCreation() {
+	public static void faceBookAcctCreation() throws InterruptedException {
 
 		String baseUrl = "https://www.facebook.com/r.php?locale=en_GB&display=page";
 
@@ -38,6 +38,16 @@ public class LocateElementsDemo {
 		// Locate by name
 		WebElement firstNameElement = driver.findElement(By.name("firstname"));
 		firstNameElement.sendKeys("abcdef");
+		
+		Thread.sleep(5000);// 30 secs sleep  (remove this in your commercial/remove projects)
+		
+		// Locate the Gender using CSS selector and set it to M/F/C
+		WebElement gender =  driver.findElement(By.cssSelector("input[type='radio'][value='1']")); 
+		gender.click(); // selects Female
+		
+		
+		System.out.println("Successfully located Gender radio feild and set it to value Female");
+		
 	}
 
 	// google New Acc Creation
