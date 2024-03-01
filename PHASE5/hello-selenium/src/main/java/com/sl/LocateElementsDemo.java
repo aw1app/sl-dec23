@@ -59,6 +59,15 @@ public class LocateElementsDemo {
 		String srcOfFbLogoImage = fb_logo_image.getAttribute("src");
 		System.out.println("FB logo src ="+srcOfFbLogoImage);
 		
+		
+		//Locate a link and click it by matching its text.
+		WebElement haveAnAcctAlreadyLinkText = driver.findElement(By.linkText("Already have an account?"));
+		
+		Thread.sleep(5000);// 30 secs sleep  (remove this in your commercial/remove projects)
+		System.out.println("Successfully located \"Already have an account?\" link!! ");
+		
+		haveAnAcctAlreadyLinkText.click();
+		
 	}
 
 	// google New Acc Creation
