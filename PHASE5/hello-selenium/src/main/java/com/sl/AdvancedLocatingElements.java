@@ -33,10 +33,42 @@ public class AdvancedLocatingElements {
 
 		// CHALLENGE : demoAdvancedCSSSelector();
 		
-		demoDropDownList();
+		//demoDropDownList();
+		
+		demoTable();
 
 		// driver.close();
 
+	}
+	
+	static void demoTable() {
+		
+		String baseUrl = "https://www.nyse.com/ipo-center/recent-ipo";
+		driver.get(baseUrl);
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		String tableXPath = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table";
+		
+		String tableXPathBody = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody";
+		
+		
+		List<WebElement> allRowsWebElements = driver.findElements(By.xpath(tableXPathBody+"/tr"));
+		
+		int noOfRows = allRowsWebElements.size();
+		System.out.printf("\n No of rows in the IPO table : %s", noOfRows);
+		
+		// Get the  BBB foods 
+		String R2C3TableCellXpath =  "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr[2]/td[3]";
+		//WebElement R2C3TableCellXpathWebElement = driver.findElement(By.xpath(R2C3TableCellXpath));
+		
+			
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		WebElement R2C3TableCellXpathWebElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(R2C3TableCellXpath)));
+		
+		System.out.printf(" Text in 2R 3C is ",  R2C3TableCellXpathWebElement.getText());			
+		
 	}
 
 	static void demoDropDownList() {
