@@ -1,6 +1,7 @@
 package com.sl;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -25,12 +26,26 @@ public class AdvancedLocatingElements {
 		
 		//waitDemo();
 		
-		locateMobileTF();
+		// locateMobileTF();
+		
+		demoAdvancedXPathCSSSelector();
 		
 		//driver.close();
 
 	}
 
+	
+	static void demoAdvancedXPathCSSSelector() {
+		String baseUrl = "file:///F:/Users/home/git/sl-dec23/PHASE5/hello-selenium/src/main/resources/test.html";
+		driver.get(baseUrl);
+		
+		List<WebElement> inputTagElements = driver.findElements(By.xpath("//input[contains(@id, 'admin')]"));
+		
+		System.out.println(" No of //input[contains(@id, 'admin')] elements "+ inputTagElements.size());
+		
+		
+	}
+	
 	// wait demo
 	public static void waitDemo() {
 		String baseUrl = "https://www.facebook.com/r.php?locale=en_GB&display=page";
