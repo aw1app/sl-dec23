@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -33,51 +34,81 @@ public class AdvancedLocatingElements {
 		// demoAdvancedXPathSelector();
 
 		// CHALLENGE : demoAdvancedCSSSelector();
+
+		// demoDropDownList();
+
+		// demoTable();
 		
-		//demoDropDownList();
-		
-		demoTable();
+		demoExternalElementsAlerts();
 
 		// driver.close();
 
 	}
-	
-	static void demoTable() throws InterruptedException {
+
+	// External elements (JavaScript alerts)
+	static void demoExternalElementsAlerts() throws InterruptedException {
+		//String baseUrl = "https://github.com/aw1app/sl-dec23/blob/main/PHASE5/hello-selenium/src/main/resources/test.html";
+		 String baseUrl =
+		 "file:///F:/Users/home/git/sl-dec23/PHASE5/hello-selenium/src/main/resources/test.html";
+		driver.get(baseUrl);
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.linkText("See an example alert")).click();
+
+		// alert will appear now, may be in 10 secs
+		WebDriverWait explicitWaitForAlert = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		// Wait for the alert to be displayed
+		explicitWaitForAlert.until(ExpectedConditions.alertIsPresent());
 		
+		Alert alert = driver.switchTo().alert();
+		
+		System.out.printf("\n alert text is %s \n", alert.getText());
+		
+		Thread.sleep(10000);
+
+		alert.accept();
+	}
+
+	// Table Automation
+	// Also JS code execution illustration
+	static void demoTable() throws InterruptedException {
+
 		String baseUrl = "https://www.nyse.com/ipo-center/recent-ipo";
 		driver.get(baseUrl);
-		
+
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
+
 		String tableXPath = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table";
-		
+
 		String tableXPathBody = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody";
-		
-		
-		List<WebElement> allRowsWebElements = driver.findElements(By.xpath(tableXPathBody+"/tr"));
-		
+
+		List<WebElement> allRowsWebElements = driver.findElements(By.xpath(tableXPathBody + "/tr"));
+
 		int noOfRows = allRowsWebElements.size();
 		System.out.printf("\n No of rows in the IPO table : %s", noOfRows);
-		
-		// Get the  BBB foods 
-		String R2C3TableCellXpath =  "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr[2]/td[3]";
-		
-		//WebElement R2C3TableCellXpathWebElement = driver.findElement(By.xpath(R2C3TableCellXpath));
-		
-			
+
+		// Get the BBB foods
+		String R2C3TableCellXpath = "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr[2]/td[3]";
+
+		// WebElement R2C3TableCellXpathWebElement =
+		// driver.findElement(By.xpath(R2C3TableCellXpath));
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-		WebElement R2C3TableCellXpathWebElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(R2C3TableCellXpath)));
-		
-		System.out.printf(" Text in 2R 3C is %s",  R2C3TableCellXpathWebElement.getText());	
-		
+		WebElement R2C3TableCellXpathWebElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(R2C3TableCellXpath)));
+
+		System.out.printf(" Text in 2R 3C is %s", R2C3TableCellXpathWebElement.getText());
+
 		// Change the Text in 2R 3C to Reliance Fresh
-		// We can write and execute any JS code like this:		
-		String myJS ="var e =document.querySelector('body > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(9) > table > tbody > tr:nth-child(2) > td:nth-child(3)'); e.textContent='Reliance Fresh'";
+		// We can write and execute any JS code like this:
+		String myJS = "var e =document.querySelector('body > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(9) > table > tbody > tr:nth-child(2) > td:nth-child(3)'); e.textContent='Reliance Fresh'";
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		
+
 		Thread.sleep(10000);// Remove this from your real projects
-		
+
 		jsExecutor.executeScript(myJS);
 	}
 
