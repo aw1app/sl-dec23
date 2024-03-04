@@ -39,11 +39,38 @@ public class AdvancedLocatingElements {
 
 		// demoTable();
 		
-		demoExternalElementsAlerts();
+		//demoExternalElementsAlerts();
+		
+		demoExternalElementsIFrame();
 
 		// driver.close();
 
 	}
+	
+	// IFRAME AUTOMATION
+	static void demoExternalElementsIFrame() throws InterruptedException {
+		driver.get("file:///F:/Users/home/git/sl-dec23/PHASE5/hello-selenium/src/main/resources/test.html");
+
+		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(10000);
+		
+		driver.switchTo().frame("myframe");
+		
+		String searchTF = "/html/body/header/nav/div/div/div/div/button/span[1]/span";
+		driver.findElement(By.xpath(searchTF)).click();
+		
+		Thread.sleep(5000);
+		
+		WebDriverWait explicitWaitForAlert = new WebDriverWait(driver, Duration.ofSeconds(30));
+		
+		WebElement searchInputPopup = explicitWaitForAlert.until(ExpectedConditions.visibilityOfElementLocated(By.id("docsearch-input")));
+		
+		searchInputPopup.sendKeys("hello");
+		
+		driver.switchTo().defaultContent();
+		
+	}
+	
 
 	// External elements (JavaScript alerts)
 	static void demoExternalElementsAlerts() throws InterruptedException {
