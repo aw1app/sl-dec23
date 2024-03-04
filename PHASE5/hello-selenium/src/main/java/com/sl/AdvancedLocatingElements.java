@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,7 +42,7 @@ public class AdvancedLocatingElements {
 
 	}
 	
-	static void demoTable() {
+	static void demoTable() throws InterruptedException {
 		
 		String baseUrl = "https://www.nyse.com/ipo-center/recent-ipo";
 		driver.get(baseUrl);
@@ -60,15 +61,24 @@ public class AdvancedLocatingElements {
 		
 		// Get the  BBB foods 
 		String R2C3TableCellXpath =  "/html/body/div[1]/div[4]/div[2]/div[3]/div[1]/div[4]/table/tbody/tr[2]/td[3]";
+		
 		//WebElement R2C3TableCellXpathWebElement = driver.findElement(By.xpath(R2C3TableCellXpath));
 		
 			
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
 		WebElement R2C3TableCellXpathWebElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(R2C3TableCellXpath)));
 		
-		System.out.printf(" Text in 2R 3C is ",  R2C3TableCellXpathWebElement.getText());			
+		System.out.printf(" Text in 2R 3C is %s",  R2C3TableCellXpathWebElement.getText());	
 		
+		// Change the Text in 2R 3C to Reliance Fresh
+		// We can write and execute any JS code like this:		
+		String myJS ="var e =document.querySelector('body > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(9) > table > tbody > tr:nth-child(2) > td:nth-child(3)'); e.textContent='Reliance Fresh'";
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		
+		Thread.sleep(10000);// Remove this from your real projects
+		
+		jsExecutor.executeScript(myJS);
 	}
 
 	static void demoDropDownList() {
