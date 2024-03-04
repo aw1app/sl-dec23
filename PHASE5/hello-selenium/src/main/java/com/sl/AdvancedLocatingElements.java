@@ -28,22 +28,30 @@ public class AdvancedLocatingElements {
 		
 		// locateMobileTF();
 		
-		demoAdvancedXPathCSSSelector();
+		//demoAdvancedXPathSelector();
 		
 		//driver.close();
 
 	}
 
-	
 	static void demoAdvancedXPathCSSSelector() {
+		
+		String baseUrl = "file:///F:/Users/home/git/sl-dec23/PHASE5/hello-selenium/src/main/resources/test.html";
+		driver.get(baseUrl);
+		
+		// Locate the h4 which is second child of div that has id – eCommerce
+		
+		
+		// Change it's text to "Hello Selenium"
+	}
+	
+	static void demoAdvancedXPathSelector() {
 		String baseUrl = "file:///F:/Users/home/git/sl-dec23/PHASE5/hello-selenium/src/main/resources/test.html";
 		driver.get(baseUrl);
 		
 		List<WebElement> inputTagElements = driver.findElements(By.xpath("//input[contains(@id, 'admin')]"));
 		
-		System.out.println(" No of //input[contains(@id, 'admin')] elements "+ inputTagElements.size());
-		
-		
+		System.out.println(" No of //input[contains(@id, 'admin')] elements "+ inputTagElements.size());		
 	}
 	
 	// wait demo
