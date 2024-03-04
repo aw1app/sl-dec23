@@ -27,7 +27,7 @@ public class AdvancedLocatingElements {
 		
 		locateMobileTF();
 		
-		driver.close();
+		//driver.close();
 
 	}
 
@@ -50,7 +50,8 @@ public class AdvancedLocatingElements {
 
 		driver.get(baseUrl);
 		
-		WebElement mobileNoTF = driver.findElement(By.cssSelector("input[]"));
+		//WebElement mobileNoTF = driver.findElements(By.cssSelector("input")).get(4);
+		WebElement mobileNoTF = driver.findElement(By.xpath("input[4]"));
 		
 		mobileNoTF.sendKeys("93949499323");
 
