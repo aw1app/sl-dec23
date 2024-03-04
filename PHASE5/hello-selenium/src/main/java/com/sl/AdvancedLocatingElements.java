@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -41,11 +42,25 @@ public class AdvancedLocatingElements {
 		
 		//demoExternalElementsAlerts();
 		
-		demoExternalElementsIFrame();
+		//demoExternalElementsIFrame();
+		
+		demoExternalElementsNewTab() ;
 
 		// driver.close();
 
 	}
+	
+	// Launch a new Tab
+	static void demoExternalElementsNewTab() throws InterruptedException {
+		driver.get("file:///F:/Users/home/git/sl-dec23/PHASE5/hello-selenium/src/main/resources/test.html");
+		
+		Thread.sleep(10000);
+		
+		driver.switchTo().newWindow(WindowType.TAB);
+		
+		driver.navigate().to("https://www.google.com?q=flowers");		
+	}
+	
 	
 	// IFRAME AUTOMATION
 	static void demoExternalElementsIFrame() throws InterruptedException {
