@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test" parallel="methods">
     <classes>
       <class name="com.sl.GoogleSearch"/>
+      <class name="com.sl.FBRegistration"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
