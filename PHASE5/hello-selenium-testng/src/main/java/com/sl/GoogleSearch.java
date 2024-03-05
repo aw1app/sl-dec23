@@ -6,8 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -31,6 +35,26 @@ public class GoogleSearch {
 
 	SoftAssert softAssert = new SoftAssert();
 
+	@BeforeSuite
+	public void myBeforeSuite() {
+		System.out.println("INSIDE myBeforeSuite");			
+	}
+	
+	@AfterSuite
+	public void myAfterSuite() {
+		System.out.println("INSIDE myAfterSuite");		
+	}
+	
+	@BeforeTest
+	public void myBeforeTest() {
+		System.out.println("INSIDE myBeforeTest");			
+	}
+	
+	@AfterTest
+	public void myAfterTest() {
+		System.out.println("INSIDE myAfterTest");		
+	}
+	
 	@BeforeClass
 	public void myBeforeClass() {
 		System.out.println("INSIDE myBeforeClass");
@@ -55,12 +79,12 @@ public class GoogleSearch {
 		System.out.println("INSIDE myAfterMethod");
 		//driver.close();
 	}
-	
-	
+		
 	
 	@Test
 	public void searchGoogleAndTestTitleText() {
-		System.out.println("INSIDE searchGoogleAndTestTitleText");
+		
+		System.out.printf("Inside TESTCASE %s and thread-id is %s \n", "searchGoogleAndTestTitleText", Thread.currentThread().getId());
 
 		driver.get("http://www.google.com");
 
@@ -73,7 +97,7 @@ public class GoogleSearch {
 	// Challenge: Check of Google search text feild appears and contains text "flowers"
 	@Test
 	public void testGoogleSearchTextFeildContainsFlowers() {
-		System.out.println("INSIDE testGoogleSearchTextFeildContainsFlowers");
+		System.out.printf("Inside TESTCASE %s and thread-id is %s \n", "testGoogleSearchTextFeildContainsFlowers", Thread.currentThread().getId());
 
 		driver.get("http://www.google.com?q=flowers");	
 		
