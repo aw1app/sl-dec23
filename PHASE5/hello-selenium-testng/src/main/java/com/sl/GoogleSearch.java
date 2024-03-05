@@ -1,12 +1,13 @@
 package com.sl;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class GoogleSearch {
 	
-	public WebDriver driver;
+	public WebDriver driver = new FirefoxDriver();
 	SoftAssert softAssert = new SoftAssert();
 	
 	@Test
