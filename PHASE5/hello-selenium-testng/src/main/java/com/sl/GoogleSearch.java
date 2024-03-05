@@ -1,6 +1,8 @@
 package com.sl;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -40,11 +42,15 @@ public class GoogleSearch {
 	@Test
 	public void testGoogleSearchTextFeildContainsFlowers() {
 
-		driver.get("http://www.google.com?q=flowers");
+		driver.get("http://www.google.com?q=flowers");	
+		
+		WebElement searchTFElement = driver.findElement(By.name("q"));
+		
+		String searchTFText = searchTFElement.getAttribute("value");
+		
+		System.out.println("Search TF Text="+searchTFText);
 
-		System.out.println("text feild contains text \"flowers\" ");
-
-		softAssert.assertEquals(driver.getTitle(), "Google");
+		softAssert.assertEquals(searchTFText, "flowers");
 
 	}
 
