@@ -21,6 +21,10 @@ public class FileUploadDemo {
 		Thread.sleep(10000);
 
 		uploadFileUsingAutoIT();
+		
+		driver.close();
+		
+		Thread.sleep(10000);
 
 	}
 
@@ -31,7 +35,7 @@ public class FileUploadDemo {
 		Actions actions = new Actions(driver);
 		actions.click(fileUploadInput).perform();
 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 
 		Runtime.getRuntime().exec("F:\\AutoIT-Projects\\fileupload.exe");
 
