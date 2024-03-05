@@ -36,9 +36,9 @@ public class GoogleSearch {
 
 	}
 	
-	// Task Check of Google search text feild appears and contains text "flowers"
+	// Challenge: Check of Google search text feild appears and contains text "flowers"
 	@Test
-	public void searchGoogleAndTestSearchTextFeildContainsFlowers() {
+	public void testGoogleSearchTextFeildContainsFlowers() {
 
 		driver.get("http://www.google.com?q=flowers");
 
