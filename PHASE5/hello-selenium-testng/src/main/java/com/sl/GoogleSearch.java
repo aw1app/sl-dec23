@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -29,20 +31,36 @@ public class GoogleSearch {
 
 	SoftAssert softAssert = new SoftAssert();
 
+	@BeforeClass
+	public void myBeforeClass() {
+		System.out.println("INSIDE myBeforeClass");
+		driver = new FirefoxDriver();		
+	}
+	
+	@AfterClass
+	public void myAfterClass() {
+		System.out.println("INSIDE myAfterClass");
+		driver.close();
+	}
+	
+	
 	@BeforeMethod
 	public void myBeforeMethod() {
-		driver = new FirefoxDriver();		
+		System.out.println("INSIDE myBeforeMethod");
+		//driver = new FirefoxDriver();		
 	}
 	
 	@AfterMethod
 	public void myAfterMethod() {
-		driver.close();
+		System.out.println("INSIDE myAfterMethod");
+		//driver.close();
 	}
 	
 	
 	
 	@Test
 	public void searchGoogleAndTestTitleText() {
+		System.out.println("INSIDE searchGoogleAndTestTitleText");
 
 		driver.get("http://www.google.com");
 
@@ -55,6 +73,7 @@ public class GoogleSearch {
 	// Challenge: Check of Google search text feild appears and contains text "flowers"
 	@Test
 	public void testGoogleSearchTextFeildContainsFlowers() {
+		System.out.println("INSIDE testGoogleSearchTextFeildContainsFlowers");
 
 		driver.get("http://www.google.com?q=flowers");	
 		
