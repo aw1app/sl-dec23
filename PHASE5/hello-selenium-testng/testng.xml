@@ -5,6 +5,7 @@
     <classes>
       <class name="com.sl.GoogleSearch"/>
       <class name="com.sl.FBRegistration"/>
+      <class name="com.sl.GoogleRegistration"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
