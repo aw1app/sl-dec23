@@ -57,8 +57,10 @@ public class ActionsDemo {
 		.pause(3000)
 		.doubleClick(helloSpanTag)
 		.release()
-		.build()
-		.perform();		
+		.build();
+		
+		
+		actions.perform();		
 		
 	}
 
