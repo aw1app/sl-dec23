@@ -3,11 +3,11 @@
 <suite name="Suite">
 	<test thread-count="5" name="Test" parallel="methods">
 
-		<groups>
+		<!--<groups>
 			<run>
 				<include name="smoke" />
 			</run>
-		</groups>
+		</groups>-->
 
 		<classes>
 			<class name="com.sl.GoogleSearch" />

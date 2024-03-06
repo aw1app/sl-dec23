@@ -63,9 +63,10 @@ public class DummyTest {
 		
 		System.out.printf("Inside %s and thread-id is %s \n", "f5", Thread.currentThread().getId());
 		
+		
 	}
 	
-	@Test()
+	@Test(priority = 1)
 	public void f6() {
 		
 		System.out.printf("Inside %s and thread-id is %s \n", "f6", Thread.currentThread().getId());

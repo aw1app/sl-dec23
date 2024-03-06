@@ -91,7 +91,7 @@ public class GoogleSearch {
 
 		System.out.println("Title of google page is " + driver.getTitle());
 
-		softAssert.assertEquals(driver.getTitle(), "Google");
+		softAssert.assertEquals(driver.getTitle(), "Google", "Title text for Google homepage failed");
 
 	}
 	

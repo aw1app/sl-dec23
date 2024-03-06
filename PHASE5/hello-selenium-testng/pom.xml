@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sl</groupId>
-  <artifactId>hello-selenium-testng</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  
-  
-   <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sl</groupId>
+	<artifactId>hello-selenium-testng</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -22,7 +23,7 @@
 			<artifactId>selenium-chrome-driver</artifactId>
 			<version>4.10.0</version>
 		</dependency>
-		
+
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
 		<dependency>
@@ -30,8 +31,8 @@
 			<artifactId>selenium-firefox-driver</artifactId>
 			<version>4.10.0</version>
 		</dependency>
-		
-		
+
+
 		<!--Testng-->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -39,9 +40,62 @@
 			<version>7.8.0</version>
 			<scope>compile</scope>
 		</dependency>
-		
-		</dependencies>
-  
-  
+
+
+		<!-- ReportNG -->
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+		<!-- ReportNG -->
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+
+
+					<properties>
+						<property>
+							<name>usedefaultlisteners</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>listener</name>
+							<value>org.uncommons.reportng.HTMLReporter,
+								org.uncommons.reportng.JUnitXMLReporter
+							</value>
+						</property>
+					</properties>
+
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
 </project>
 
