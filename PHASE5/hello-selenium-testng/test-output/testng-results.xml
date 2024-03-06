@@ -1,75 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-05T12:55:34 IST" name="Suite" finished-at="2024-03-05T12:56:01 IST" duration-ms="27314">
+  <suite started-at="2024-03-06T09:48:08 IST" name="Suite" finished-at="2024-03-06T09:48:08 IST" duration-ms="346">
     <groups>
+      <group name="smoke">
+        <method signature="DummyTest.f2()[pri:0, instance:com.sl.DummyTest@5f049ea1]" name="f2" class="com.sl.DummyTest"/>
+        <method signature="DummyTest.f5()[pri:0, instance:com.sl.DummyTest@5f049ea1]" name="f5" class="com.sl.DummyTest"/>
+        <method signature="GoogleSearch.searchGoogleAndTestTitleText()[pri:0, instance:com.sl.GoogleSearch@4be29ed9]" name="searchGoogleAndTestTitleText" class="com.sl.GoogleSearch"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-03-05T12:55:34 IST" name="Test" finished-at="2024-03-05T12:56:01 IST" duration-ms="27314">
+    <test started-at="2024-03-06T09:48:08 IST" name="Test" finished-at="2024-03-06T09:48:08 IST" duration-ms="346">
+      <class name="com.sl.DummyTest">
+        <test-method signature="f2()[pri:0, instance:com.sl.DummyTest@5f049ea1]" started-at="2024-03-06T09:48:08 IST" name="f2" finished-at="2024-03-06T09:48:08 IST" duration-ms="28" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f2 -->
+        <test-method signature="f5()[pri:0, instance:com.sl.DummyTest@5f049ea1]" started-at="2024-03-06T09:48:08 IST" name="f5" finished-at="2024-03-06T09:48:08 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f5 -->
+      </class> <!-- com.sl.DummyTest -->
       <class name="com.sl.GoogleSearch">
-        <test-method is-config="true" signature="myBeforeSuite()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:34 IST" name="myBeforeSuite" finished-at="2024-03-05T12:55:34 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myBeforeSuite -->
-        <test-method is-config="true" signature="myBeforeTest()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:34 IST" name="myBeforeTest" finished-at="2024-03-05T12:55:34 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myBeforeTest -->
-        <test-method is-config="true" signature="myBeforeClass()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:34 IST" name="myBeforeClass" finished-at="2024-03-05T12:55:49 IST" duration-ms="14851" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myBeforeClass -->
-        <test-method is-config="true" signature="myBeforeMethod()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:49 IST" name="myBeforeMethod" finished-at="2024-03-05T12:55:49 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myBeforeMethod -->
-        <test-method signature="searchGoogleAndTestTitleText()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:49 IST" name="searchGoogleAndTestTitleText" finished-at="2024-03-05T12:55:55 IST" duration-ms="6003" status="PASS">
+        <test-method signature="searchGoogleAndTestTitleText()[pri:0, instance:com.sl.GoogleSearch@4be29ed9]" started-at="2024-03-06T09:48:08 IST" name="searchGoogleAndTestTitleText" finished-at="2024-03-06T09:48:08 IST" duration-ms="35" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "this.driver" is null
+at com.sl.GoogleSearch.searchGoogleAndTestTitleText(GoogleSearch.java:90)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchGoogleAndTestTitleText -->
-        <test-method is-config="true" signature="myBeforeMethod()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:49 IST" name="myBeforeMethod" finished-at="2024-03-05T12:55:49 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myBeforeMethod -->
-        <test-method signature="testGoogleSearchTextFeildContainsFlowers()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:49 IST" name="testGoogleSearchTextFeildContainsFlowers" finished-at="2024-03-05T12:55:55 IST" duration-ms="6099" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGoogleSearchTextFeildContainsFlowers -->
-        <test-method is-config="true" signature="myAfterMethod()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:55 IST" name="myAfterMethod" finished-at="2024-03-05T12:55:55 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myAfterMethod -->
-        <test-method is-config="true" signature="myAfterMethod()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:55 IST" name="myAfterMethod" finished-at="2024-03-05T12:55:55 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myAfterMethod -->
-        <test-method is-config="true" signature="myAfterClass()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:55:55 IST" name="myAfterClass" finished-at="2024-03-05T12:56:01 IST" duration-ms="6149" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myAfterClass -->
-        <test-method is-config="true" signature="myAfterTest()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:56:01 IST" name="myAfterTest" finished-at="2024-03-05T12:56:01 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myAfterTest -->
-        <test-method is-config="true" signature="myAfterSuite()[pri:0, instance:com.sl.GoogleSearch@548d708a]" started-at="2024-03-05T12:56:05 IST" name="myAfterSuite" finished-at="2024-03-05T12:56:05 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myAfterSuite -->
       </class> <!-- com.sl.GoogleSearch -->
-      <class name="com.sl.FBRegistration">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.sl.FBRegistration@350aac89]" started-at="2024-03-05T12:55:18 IST" name="beforeSuite" finished-at="2024-03-05T12:55:34 IST" duration-ms="16470" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method signature="fbAccount()[pri:0, instance:com.sl.FBRegistration@350aac89]" started-at="2024-03-05T12:55:34 IST" name="fbAccount" finished-at="2024-03-05T12:55:41 IST" duration-ms="6696" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fbAccount -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.sl.FBRegistration@350aac89]" started-at="2024-03-05T12:56:02 IST" name="afterSuite" finished-at="2024-03-05T12:56:05 IST" duration-ms="3355" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- com.sl.FBRegistration -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

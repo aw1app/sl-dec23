@@ -3,6 +3,7 @@ package com.sl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -58,7 +59,7 @@ public class GoogleSearch {
 	@BeforeClass
 	public void myBeforeClass() {
 		System.out.println("INSIDE myBeforeClass");
-		driver = new FirefoxDriver();		
+		driver = new FirefoxDriver();// new EdgeDriver();// 		
 	}
 	
 	@AfterClass
@@ -81,7 +82,7 @@ public class GoogleSearch {
 	}
 		
 	
-	@Test
+	@Test(groups = {"smoke"})
 	public void searchGoogleAndTestTitleText() {
 		
 		System.out.printf("Inside TESTCASE %s and thread-id is %s \n", "searchGoogleAndTestTitleText", Thread.currentThread().getId());
@@ -95,7 +96,7 @@ public class GoogleSearch {
 	}
 	
 	// Challenge: Check of Google search text feild appears and contains text "flowers"
-	@Test
+	@Test(enabled = false)
 	public void testGoogleSearchTextFeildContainsFlowers() {
 		System.out.printf("Inside TESTCASE %s and thread-id is %s \n", "testGoogleSearchTextFeildContainsFlowers", Thread.currentThread().getId());
 

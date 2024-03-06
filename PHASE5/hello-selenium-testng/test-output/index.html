@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.sl.GoogleSearch" class="method navigator-link" hash-for-method="searchGoogleAndTestTitleText">searchGoogleAndTestTitleText</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,17 +117,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.sl.FBRegistration" class="method navigator-link" hash-for-method="fbAccount">fbAccount</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.sl.DummyTest" class="method navigator-link" hash-for-method="f2">f2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.sl.GoogleSearch" class="method navigator-link" hash-for-method="searchGoogleAndTestTitleText">searchGoogleAndTestTitleText</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.sl.GoogleSearch" class="method navigator-link" hash-for-method="testGoogleSearchTextFeildContainsFlowers">testGoogleSearchTextFeildContainsFlowers</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.sl.DummyTest" class="method navigator-link" hash-for-method="f5">f5</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -128,9 +137,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.sl.GoogleSearch</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -139,28 +148,35 @@
                   <a name="searchGoogleAndTestTitleText">
                   </a> <!-- searchGoogleAndTestTitleText -->
                   <span class="method-name">searchGoogleAndTestTitleText</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGoogleSearchTextFeildContainsFlowers">
-                  </a> <!-- testGoogleSearchTextFeildContainsFlowers -->
-                  <span class="method-name">testGoogleSearchTextFeildContainsFlowers</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at com.sl.GoogleSearch.searchGoogleAndTestTitleText(GoogleSearch.java:90)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+... Removed 12 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.sl.FBRegistration</span>
+              <span class="class-name">com.sl.DummyTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="fbAccount">
-                  </a> <!-- fbAccount -->
-                  <span class="method-name">fbAccount</span>
+                  <a name="f2">
+                  </a> <!-- f2 -->
+                  <span class="method-name">f2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="f5">
+                  </a> <!-- f5 -->
+                  <span class="method-name">f5</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -176,9 +192,16 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; parallel=&quot;methods&quot; name=&quot;Test&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;smoke&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.sl.GoogleSearch&quot;/&gt;
       &lt;class name=&quot;com.sl.FBRegistration&quot;/&gt;
+      &lt;class name=&quot;com.sl.GoogleRegistration&quot;/&gt;
+      &lt;class name=&quot;com.sl.DummyTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -192,7 +215,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -202,6 +225,22 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">smoke</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">f2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">f5</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">searchGoogleAndTestTitleText</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -220,22 +259,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'fbAccount')
-data.setCell(0, 2, 'com.sl.FBRegistration')
-data.setCell(0, 3, 6696);
+data.setCell(0, 1, 'searchGoogleAndTestTitleText')
+data.setCell(0, 2, 'com.sl.GoogleSearch')
+data.setCell(0, 3, 35);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testGoogleSearchTextFeildContainsFlowers')
-data.setCell(1, 2, 'com.sl.GoogleSearch')
-data.setCell(1, 3, 6099);
+data.setCell(1, 1, 'f5')
+data.setCell(1, 2, 'com.sl.DummyTest')
+data.setCell(1, 3, 32);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'searchGoogleAndTestTitleText')
-data.setCell(2, 2, 'com.sl.GoogleSearch')
-data.setCell(2, 3, 6003);
+data.setCell(2, 1, 'f2')
+data.setCell(2, 2, 'com.sl.DummyTest')
+data.setCell(2, 3, 28);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 seconds</span>
+              <span class="suite-total-time">Total running time: 95 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -250,9 +289,43 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">7 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.sl.GoogleSearch</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testGoogleSearchTextFeildContainsFlowers</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.sl.FBRegistration</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">fbAccount</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.sl.DummyTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">f1</span>
+                <br/>
+                <span class="ignored-method-name">f4</span>
+                <br/>
+                <span class="ignored-method-name">f6</span>
+                <br/>
+                <span class="ignored-method-name">f3</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.sl.GoogleRegistration</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">googleNewAccCreation</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -261,82 +334,27 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.sl.FBRegistration</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">beforeSuite</span>
+              <div class="chronological-class-name">com.sl.DummyTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">f2</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.sl.GoogleSearch</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">myBeforeSuite</span>
-                <span class="method-start">16473 ms</span>
-              </div> <!-- configuration-suite before -->
-              <div class="configuration-test before">
-                <span class="method-name">myBeforeTest</span>
-                <span class="method-start">16542 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="configuration-class before">
-                <span class="method-name">myBeforeClass</span>
-                <span class="method-start">16655 ms</span>
-              </div> <!-- configuration-class before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.sl.FBRegistration</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">fbAccount</span>
-                <span class="method-start">16738 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.sl.GoogleSearch</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">myBeforeMethod</span>
-                <span class="method-start">31507 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">searchGoogleAndTestTitleText</span>
-                <span class="method-start">31513 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">myBeforeMethod</span>
-                <span class="method-start">31522 ms</span>
-              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.sl.DummyTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testGoogleSearchTextFeildContainsFlowers</span>
-                <span class="method-start">31523 ms</span>
+                <span class="method-name">f5</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">myAfterMethod</span>
-                <span class="method-start">37521 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">myAfterMethod</span>
-                <span class="method-start">37632 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">myAfterClass</span>
-                <span class="method-start">37638 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-test after">
-                <span class="method-name">myAfterTest</span>
-                <span class="method-start">43788 ms</span>
-              </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.sl.FBRegistration</div> <!-- chronological-class-name -->
-              <div class="configuration-suite after">
-                <span class="method-name">afterSuite</span>
-                <span class="method-start">43897 ms</span>
-              </div> <!-- configuration-suite after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.sl.GoogleSearch</div> <!-- chronological-class-name -->
-              <div class="configuration-suite after">
-                <span class="method-name">myAfterSuite</span>
-                <span class="method-start">47252 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
