@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-07T10:25:25 IST" name="Suite" finished-at="2024-03-07T10:25:34 IST" duration-ms="9559">
+    <groups>
+    </groups>
+    <test started-at="2024-03-07T10:25:25 IST" name="Test" finished-at="2024-03-07T10:25:34 IST" duration-ms="9559">
+      <class name="com.sl.GoogleRegistration">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.sl.GoogleRegistration@3ba987b8]" started-at="2024-03-07T10:25:05 IST" name="beforeSuite" finished-at="2024-03-07T10:25:25 IST" duration-ms="19430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method signature="googleNewAccCreation(java.lang.String,java.lang.String)[pri:0, instance:com.sl.GoogleRegistration@3ba987b8]" started-at="2024-03-07T10:25:25 IST" name="googleNewAccCreation" data-provider="googleNewUserData" finished-at="2024-03-07T10:25:29 IST" duration-ms="4089" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Krishna]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Varma]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleNewAccCreation -->
+        <test-method signature="googleNewAccCreation(java.lang.String,java.lang.String)[pri:0, instance:com.sl.GoogleRegistration@3ba987b8]" started-at="2024-03-07T10:25:29 IST" name="googleNewAccCreation" data-provider="googleNewUserData" finished-at="2024-03-07T10:25:31 IST" duration-ms="2651" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ravi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Sarma]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleNewAccCreation -->
+        <test-method signature="googleNewAccCreation(java.lang.String,java.lang.String)[pri:0, instance:com.sl.GoogleRegistration@3ba987b8]" started-at="2024-03-07T10:25:31 IST" name="googleNewAccCreation" data-provider="googleNewUserData" finished-at="2024-03-07T10:25:34 IST" duration-ms="2678" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Shalini]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yadav]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleNewAccCreation -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.sl.GoogleRegistration@3ba987b8]" started-at="2024-03-07T10:25:34 IST" name="afterSuite" finished-at="2024-03-07T10:25:38 IST" duration-ms="3449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.sl.GoogleRegistration -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
