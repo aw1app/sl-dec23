@@ -6,7 +6,7 @@ WORKDIR /usr
 COPY . /usr
 
 RUN npm install -g @angular/cli && npm install && ng build
-RUN npm install -g json-server --silent
+#RUN npm install -g json-server --silent
 
 # #STAGE 2: Run 
 FROM nginx:alpine-slim
@@ -15,6 +15,13 @@ COPY --from=build /usr/dist/angular_project_with_service_routing/browser /usr/sh
 # Expose nginx webserver 
 EXPOSE 80
 
+# Step 3: Install JSON Server
+RUN npm install -g json-server
+
+RUN echo which npx?
 # start json-server
 #RUN npm start json-server &
-RUN json-server --watch db.json --port 3000 &
+#RUN json-server --watch db.json --port 3000 &
+WORKDIR /json-server
+COPY db.json /json-server/db.json
+RUN npx json-server --watch /json-server/db.json --port 3000 & nginx -g 'daemon off;'
