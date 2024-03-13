@@ -16,11 +16,10 @@ COPY --from=build /usr/dist/angular_project_with_service_routing/browser /usr/sh
 EXPOSE 80
 
 # # Step 3: Install JSON Server
-# RUN npm install -g json-server
+RUN apk update && \
+    apk add --no-cache nodejs npm
 
-# # start json-server
-# #RUN npm start json-server &
-# #RUN json-server --watch db.json --port 3000 &
-# WORKDIR /json-server
-# COPY db.json /json-server/db.json
-# RUN npx json-server --watch /json-server/db.json --port 3000 & nginx -g 'daemon off;'
+# # Step -4 : start json-server
+WORKDIR /json-server
+COPY db.json /json-server/db.json
+RUN npx json-server --watch /json-server/db.json --port 3000 & nginx -g 'daemon off;'
