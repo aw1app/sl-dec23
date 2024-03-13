@@ -18,7 +18,9 @@ COPY --from=builder /app/target/spring-boot-rest-api-server-0.0.1-SNAPSHOT.jar /
 # Copy the script to start both MySQL and Spring Boot app
 COPY start.sh /start.sh
 
-# Grant execute permissions to the script
+# Convert line endings of the script file to Unix-style LF
+RUN apt-get update && apt-get install -y dos2unix && dos2unix /start.sh && chmod +x /start.sh
+
 RUN chmod +x /start.sh
 
 # Expose MySQL default port
