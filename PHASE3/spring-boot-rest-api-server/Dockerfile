@@ -13,7 +13,7 @@ FROM mysql:latest
 ENV MYSQL_ROOT_PASSWORD=rootroot
 
 # Copy the built JAR file from the builder stage to the MySQL image
-COPY --from=builder /app/target/<your-spring-boot-app-name>.jar /<your-spring-boot-app-name>.jar
+COPY --from=builder /app/target/spring-boot-rest-api-server-0.0.1-SNAPSHOT.jar /spring-boot-rest-api-server-0.0.1-SNAPSHOT.jar
 
 # Copy the script to start both MySQL and Spring Boot app
 COPY start.sh /start.sh
