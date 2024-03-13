@@ -19,7 +19,7 @@ COPY --from=builder /app/target/spring-boot-rest-api-server-0.0.1-SNAPSHOT.jar /
 COPY start.sh /start.sh
 
 # Convert line endings of the script file to Unix-style LF
-RUN apt-get update && apt-get install -y dos2unix && dos2unix /start.sh && chmod +x /start.sh
+RUN apk add --no-cache dos2unix && dos2unix /start.sh && chmod +x /start.sh
 
 RUN chmod +x /start.sh
 
