@@ -22,7 +22,8 @@
                         <td> {{i+1}}</td>
                         <td> {{prod.name}}</td>
                         <td> {{prod.price}}</td>
-                        <td> <a href="product/{{prod.id}}" class="badge my-button"> DETAILS </a></td>
+                        <!-- <td> <a href="product/{{prod.id}}" class="badge my-button"> DETAILS </a></td> -->
+                        <td> <a href="product{{prod.id}}" class="badge my-button"> DETAILS </a></td>
                         <td> <a href="update-product/{{prod.id}}" class="badge bg-info"> UPDATE </a></td>
                         <td> <button (click)="deleteProduct(prod.id)" class="badge bg-danger"> DELETE </button>
                         </td>

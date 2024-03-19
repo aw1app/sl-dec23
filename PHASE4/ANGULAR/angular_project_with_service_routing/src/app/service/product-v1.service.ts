@@ -12,7 +12,10 @@ export class ProductV1Service {
   products: Product[] = [];
   httpClient!: HttpClient;
 
-  restAPIServerBaseUrl: string = "http://localhost:3000";
+  //restAPIServerBaseUrl: string = "http://localhost:3000";
+
+  // FOR SPRING-BOOT-REST_API_SERVER
+  restAPIServerBaseUrl: string = "http://localhost:80";
 
   constructor(httpClient: HttpClient) {
     this.httpClient = httpClient;
@@ -20,12 +23,19 @@ export class ProductV1Service {
 
   //List API
   getAllProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(`${this.restAPIServerBaseUrl}/products`);
+    //return this.httpClient.get<Product[]>(`${this.restAPIServerBaseUrl}/products`);
+
+    // FOR SPRING-BOOT-REST_API_SERVER
+    return this.httpClient.get<Product[]>(`${this.restAPIServerBaseUrl}/product/list`);
   }
 
   //Details API
   getProduct = (id: number): Observable<Product> => {
-    return this.httpClient.get<Product>(`${this.restAPIServerBaseUrl}/products/${id}`);
+    //For JSON-SERVER
+    //return this.httpClient.get<Product>(`${this.restAPIServerBaseUrl}/products/${id}`);
+
+    // FOR SPRING-BOOT-REST_API_SERVER
+    return this.httpClient.get<Product>(`${this.restAPIServerBaseUrl}/product/details/${id}`);
   }
 
   //Delete API
@@ -39,6 +49,7 @@ export class ProductV1Service {
   // Create API
   newIdsStart:number=10002;
 
+  /*
   addProduct(name: string, price: number, image:string): Observable<any>  {
 
     this.newIdsStart=this.newIdsStart+1;
@@ -59,6 +70,22 @@ export class ProductV1Service {
     
 
     return this.httpClient.post(`${this.restAPIServerBaseUrl}/products`, prodJSON, { 'headers': headers });
+  }
+  */
+
+
+  //FOr SPROINT REST 
+  addProduct(name: string, price: number, image:string): Observable<any>  {
+
+    let prodJSON={
+      "name":name,
+      "price":price,
+      "productImage":image,
+    };
+
+    const headers = { 'content-type': 'application/json' };  
+
+    return this.httpClient.post(`${this.restAPIServerBaseUrl}/product/add-product`, prodJSON, { 'headers': headers });
   }
 
   updateProduct(id:number,name: string, price: number, image:string): Observable<any>  {
